@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Not Found | ProHealth</title>
+    <meta
+      name="description"
+      content="The medical resource or page you requested could not be located."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body
+    style="
+      background: radial-gradient(circle at center, #ffffff 0%, #f1f5f9 100%);
+    "
+  >
+    <!-- Strictly NO navbar rendered on this 404 page as requested -->
+
+    <main class="error-page-wrapper">
+      <div class="error-card">
+        <!-- Brand Logo Header on 404 Card -->
+        <div
+          style="display: flex; justify-content: center; margin-bottom: 24px"
+        >
+          <a
+            href="index.html"
+            class="brand-logo"
+            aria-label="Stackly Healthcare Home"
+          >
+            <img
+              src="assets/images/logo.webp"
+              alt="Stackly Healthcare"
+              class="brand-logo-img"
+            />
+            <span class="brand-tag">Healthcare</span>
+          </a>
+        </div>
+
+        <!-- Large 404 Code Badge -->
+        <div class="error-code-badge">404</div>
+
+        <!-- Heading -->
+        <h1 class="error-title">Page Not Found</h1>
+
+        <!-- Friendly Healthcare Explanation -->
+        <p class="error-description">
+          We could not locate the clinical record, department route, or
+          requested service module. The resource may have been relocated,
+          archived under HIPAA guidelines, or is currently under scheduled
+          maintenance.
+        </p>
+
+        <!-- Primary Action Buttons: Home & Go Back (which redirects to the place where we were at before) -->
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+          "
+        >
+          <a href="index.html" class="btn btn-primary btn-lg"
+            >Return to Homepage</a
+          >
+          <button
+            type="button"
+            onclick="window.history.back()"
+            class="btn btn-outline btn-lg"
+          >
+            ← Go Back
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

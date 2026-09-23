@@ -1,0 +1,905 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clinical Services & Specialties - ProHealth Hospital</title>
+    <meta
+      name="description"
+      content="Explore ProHealth's 25+ medical departments, modern diagnostic facilities, emergency trauma centers, and advanced surgical interventions."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <!-- Pure CSS Page Loader -->
+    <div id="page-loader" aria-live="polite">
+      <div class="loader-brand">
+        <img
+          src="assets/images/logo.webp"
+          alt="Stackly Healthcare Logo"
+          class="brand-logo-img"
+        />
+        <span class="brand-tag">Healthcare</span>
+      </div>
+      <div class="loader-spinner"></div>
+      <p class="loader-text">Loading clinical services directory...</p>
+    </div>
+
+    <!-- Fixed Navbar -->
+    <header class="fixed-navbar" role="banner">
+      <div class="nav-container">
+        <a
+          href="index.html"
+          class="brand-logo"
+          aria-label="Stackly Healthcare Home"
+        >
+          <img
+            src="assets/images/logo.webp"
+            alt="Stackly Healthcare"
+            class="brand-logo-img"
+          />
+          <span class="brand-tag">Healthcare</span>
+        </a>
+
+        <nav class="nav-menu" role="navigation" aria-label="Primary Navigation">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About Us</a>
+          <a href="services.html" class="nav-link active">Services</a>
+          <a href="blog.html" class="nav-link">Blog</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="sign-in.html" class="btn btn-sm btn-secondary">Sign In</a>
+          <a href="sign-up.html" class="btn btn-sm btn-primary"
+            >Book Consultation</a
+          >
+          <button
+            class="nav-toggle"
+            aria-label="Toggle Navigation Menu"
+            aria-expanded="false"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-nav-overlay" aria-hidden="true">
+      <div
+        class="mobile-nav-drawer"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile Menu"
+      >
+        <div class="mobile-nav-header">
+          <div class="brand-logo">
+            <img
+              src="assets/images/logo.webp"
+              alt="Stackly Healthcare"
+              class="brand-logo-img"
+            />
+            <span class="brand-tag">Healthcare</span>
+          </div>
+          <button class="mobile-nav-close" aria-label="Close menu">
+            &times;
+          </button>
+        </div>
+        <div class="mobile-nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About Us</a>
+          <a href="services.html" class="nav-link active">Services</a>
+          <a href="blog.html" class="nav-link">Blog</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+        <div class="mobile-nav-actions">
+          <a href="sign-in.html" class="btn btn-secondary btn-block">Sign In</a>
+          <a href="sign-up.html" class="btn btn-primary btn-block"
+            >Book Consultation</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <main class="page-content-wrapper">
+      <!-- Banner -->
+      <section
+        style="
+          background: radial-gradient(
+            circle at top right,
+            rgba(224, 242, 254, 0.6) 0%,
+            rgba(248, 250, 252, 1) 60%
+          );
+          padding: 50px 0 40px;
+          border-bottom: 1px solid var(--border-color);
+        "
+      >
+        <div class="container">
+          <div
+            style="
+              font-size: 13px;
+              color: var(--text-muted);
+              margin-bottom: 8px;
+            "
+          >
+            <a href="index.html" style="color: var(--primary)">Home</a> &bull;
+            Clinical Services
+          </div>
+          <h1
+            style="
+              font-family: var(--font-heading);
+              font-size: 40px;
+              font-weight: 800;
+              color: var(--text-main);
+            "
+          >
+            Comprehensive Clinical Services & Specialty Centers
+          </h1>
+          <p
+            style="
+              font-size: 17px;
+              color: var(--text-muted);
+              max-width: 720px;
+              margin-top: 10px;
+            "
+          >
+            Explore our multidisciplinary departments. Each specialty combines
+            advanced surgical instruments, rapid lab analysis, and compassionate
+            bedside care.
+          </p>
+        </div>
+      </section>
+
+      <!-- Detailed Services Grid -->
+      <section class="section">
+        <div class="container">
+          <div class="grid-3">
+            <!-- Service 1 -->
+            <div class="card">
+              <div class="card-icon">🫀</div>
+              <h3 class="card-title">Interventional Cardiology</h3>
+              <p class="card-desc">
+                Equipped with biplane Cath labs for coronary stenting, balloon
+                angioplasty, transcatheter aortic valve replacement (TAVR), and
+                pacemaker implantation.
+              </p>
+              <ul
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  margin-bottom: 18px;
+                  line-height: 1.8;
+                "
+              >
+                <li>✓ 24/7 Primary Angioplasty Protocol</li>
+                <li>✓ Non-invasive Echocardiography & TMT</li>
+                <li>✓ Cardiac Rehabilitation Center</li>
+              </ul>
+              <button class="btn btn-sm btn-primary" data-action="404">
+                Book Specialist Visit
+              </button>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="card">
+              <div
+                class="card-icon"
+                style="
+                  background: var(--secondary-light);
+                  color: var(--secondary-dark);
+                "
+              >
+                🧠
+              </div>
+              <h3 class="card-title">Neurology & Spine Surgery</h3>
+              <p class="card-desc">
+                Expert neurovascular intervention for acute ischemic stroke,
+                robotic spine decompression, deep brain stimulation, and
+                neuro-oncology.
+              </p>
+              <ul
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  margin-bottom: 18px;
+                  line-height: 1.8;
+                "
+              >
+                <li>✓ Stroke Code Response under 30 mins</li>
+                <li>✓ Video-EEG Monitoring Suite</li>
+                <li>✓ Minimally Invasive Discectomy</li>
+              </ul>
+              <button class="btn btn-sm btn-primary" data-action="404">
+                Book Specialist Visit
+              </button>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="card">
+              <div
+                class="card-icon"
+                style="background: #fef3c7; color: #d97706"
+              >
+                👶
+              </div>
+              <h3 class="card-title">Pediatric & Neonatology (NICU)</h3>
+              <p class="card-desc">
+                State-of-the-art Level III NICU and PICU providing
+                round-the-clock intensive monitoring for premature infants and
+                pediatric sub-specialties.
+              </p>
+              <ul
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  margin-bottom: 18px;
+                  line-height: 1.8;
+                "
+              >
+                <li>✓ Advanced Infant Ventilator Care</li>
+                <li>✓ Pediatric Allergy & Pulmonology</li>
+                <li>✓ Growth & Milestones Telemetry</li>
+              </ul>
+              <button class="btn btn-sm btn-primary" data-action="404">
+                Book Specialist Visit
+              </button>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="card">
+              <div
+                class="card-icon"
+                style="background: #e0e7ff; color: #4338ca"
+              >
+                🦴
+              </div>
+              <h3 class="card-title">Orthopedics & Robotic Arthroplasty</h3>
+              <p class="card-desc">
+                Robotic total knee and hip replacements with 3D computed
+                mapping, arthroscopic sports ligament repairs, and fracture
+                traumatology.
+              </p>
+              <ul
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  margin-bottom: 18px;
+                  line-height: 1.8;
+                "
+              >
+                <li>✓ Sub-millimeter Robotic Precision</li>
+                <li>✓ Rapid Recovery Mobilization</li>
+                <li>✓ Dedicated Sports Physiotherapy</li>
+              </ul>
+              <button class="btn btn-sm btn-primary" data-action="404">
+                Book Specialist Visit
+              </button>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="card">
+              <div
+                class="card-icon"
+                style="background: #fee2e2; color: #b91c1c"
+              >
+                🎗️
+              </div>
+              <h3 class="card-title">Comprehensive Oncology Institute</h3>
+              <p class="card-desc">
+                Multidisciplinary tumor board offering precision medical
+                chemotherapy, surgical oncological resections, and palliative
+                pain management.
+              </p>
+              <ul
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  margin-bottom: 18px;
+                  line-height: 1.8;
+                "
+              >
+                <li>✓ Day-Care Chemotherapy Lounge</li>
+                <li>✓ Targeted Immunotherapy Protocols</li>
+                <li>✓ Psychological Support Counseling</li>
+              </ul>
+              <button class="btn btn-sm btn-primary" data-action="404">
+                Book Specialist Visit
+              </button>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="card">
+              <div
+                class="card-icon"
+                style="background: #dcfce7; color: #15803d"
+              >
+                💧
+              </div>
+              <h3 class="card-title">Nephrology & Dialysis Center</h3>
+              <p class="card-desc">
+                Modern 24-station hemodialysis unit utilizing ultra-pure RO
+                water filtration, renal biopsy diagnostics, and kidney
+                transplant workup.
+              </p>
+              <ul
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  margin-bottom: 18px;
+                  line-height: 1.8;
+                "
+              >
+                <li>✓ Night Dialysis Services</li>
+                <li>✓ Continuous Ambulatory Peritoneal Dialysis</li>
+                <li>✓ Hypertension & Chronic Kidney Care</li>
+              </ul>
+              <button class="btn btn-sm btn-primary" data-action="404">
+                Book Specialist Visit
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: High-Resolution Diagnostics & Molecular Pathology -->
+      <section class="section section-subtle">
+        <div class="container">
+          <div class="grid-2" style="align-items: center; gap: 40px">
+            <div>
+              <span class="section-tag">Precision Diagnostics</span>
+              <h2 class="section-title">
+                24/7 Advanced Medical Imaging & Automated Pathology
+              </h2>
+              <p class="section-desc" style="margin-bottom: 16px">
+                Diagnostic accuracy is the cornerstone of clinical efficacy.
+                ProHealth's imaging wing houses high-field 3T Magnetic Resonance
+                Imaging (MRI), multi-slice computed tomography, and digital
+                subtraction angiography suites.
+              </p>
+              <ul
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 12px;
+                  font-size: 14px;
+                  margin-bottom: 24px;
+                "
+              >
+                <li>
+                  •
+                  <strong>Same-Day Electronic Tele-Radiology:</strong> Certified
+                  radiologist reports uploaded to your secure patient portal
+                  within 4 hours.
+                </li>
+                <li>
+                  • <strong>Molecular & Genetic Pathology:</strong> Real-time
+                  RT-PCR, flow cytometry, and tumor biomarker profiling.
+                </li>
+                <li>
+                  •
+                  <strong
+                    >Digital Mammography & Bone Densitometry (DEXA):</strong
+                  >
+                  Early detection screening protocols for preventative wellness.
+                </li>
+              </ul>
+              <button class="btn btn-primary" data-action="404">
+                Schedule Diagnostic Scan &rarr;
+              </button>
+            </div>
+            <div>
+              <div class="hero-image-card">
+                <img
+                  src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80"
+                  alt="Advanced MRI and Diagnostic Imaging at ProHealth"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Day-Care Surgery & Ambulatory Recovery -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Day Care Surgery</span>
+            <h2 class="section-title">
+              Same-Day Surgical Interventions with Rapid Discharge
+            </h2>
+            <p class="section-desc">
+              Advanced endoscopic, arthroscopic, and laser surgical techniques
+              enabling safe patient recovery and return home on the same day.
+            </p>
+          </div>
+
+          <div class="grid-3">
+            <div class="card">
+              <div
+                class="card-icon"
+                style="background: var(--primary-light); color: var(--primary)"
+              >
+                👁️
+              </div>
+              <h3 class="card-title">Advanced Ophthalmology</h3>
+              <p class="card-desc">
+                Micro-incision cataract phacoemulsification, laser refractive
+                vision correction, and retinal vitreous procedures.
+              </p>
+              <button class="btn btn-sm btn-outline" data-action="404">
+                Clinical Details &rarr;
+              </button>
+            </div>
+            <div class="card">
+              <div
+                class="card-icon"
+                style="
+                  background: var(--secondary-light);
+                  color: var(--secondary-dark);
+                "
+              >
+                🔬
+              </div>
+              <h3 class="card-title">Minimally Invasive ENT</h3>
+              <p class="card-desc">
+                Functional Endoscopic Sinus Surgery (FESS), coblation
+                tonsillectomy, and digital micro-laryngeal intervention.
+              </p>
+              <button class="btn btn-sm btn-outline" data-action="404">
+                Clinical Details &rarr;
+              </button>
+            </div>
+            <div class="card">
+              <div
+                class="card-icon"
+                style="background: #fef3c7; color: #d97706"
+              >
+                🩹
+              </div>
+              <h3 class="card-title">Laparoscopic General Surgery</h3>
+              <p class="card-desc">
+                Laser proctology, single-port laparoscopic cholecystectomy, and
+                tension-free hernia repair under local or spinal block.
+              </p>
+              <button class="btn btn-sm btn-outline" data-action="404">
+                Clinical Details &rarr;
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Step-by-Step Patient Care Pathway -->
+      <section class="section section-subtle">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Care Process</span>
+            <h2 class="section-title">Your Structured Pathway to Recovery</h2>
+            <p class="section-desc">
+              From initial outpatient evaluation to full post-operative
+              discharge, our coordinated clinical roadmap leaves nothing to
+              chance.
+            </p>
+          </div>
+
+          <div class="grid-4">
+            <div class="card" style="text-align: center; align-items: center">
+              <div
+                class="card-icon"
+                style="
+                  background: #e0f2fe;
+                  color: #0284c7;
+                  font-weight: 800;
+                  font-size: 20px;
+                "
+              >
+                01
+              </div>
+              <h4 style="font-size: 17px; margin-bottom: 8px">
+                Clinical Consultation
+              </h4>
+              <p style="font-size: 13px; color: var(--text-muted)">
+                Comprehensive bedside interview, vital signs assessment, and
+                medical history intake.
+              </p>
+            </div>
+            <div class="card" style="text-align: center; align-items: center">
+              <div
+                class="card-icon"
+                style="
+                  background: #ccfbf1;
+                  color: #0f766e;
+                  font-weight: 800;
+                  font-size: 20px;
+                "
+              >
+                02
+              </div>
+              <h4 style="font-size: 17px; margin-bottom: 8px">
+                Diagnostic Profiling
+              </h4>
+              <p style="font-size: 13px; color: var(--text-muted)">
+                Exact laboratory panels, high-res computed scans, and
+                multidisciplinary tumor board review.
+              </p>
+            </div>
+            <div class="card" style="text-align: center; align-items: center">
+              <div
+                class="card-icon"
+                style="
+                  background: #fef3c7;
+                  color: #d97706;
+                  font-weight: 800;
+                  font-size: 20px;
+                "
+              >
+                03
+              </div>
+              <h4 style="font-size: 17px; margin-bottom: 8px">
+                Targeted Treatment
+              </h4>
+              <p style="font-size: 13px; color: var(--text-muted)">
+                Minimally invasive surgical correction or tailored
+                pharmacological regimen.
+              </p>
+            </div>
+            <div class="card" style="text-align: center; align-items: center">
+              <div
+                class="card-icon"
+                style="
+                  background: #e0e7ff;
+                  color: #4338ca;
+                  font-weight: 800;
+                  font-size: 20px;
+                "
+              >
+                04
+              </div>
+              <h4 style="font-size: 17px; margin-bottom: 8px">
+                Holistic Recovery
+              </h4>
+              <p style="font-size: 13px; color: var(--text-muted)">
+                Continuous physiological telemetry, physical therapy, and remote
+                digital follow-ups.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Comprehensive Health Checkup Packages -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Preventive Health</span>
+            <h2 class="section-title">Specialized Health Checkup Packages</h2>
+            <p class="section-desc">
+              Early detection saves lives. Choose a preventative screening
+              package tailored to your age, lifestyle, and clinical risk
+              factors.
+            </p>
+          </div>
+
+          <div class="grid-3">
+            <div class="card" style="border: 2px solid var(--border-color)">
+              <span
+                class="status-badge status-confirmed"
+                style="width: fit-content; margin-bottom: 12px"
+                >Basic Screening</span
+              >
+              <h3 class="card-title">Essential Health Package</h3>
+              <p class="card-desc">
+                Complete Blood Count, Fasting Blood Sugar, Lipid Profile, Liver
+                & Kidney Function Tests, and Physician Consultation.
+              </p>
+              <button class="btn btn-outline btn-block" data-action="404">
+                Book Package &rarr;
+              </button>
+            </div>
+
+            <div
+              class="card"
+              style="
+                border: 2px solid var(--primary);
+                box-shadow: var(--shadow-md);
+              "
+            >
+              <span
+                class="status-badge status-completed"
+                style="width: fit-content; margin-bottom: 12px"
+                >Most Popular</span
+              >
+              <h3 class="card-title">Comprehensive Cardiac Check</h3>
+              <p class="card-desc">
+                12-Lead ECG, 2D Echocardiography, Treadmill Stress Test (TMT),
+                Serum Troponin, Glycated Hemoglobin (HbA1c), and Cardiologist
+                Review.
+              </p>
+              <button class="btn btn-primary btn-block" data-action="404">
+                Book Package &rarr;
+              </button>
+            </div>
+
+            <div class="card" style="border: 2px solid var(--border-color)">
+              <span
+                class="status-badge status-pending"
+                style="width: fit-content; margin-bottom: 12px"
+                >Executive Care</span
+              >
+              <h3 class="card-title">Senior Citizen Platinum Plan</h3>
+              <p class="card-desc">
+                Full Body CT Calcium Score, DEXA Bone Mineral Density, Thyroid
+                Profile, Prostate/Pap Smear Screening, and Geriatric Evaluation.
+              </p>
+              <button class="btn btn-outline btn-block" data-action="404">
+                Book Package &rarr;
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 7: FAQ Accordion Section -->
+      <section class="section section-subtle">
+        <div class="container" style="max-width: 860px">
+          <div class="section-header">
+            <span class="section-tag">Patient Guidance</span>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-desc">
+              Have questions regarding appointments, insurance, or emergency
+              services? Find your answers below.
+            </p>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 16px">
+            <div class="card" style="padding: 20px 24px">
+              <h4
+                style="
+                  font-size: 16px;
+                  font-weight: 700;
+                  color: var(--text-main);
+                  margin-bottom: 8px;
+                "
+              >
+                How do I book an in-person or virtual consultation?
+              </h4>
+              <p style="font-size: 14px; color: var(--text-muted)">
+                You can create an account via our Patient Portal, select your
+                preferred specialist and time slot, or call our 24/7 helpline at
+                +91 9876543210.
+              </p>
+            </div>
+
+            <div class="card" style="padding: 20px 24px">
+              <h4
+                style="
+                  font-size: 16px;
+                  font-weight: 700;
+                  color: var(--text-main);
+                  margin-bottom: 8px;
+                "
+              >
+                Do you support cashless health insurance policies?
+              </h4>
+              <p style="font-size: 14px; color: var(--text-muted)">
+                Yes, ProHealth has established cashless network tie-ups with
+                over 40 leading public and private health insurance providers
+                and TPAs.
+              </p>
+            </div>
+
+            <div class="card" style="padding: 20px 24px">
+              <h4
+                style="
+                  font-size: 16px;
+                  font-weight: 700;
+                  color: var(--text-main);
+                  margin-bottom: 8px;
+                "
+              >
+                What should I do in an emergency situation?
+              </h4>
+              <p style="font-size: 14px; color: var(--text-muted)">
+                Our Salem Emergency Trauma Center operates 24 hours a day, 365
+                days a year. Call our immediate ambulance dispatch line or
+                report directly to our Emergency Bay at MMR Complex, Chinna
+                Thirupathi.
+              </p>
+            </div>
+
+            <div class="card" style="padding: 20px 24px">
+              <h4
+                style="
+                  font-size: 16px;
+                  font-weight: 700;
+                  color: var(--text-main);
+                  margin-bottom: 8px;
+                "
+              >
+                Can I access my lab test results online?
+              </h4>
+              <p style="font-size: 14px; color: var(--text-muted)">
+                Yes! Once your pathology or imaging tests are verified by our
+                radiologists, you can immediately view and download reports
+                through your Patient Dashboard.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 8: Consultation Booking CTA Banner -->
+      <section class="section">
+        <div class="container">
+          <div class="cta-banner">
+            <div>
+              <h2>Consult with Our Specialized Physicians</h2>
+              <p>
+                Experience compassionate medical care, advanced diagnostics, and
+                personalized treatment plans in Salem.
+              </p>
+            </div>
+            <div class="cta-btn-group">
+              <a
+                href="sign-up.html"
+                class="btn btn-lg btn-primary"
+                style="background: white; color: var(--primary-dark)"
+                >Book Appointment Online</a
+              >
+              <a
+                href="contact.html"
+                class="btn btn-lg btn-outline"
+                style="border-color: white; color: white"
+                >Contact Clinical Team</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="brand-logo" style="color: white">
+              <img
+                src="assets/images/logo.webp"
+                alt="Stackly Healthcare"
+                class="brand-logo-img"
+              />
+              <span class="brand-tag light-tag">Healthcare</span>
+            </div>
+            <p>
+              ProHealth provides comprehensive tertiary healthcare, advanced
+              robotic surgeries, and compassionate 24/7 care in Salem.
+            </p>
+            <div class="footer-social-icons">
+              <a href="404.html" class="social-icon-btn" aria-label="Facebook">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  />
+                </svg>
+              </a>
+              <a href="404.html" class="social-icon-btn" aria-label="Twitter">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                  />
+                </svg>
+              </a>
+              <a href="404.html" class="social-icon-btn" aria-label="LinkedIn">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.6a1.5 1.5 0 0 0-1.5 1.5 1.5 1.5 0 0 0 1.5 1.5 1.5 1.5 0 0 0 1.5-1.5 1.5 1.5 0 0 0-1.5-1.5z"
+                  />
+                </svg>
+              </a>
+              <a href="404.html" class="social-icon-btn" aria-label="Instagram">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-title">Navigation</h4>
+            <div class="footer-links">
+              <a href="index.html">Home Overview</a>
+              <a href="about.html">About ProHealth</a>
+              <a href="services.html">Clinical Services</a>
+              <a href="contact.html">Contact Us</a>
+              <a href="dashboard.html">Access Portal</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-title">Departments</h4>
+            <div class="footer-links">
+              <a href="services.html">Cardiology</a>
+              <a href="services.html">Neurology</a>
+              <a href="services.html">Pediatrics</a>
+              <a href="services.html">Orthopedics</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-title">Salem Medical Center</h4>
+            <div class="footer-contact-item">
+              <span>📍</span>
+              <span
+                >MMR Complex, Chinna Thirupathi, Salem, Tamil Nadu 636008</span
+              >
+            </div>
+            <div class="footer-contact-item">
+              <span>📞</span>
+              <a href="tel:+919876543210" style="color: inherit"
+                >+91 9876543210</a
+              >
+            </div>
+            <div class="footer-contact-item">
+              <span>✉️</span>
+              <a href="mailto:hello@thestackly.com" style="color: inherit"
+                >hello@thestackly.com</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div>&copy; 2026 ProHealth Medical Care. All rights reserved.</div>
+          <div class="footer-legal-links">
+            <a href="404.html">Privacy Policy</a>
+            <a href="404.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appointments & Clinical Visits - ProHealth Healthcare System</title>
+    <meta
+      name="description"
+      content="View and manage scheduled outpatient consultations, diagnostic testing slots, and physician appointments."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <!-- Pure CSS Page Loader -->
+    <div id="page-loader" aria-live="polite">
+      <div class="loader-brand">
+        <img
+          src="assets/images/logo.webp"
+          alt="Stackly Healthcare Logo"
+          class="brand-logo-img"
+        />
+        <span class="brand-tag">Healthcare</span>
+      </div>
+      <div class="loader-spinner"></div>
+      <p class="loader-text">Loading appointments registry...</p>
+    </div>
+
+    <main class="dashboard-page-wrapper">
+      <div class="dashboard-container">
+        <!-- Dashboard Sidebar -->
+        <aside class="dashboard-sidebar" aria-label="Dashboard Navigation">
+          <!-- Portal Brand Header -->
+          <div class="dash-brand-header">
+            <a
+              href="index.html"
+              class="brand-logo"
+              title="Back to Stackly Healthcare Home"
+            >
+              <img
+                src="assets/images/logo.webp"
+                alt="Stackly Healthcare"
+                class="brand-logo-img"
+              />
+              <span class="brand-tag">Portal</span>
+            </a>
+          </div>
+
+          <div class="dash-user-badge">
+            <div id="dash-sidebar-avatar" class="dash-user-avatar">U</div>
+            <div class="dash-user-info">
+              <h4 id="dash-user-name">Loading...</h4>
+              <span id="dash-role-badge" class="dash-role-badge">Role</span>
+            </div>
+          </div>
+
+          <nav id="dash-sidebar-nav" class="dash-nav"></nav>
+
+          <div
+            style="
+              margin-top: auto;
+              padding-top: 20px;
+              border-top: 1px solid var(--border-color);
+            "
+          >
+            <a href="settings.html" class="btn btn-secondary btn-block btn-sm">
+              <span>⚙️</span> Portal Settings
+            </a>
+          </div>
+        </aside>
+
+        <!-- Main Appointments Workspace -->
+        <section
+          class="dashboard-main"
+          role="region"
+          aria-label="Appointments Content"
+        >
+          <div class="dashboard-top-bar">
+            <div class="dash-greeting-box">
+              <h1>Clinical Appointments & Scheduling</h1>
+              <p id="dash-session-time">Verified Session</p>
+            </div>
+            <div class="dash-portal-actions">
+              <span id="dash-role-badge-top" class="dash-role-badge">Role</span>
+              <button class="btn btn-primary btn-sm" data-action="404">
+                + Book Appointment
+              </button>
+              <button id="dash-signout-btn" class="btn btn-danger btn-sm">
+                Sign Out
+              </button>
+            </div>
+          </div>
+
+          <!-- Appointment Overview Metric Cards -->
+          <div class="dash-stats-grid">
+            <div class="dash-stat-card">
+              <div class="dash-stat-info">
+                <h5>Confirmed Visits</h5>
+                <h3>3 Scheduled</h3>
+              </div>
+              <div class="dash-stat-icon stat-sky">📅</div>
+            </div>
+            <div class="dash-stat-card">
+              <div class="dash-stat-info">
+                <h5>Pending Review</h5>
+                <h3>1 Booking</h3>
+              </div>
+              <div class="dash-stat-icon stat-amber">⏳</div>
+            </div>
+            <div class="dash-stat-card">
+              <div class="dash-stat-info">
+                <h5>Completed Visits</h5>
+                <h3>12 Past Visits</h3>
+              </div>
+              <div class="dash-stat-icon stat-teal">✅</div>
+            </div>
+            <div class="dash-stat-card">
+              <div class="dash-stat-info">
+                <h5>Emergency Slots</h5>
+                <h3>Available 24/7</h3>
+              </div>
+              <div class="dash-stat-icon stat-indigo">🚨</div>
+            </div>
+          </div>
+
+          <!-- Detailed Appointments Schedule Table -->
+          <div class="dash-card" style="margin-bottom: 30px">
+            <div class="dash-card-header">
+              <h3>Scheduled Outpatient & In-Clinic Consultations</h3>
+              <div style="display: flex; gap: 8px">
+                <button class="btn btn-sm btn-outline" data-action="404">
+                  Filter by Specialty
+                </button>
+                <button class="btn btn-sm btn-secondary" data-action="404">
+                  Export PDF
+                </button>
+              </div>
+            </div>
+            <div class="data-table-container">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Appointment ID</th>
+                    <th>Physician / Specialist</th>
+                    <th>Department</th>
+                    <th>Date & Time</th>
+                    <th>Consultation Mode</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>#APT-9041</strong></td>
+                    <td>Dr. Alexander Wright</td>
+                    <td>Cardiology Institute</td>
+                    <td>Tomorrow, 10:30 AM</td>
+                    <td>In-Person (Room 204)</td>
+                    <td>
+                      <span class="status-badge status-confirmed"
+                        >Confirmed</span
+                      >
+                    </td>
+                    <td>
+                      <button
+                        class="btn btn-sm btn-secondary"
+                        data-action="404"
+                      >
+                        Manage
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>#APT-9042</strong></td>
+                    <td>Dr. Priya Sharma</td>
+                    <td>Pediatrics & Family Care</td>
+                    <td>Sep 28, 03:00 PM</td>
+                    <td>Virtual Telehealth</td>
+                    <td>
+                      <span class="status-badge status-pending"
+                        >Pending Review</span
+                      >
+                    </td>
+                    <td>
+                      <button
+                        class="btn btn-sm btn-secondary"
+                        data-action="404"
+                      >
+                        Reschedule
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>#APT-9038</strong></td>
+                    <td>Dr. Michael Chang</td>
+                    <td>Orthopedics & Joint Care</td>
+                    <td>Oct 04, 11:15 AM</td>
+                    <td>Pre-operative Evaluation</td>
+                    <td>
+                      <span class="status-badge status-confirmed"
+                        >Confirmed</span
+                      >
+                    </td>
+                    <td>
+                      <button
+                        class="btn btn-sm btn-secondary"
+                        data-action="404"
+                      >
+                        Manage
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>#APT-8991</strong></td>
+                    <td>Dr. Catherine Brooks</td>
+                    <td>Radiology & CT Diagnostics</td>
+                    <td>Sep 14, 09:00 AM</td>
+                    <td>Diagnostic Scan Suite</td>
+                    <td>
+                      <span class="status-badge status-completed"
+                        >Completed</span
+                      >
+                    </td>
+                    <td>
+                      <button
+                        class="btn btn-sm btn-secondary"
+                        data-action="404"
+                      >
+                        View Summary
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Appointment Guidelines Card -->
+          <div class="dash-card">
+            <div class="dash-card-header">
+              <h3>Patient Visit Protocol & Reminders</h3>
+              <span class="status-badge status-confirmed"
+                >Important Notice</span
+              >
+            </div>
+            <div
+              style="
+                font-size: 14px;
+                color: var(--text-muted);
+                line-height: 1.7;
+              "
+            >
+              <p>
+                • Please report to the reception desk at
+                <strong>MMR Complex, Chinna Thirupathi, Salem</strong> at least
+                15 minutes prior to your scheduled consultation time.
+              </p>
+              <p>
+                • Bring any prior medical discharge summaries, ECG charts, or
+                current medication strips for physician review.
+              </p>
+              <p>
+                • For virtual video consults, log in 5 minutes early to test
+                your camera and microphone audio connection.
+              </p>
+            </div>
+            <div style="margin-top: 20px; display: flex; gap: 12px">
+              <button class="btn btn-primary" data-action="404">
+                Book Follow-up Appointment
+              </button>
+              <button class="btn btn-outline" data-action="404">
+                Request Medical Transport
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-bottom" style="border-top: none; padding-top: 0">
+          <div>
+            &copy; 2026 ProHealth Medical Care. Authenticated Clinical Session.
+          </div>
+          <div class="footer-legal-links">
+            <a href="404.html">Privacy Policy</a>
+            <a href="404.html">HIPAA Security Notice</a>
+            <a href="index.html">ProHealth Home</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script>
+      // Initialize user session & sidebar for appointments.html
+      document.addEventListener("DOMContentLoaded", () => {
+        const user = getCurrentUser();
+        if (!user) {
+          window.location.href = "sign-in.html";
+          return;
+        }
+        const userInitials =
+          (user.firstName ? user.firstName[0] : "U") +
+          (user.lastName ? user.lastName[0] : "");
+        const userNameDisplay = `${user.role === "Doctor" ? "Dr. " : ""}${user.firstName} ${user.lastName}`;
+
+        document.getElementById("dash-avatar").textContent = userInitials;
+        document.getElementById("dash-sidebar-avatar").textContent =
+          userInitials;
+        document.getElementById("dash-user-name").textContent = userNameDisplay;
+
+        const roleBadge = document.getElementById("dash-role-badge");
+        roleBadge.textContent = user.role;
+        roleBadge.className = `dash-role-badge role-badge-${user.role.toLowerCase()}`;
+
+        // Populate sidebar
+        renderSidebarNav(user.role);
+        setupSignOut();
+        setupActionButtonsRedirect();
+      });
+    </script>
+    <script src="assets/js/dashboard.js"></script>
+  </body>
+</html>

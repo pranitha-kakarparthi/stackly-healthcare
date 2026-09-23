@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Portal Security & Account Settings - ProHealth Healthcare System
+    </title>
+    <meta
+      name="description"
+      content="Manage your personal healthcare profile, password security, two-factor authentication, HIPAA privacy preferences, and active clinical sessions."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <!-- Pure CSS Page Loader -->
+    <div id="page-loader" aria-live="polite">
+      <div class="loader-brand">
+        <img
+          src="assets/images/logo.webp"
+          alt="Stackly Healthcare Logo"
+          class="brand-logo-img"
+        />
+        <span class="brand-tag">Healthcare</span>
+      </div>
+      <div class="loader-spinner"></div>
+      <p class="loader-text">Loading encrypted security credentials...</p>
+    </div>
+
+    <main class="dashboard-page-wrapper">
+      <div class="dashboard-container">
+        <!-- Dashboard Sidebar -->
+        <aside class="dashboard-sidebar" aria-label="Dashboard Navigation">
+          <!-- Portal Brand Header -->
+          <div class="dash-brand-header">
+            <a
+              href="index.html"
+              class="brand-logo"
+              title="Back to Stackly Healthcare Home"
+            >
+              <img
+                src="assets/images/logo.webp"
+                alt="Stackly Healthcare"
+                class="brand-logo-img"
+              />
+              <span class="brand-tag">Portal</span>
+            </a>
+          </div>
+
+          <div class="dash-user-badge">
+            <div id="dash-sidebar-avatar" class="dash-user-avatar">U</div>
+            <div class="dash-user-info">
+              <h4 id="dash-user-name">Loading...</h4>
+              <span id="dash-role-badge" class="dash-role-badge">Role</span>
+            </div>
+          </div>
+
+          <nav id="dash-sidebar-nav" class="dash-nav"></nav>
+
+          <div
+            style="
+              margin-top: auto;
+              padding-top: 20px;
+              border-top: 1px solid var(--border-color);
+            "
+          >
+            <a
+              href="settings.html"
+              class="btn btn-secondary btn-block btn-sm active"
+            >
+              <span>⚙️</span> Portal Settings
+            </a>
+          </div>
+        </aside>
+
+        <!-- Main Settings Workspace -->
+        <section
+          class="dashboard-main"
+          role="region"
+          aria-label="Settings Content"
+        >
+          <!-- Portal Top Bar -->
+          <div class="dashboard-top-bar">
+            <div class="dash-greeting-box">
+              <h1>Portal Security & Account Settings</h1>
+              <p id="dash-session-time">Verified Session</p>
+            </div>
+            <div class="dash-portal-actions">
+              <span id="dash-role-badge-top" class="dash-role-badge">Role</span>
+              <button
+                class="btn btn-secondary btn-sm"
+                data-action="404"
+                title="Alerts"
+              >
+                🔔 Alerts
+              </button>
+              <button id="dash-signout-btn" class="btn btn-danger btn-sm">
+                Sign Out
+              </button>
+            </div>
+          </div>
+
+          <!-- Section 1: Security & Compliance Status KPI Cards -->
+          <div class="dash-stats-grid">
+            <div class="dash-stat-card">
+              <div class="dash-stat-info">
+                <h5>HIPAA Compliance</h5>
+                <h3>100% Verified</h3>
+              </div>
+              <div class="dash-stat-icon stat-teal">🛡️</div>
+            </div>
+            <div class="dash-stat-card">
+              <div class="dash-stat-info">
+                <h5>Password Status</h5>
+                <h3>Strong & Compliant</h3>
+              </div>
+              <div class="dash-stat-icon stat-sky">🔑</div>
+            </div>
+            <div class="dash-stat-card">
+              <div class="dash-stat-info">
+                <h5>Two-Factor (2FA)</h5>
+                <h3>Active (SMS & App)</h3>
+              </div>
+              <div class="dash-stat-icon stat-indigo">📱</div>
+            </div>
+            <div class="dash-stat-card">
+              <div class="dash-stat-info">
+                <h5>Active Sessions</h5>
+                <h3>2 Authorized</h3>
+              </div>
+              <div class="dash-stat-icon stat-amber">💻</div>
+            </div>
+          </div>
+
+          <!-- Section 2: Profile Identity & Contact Details -->
+          <div class="settings-section-card">
+            <div class="settings-section-header">
+              <div>
+                <h3>Personal Identity & Clinical Contact Details</h3>
+                <p style="font-size: 13px; color: var(--text-muted); margin: 0">
+                  Manage your legal patient identity and primary contact
+                  channels.
+                </p>
+              </div>
+              <span class="status-badge status-confirmed"
+                >Identity Verified</span
+              >
+            </div>
+
+            <form
+              onsubmit="
+                event.preventDefault();
+                window.location.href = '404.html';
+              "
+            >
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                  gap: 20px;
+                  margin-bottom: 20px;
+                "
+              >
+                <!-- First Name -->
+                <div class="form-group">
+                  <label class="form-label"
+                    >First Name <span class="required-star">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="settings-firstname"
+                    class="form-input input-alpha-only"
+                    placeholder="First name (alphabets only)"
+                    required
+                  />
+                </div>
+
+                <!-- Last Name -->
+                <div class="form-group">
+                  <label class="form-label"
+                    >Last Name <span class="required-star">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="settings-lastname"
+                    class="form-input input-alpha-only"
+                    placeholder="Last name (alphabets only)"
+                    required
+                  />
+                </div>
+
+                <!-- Email Address -->
+                <div class="form-group">
+                  <label class="form-label"
+                    >Email Address <span class="required-star">*</span></label
+                  >
+                  <input
+                    type="email"
+                    id="settings-email"
+                    class="form-input"
+                    placeholder="name@example.com"
+                    required
+                  />
+                </div>
+
+                <!-- 10-Digit Mobile -->
+                <div class="form-group">
+                  <label class="form-label"
+                    >Mobile Number (10 Digits)
+                    <span class="required-star">*</span></label
+                  >
+                  <div class="phone-input-split">
+                    <span class="phone-country-code">+1</span>
+                    <input
+                      type="tel"
+                      id="settings-phone"
+                      class="form-input input-phone-10"
+                      placeholder="10 digit mobile"
+                      maxlength="10"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div style="display: flex; justify-content: flex-end; gap: 12px">
+                <button type="reset" class="btn btn-secondary btn-sm">
+                  Reset
+                </button>
+                <button type="submit" class="btn btn-primary btn-sm">
+                  Save Profile Changes
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Section 3: Password & Cryptographic Security -->
+          <div class="settings-section-card">
+            <div class="settings-section-header">
+              <div>
+                <h3>Password & Cryptographic Credentials</h3>
+                <p style="font-size: 13px; color: var(--text-muted); margin: 0">
+                  Passwords must contain at least 8 characters including one
+                  uppercase, one number, and one special character.
+                </p>
+              </div>
+              <span class="status-badge status-completed">AES-256 Hashed</span>
+            </div>
+
+            <form
+              onsubmit="
+                event.preventDefault();
+                window.location.href = '404.html';
+              "
+            >
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                  gap: 20px;
+                  margin-bottom: 20px;
+                "
+              >
+                <div class="form-group">
+                  <label class="form-label">Current Password</label>
+                  <div class="password-input-group">
+                    <input
+                      type="password"
+                      class="form-input"
+                      placeholder="Enter current password"
+                      required
+                    />
+                    <button type="button" class="password-toggle-btn">
+                      👁️
+                    </button>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">New Password</label>
+                  <div class="password-input-group">
+                    <input
+                      type="password"
+                      class="form-input"
+                      placeholder="8+ chars, uppercase, number & symbol"
+                      required
+                    />
+                    <button type="button" class="password-toggle-btn">
+                      👁️
+                    </button>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Confirm New Password</label>
+                  <div class="password-input-group">
+                    <input
+                      type="password"
+                      class="form-input"
+                      placeholder="Re-type new password"
+                      required
+                    />
+                    <button type="button" class="password-toggle-btn">
+                      👁️
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div style="display: flex; justify-content: flex-end">
+                <button type="submit" class="btn btn-primary btn-sm">
+                  Update Password
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Section 4: Two-Column - 2FA & Notification Preferences -->
+          <div class="dashboard-grid-2">
+            <!-- 2-Factor Authentication -->
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <h3>Two-Factor Authentication (2FA)</h3>
+                <span class="status-badge status-confirmed">Enabled</span>
+              </div>
+              <p
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  line-height: 1.5;
+                  margin-bottom: 18px;
+                "
+              >
+                Protect your medical data with an additional authentication
+                challenge each time you sign in from an unrecognized device.
+              </p>
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 14px;
+                  margin-bottom: 20px;
+                "
+              >
+                <label
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    font-size: 14px;
+                    cursor: pointer;
+                  "
+                >
+                  <span>📱 SMS One-Time Code</span>
+                  <input
+                    type="checkbox"
+                    checked
+                    style="width: 18px; height: 18px"
+                  />
+                </label>
+                <label
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    font-size: 14px;
+                    cursor: pointer;
+                  "
+                >
+                  <span>🔐 Authenticator App (TOTP)</span>
+                  <input
+                    type="checkbox"
+                    checked
+                    style="width: 18px; height: 18px"
+                  />
+                </label>
+                <label
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    font-size: 14px;
+                    cursor: pointer;
+                  "
+                >
+                  <span>👆 WebAuthn Biometrics (Fingerprint)</span>
+                  <input type="checkbox" style="width: 18px; height: 18px" />
+                </label>
+              </div>
+              <button
+                class="btn btn-outline btn-block btn-sm"
+                data-action="404"
+              >
+                Reconfigure 2FA Devices &rarr;
+              </button>
+            </div>
+
+            <!-- Notification & Alert Preferences -->
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <h3>Clinical Alerts & Notifications</h3>
+                <span class="status-badge status-completed">Live Sync</span>
+              </div>
+              <p
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  line-height: 1.5;
+                  margin-bottom: 18px;
+                "
+              >
+                Configure which updates and clinical notifications you wish to
+                receive.
+              </p>
+              <div
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 14px;
+                  margin-bottom: 20px;
+                "
+              >
+                <label
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    font-size: 14px;
+                    cursor: pointer;
+                  "
+                >
+                  <span>📅 Appointment Reminders (24h prior)</span>
+                  <input
+                    type="checkbox"
+                    checked
+                    style="width: 18px; height: 18px"
+                  />
+                </label>
+                <label
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    font-size: 14px;
+                    cursor: pointer;
+                  "
+                >
+                  <span>🔬 Diagnostic Lab Results Ready Alerts</span>
+                  <input
+                    type="checkbox"
+                    checked
+                    style="width: 18px; height: 18px"
+                  />
+                </label>
+                <label
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    font-size: 14px;
+                    cursor: pointer;
+                  "
+                >
+                  <span>💊 Prescription Refill Delivery Updates</span>
+                  <input
+                    type="checkbox"
+                    checked
+                    style="width: 18px; height: 18px"
+                  />
+                </label>
+              </div>
+              <button
+                class="btn btn-secondary btn-block btn-sm"
+                data-action="404"
+              >
+                Save Notification Settings
+              </button>
+            </div>
+          </div>
+
+          <!-- Section 5: HIPAA Privacy, Data Export & Active Devices -->
+          <div class="dashboard-grid-2">
+            <!-- HIPAA Data Management -->
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <h3>HIPAA Privacy & Record Export</h3>
+                <span class="status-badge status-confirmed">Confidential</span>
+              </div>
+              <p
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  line-height: 1.6;
+                  margin-bottom: 16px;
+                "
+              >
+                In compliance with HIPAA Privacy Standards, you retain absolute
+                ownership and portability of your electronic health records.
+              </p>
+              <div style="display: flex; gap: 10px; flex-wrap: wrap">
+                <button class="btn btn-primary btn-sm" data-action="404">
+                  📥 Export Complete EHR (PDF)
+                </button>
+                <button class="btn btn-secondary btn-sm" data-action="404">
+                  Audit Access Logs
+                </button>
+              </div>
+            </div>
+
+            <!-- Active Authorized Sessions -->
+            <div class="dash-card">
+              <div class="dash-card-header">
+                <h3>Active Browser Sessions</h3>
+                <span class="status-badge status-confirmed">2 Active</span>
+              </div>
+              <ul
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  gap: 12px;
+                  font-size: 13px;
+                  margin-bottom: 16px;
+                "
+              >
+                <li
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    border-bottom: 1px solid var(--border-light);
+                    padding-bottom: 8px;
+                  "
+                >
+                  <div>
+                    <strong>Windows 11 • Chrome 129</strong>
+                    <div style="color: var(--text-muted); font-size: 11px">
+                      This Device • Active Now
+                    </div>
+                  </div>
+                  <span class="status-badge status-confirmed">Current</span>
+                </li>
+                <li
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding-bottom: 4px;
+                  "
+                >
+                  <div>
+                    <strong>Apple iPhone 15 • Mobile Safari</strong>
+                    <div style="color: var(--text-muted); font-size: 11px">
+                      Salem, OR • 2 hours ago
+                    </div>
+                  </div>
+                  <button class="btn btn-sm btn-secondary" data-action="404">
+                    Revoke
+                  </button>
+                </li>
+              </ul>
+              <button
+                class="btn btn-outline btn-block btn-sm"
+                data-action="404"
+              >
+                Sign Out All Other Devices
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-bottom" style="border-top: none; padding-top: 0">
+          <div>
+            &copy; 2026 ProHealth Medical Care. Portal Security & HIPAA
+            Governance.
+          </div>
+          <div class="footer-bottom-links">
+            <a href="404.html">Security Whitepaper</a>
+            <a href="404.html">Privacy Policy</a>
+            <a href="404.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+      // Populate fields from current user session
+      document.addEventListener("DOMContentLoaded", () => {
+        const user = getCurrentUser();
+        if (user) {
+          const fn = document.getElementById("settings-firstname");
+          const ln = document.getElementById("settings-lastname");
+          const em = document.getElementById("settings-email");
+          const ph = document.getElementById("settings-phone");
+          if (fn) fn.value = user.firstName || "";
+          if (ln) ln.value = user.lastName || "";
+          if (em) em.value = user.email || "";
+          if (ph) ph.value = user.phone || "9876543210";
+        }
+      });
+    </script>
+  </body>
+</html>

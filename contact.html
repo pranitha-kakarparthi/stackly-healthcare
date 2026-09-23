@@ -1,0 +1,974 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - ProHealth Medical Center Salem</title>
+    <meta
+      name="description"
+      content="Get in touch with ProHealth Medical Center at MMR Complex, Salem. Reach our 24/7 emergency trauma desk, book appointments or consult specialists."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <!-- Pure CSS Page Loader -->
+    <div id="page-loader" aria-live="polite">
+      <div class="loader-brand">
+        <img
+          src="assets/images/logo.webp"
+          alt="Stackly Healthcare Logo"
+          class="brand-logo-img"
+        />
+        <span class="brand-tag">Healthcare</span>
+      </div>
+      <div class="loader-spinner"></div>
+      <p class="loader-text">Loading ProHealth contact desk...</p>
+    </div>
+
+    <!-- Fixed Navbar (No Dashboard Link as requested) -->
+    <header class="fixed-navbar" role="banner">
+      <div class="nav-container">
+        <a
+          href="index.html"
+          class="brand-logo"
+          aria-label="Stackly Healthcare Home"
+        >
+          <img
+            src="assets/images/logo.webp"
+            alt="Stackly Healthcare"
+            class="brand-logo-img"
+          />
+          <span class="brand-tag">Healthcare</span>
+        </a>
+
+        <nav class="nav-menu" role="navigation" aria-label="Primary Navigation">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About Us</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="blog.html" class="nav-link">Blog</a>
+          <a href="contact.html" class="nav-link active">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="sign-in.html" class="btn btn-sm btn-secondary">Sign In</a>
+          <a href="sign-up.html" class="btn btn-sm btn-primary"
+            >Book Consultation</a
+          >
+          <button
+            class="nav-toggle"
+            aria-label="Toggle Navigation Menu"
+            aria-expanded="false"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-nav-overlay" aria-hidden="true">
+      <div
+        class="mobile-nav-drawer"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile Menu"
+      >
+        <div class="mobile-nav-header">
+          <div class="brand-logo">
+            <img
+              src="assets/images/logo.webp"
+              alt="Stackly Healthcare"
+              class="brand-logo-img"
+            />
+            <span class="brand-tag">Healthcare</span>
+          </div>
+          <button class="mobile-nav-close" aria-label="Close menu">
+            &times;
+          </button>
+        </div>
+        <div class="mobile-nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About Us</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="blog.html" class="nav-link">Blog</a>
+          <a href="contact.html" class="nav-link active">Contact</a>
+        </div>
+        <div class="mobile-nav-actions">
+          <a href="sign-in.html" class="btn btn-secondary btn-block">Sign In</a>
+          <a href="sign-up.html" class="btn btn-primary btn-block"
+            >Book Consultation</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <main class="page-content-wrapper">
+      <!-- Section 1: Hero Banner & Breadcrumb -->
+      <section
+        style="
+          background: radial-gradient(
+            circle at top right,
+            rgba(224, 242, 254, 0.6) 0%,
+            rgba(248, 250, 252, 1) 60%
+          );
+          padding: 50px 0 40px;
+          border-bottom: 1px solid var(--border-color);
+        "
+      >
+        <div class="container">
+          <div
+            style="
+              font-size: 13px;
+              color: var(--text-muted);
+              margin-bottom: 8px;
+            "
+          >
+            <a href="index.html" style="color: var(--primary)">Home</a> &bull;
+            Contact Us
+          </div>
+          <h1
+            style="
+              font-family: var(--font-heading);
+              font-size: 40px;
+              font-weight: 800;
+              color: var(--text-main);
+            "
+          >
+            Reach Out to Our Clinical Team in Salem
+          </h1>
+          <p
+            style="
+              font-size: 17px;
+              color: var(--text-muted);
+              max-width: 680px;
+              margin-top: 10px;
+            "
+          >
+            Whether you have an inquiry about scheduling, require emergency
+            medical guidance, or wish to consult a specialist, our care teams
+            are available 24 hours a day.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 2: Contact Information Cards -->
+      <section class="section" style="padding: 50px 0 30px">
+        <div class="container">
+          <div class="grid-3">
+            <!-- Card 1: Office Address -->
+            <div class="card" style="text-align: center; align-items: center">
+              <div class="card-icon">📍</div>
+              <h3 class="card-title">Hospital Address</h3>
+              <p class="card-desc" style="margin-bottom: 14px">
+                MMR Complex, Chinna Thirupathi,<br />
+                Salem, Tamil Nadu 636008
+              </p>
+              <a
+                href="https://maps.google.com/?q=Chinna+Thirupathi+Salem+Tamil+Nadu"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-sm btn-outline"
+                >Open in Google Maps</a
+              >
+            </div>
+
+            <!-- Card 2: Phone -->
+            <div class="card" style="text-align: center; align-items: center">
+              <div
+                class="card-icon"
+                style="
+                  background: var(--secondary-light);
+                  color: var(--secondary-dark);
+                "
+              >
+                📞
+              </div>
+              <h3 class="card-title">Direct Helplines</h3>
+              <p class="card-desc" style="margin-bottom: 14px">
+                Emergency & Triage: <strong>+91 9876543210</strong><br />
+                OPD Appointments: +91 9876543211
+              </p>
+              <a href="tel:+919876543210" class="btn btn-sm btn-primary"
+                >Call Now (+91 9876543210)</a
+              >
+            </div>
+
+            <!-- Card 3: Email -->
+            <div class="card" style="text-align: center; align-items: center">
+              <div
+                class="card-icon"
+                style="background: #fef3c7; color: #d97706"
+              >
+                ✉️
+              </div>
+              <h3 class="card-title">Electronic Mail</h3>
+              <p class="card-desc" style="margin-bottom: 14px">
+                General Inquiries: <strong>hello@thestackly.com</strong><br />
+                Response within 2-4 business hours
+              </p>
+              <a
+                href="mailto:hello@thestackly.com"
+                class="btn btn-sm btn-secondary"
+                >Send Email</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Interactive Contact Form & Location Map -->
+      <section class="section section-subtle" style="padding: 40px 0 60px">
+        <div class="container">
+          <div class="grid-2" style="align-items: flex-start; gap: 40px">
+            <!-- Interactive Form -->
+            <div class="card" style="box-shadow: var(--shadow-md)">
+              <div style="margin-bottom: 24px">
+                <h2
+                  style="
+                    font-family: var(--font-heading);
+                    font-size: 24px;
+                    font-weight: 800;
+                    color: var(--text-main);
+                    margin-bottom: 8px;
+                  "
+                >
+                  Send Us a Clinical Message
+                </h2>
+                <p style="font-size: 14px; color: var(--text-muted)">
+                  Fill in your details below and our patient care team will get
+                  back to you promptly.
+                </p>
+              </div>
+
+              <!-- Form Success Alert -->
+              <div
+                id="contact-success"
+                style="
+                  display: none;
+                  padding: 14px;
+                  background: var(--success-light);
+                  color: #047857;
+                  border-radius: var(--radius-md);
+                  margin-bottom: 20px;
+                  font-size: 14px;
+                  font-weight: 600;
+                "
+              >
+                ✓ Thank you! Your message has been received by our clinical
+                desk. A representative will contact you shortly.
+              </div>
+
+              <form id="contact-form" novalidate>
+                <!-- Name Field (Alphabets Only) -->
+                <div class="form-group">
+                  <label for="contact-name" class="form-label"
+                    >Full Name (Alphabets Only)
+                    <span class="required-star">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="contact-name"
+                    class="form-control input-alpha-only"
+                    placeholder="e.g. Sarah Jenkins"
+                    pattern="[A-Za-z\s]+"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Please provide your full name using alphabets only.
+                  </div>
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group">
+                  <label for="contact-email" class="form-label"
+                    >Email Address <span class="required-star">*</span></label
+                  >
+                  <input
+                    type="email"
+                    id="contact-email"
+                    class="form-control"
+                    placeholder="e.g. sarah@example.com"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid email address.
+                  </div>
+                </div>
+
+                <!-- Mobile Number (10 Digits Only) -->
+                <div class="form-group">
+                  <label for="contact-phone" class="form-label"
+                    >Mobile Number (10 Digits)
+                    <span class="required-star">*</span></label
+                  >
+                  <input
+                    type="tel"
+                    id="contact-phone"
+                    class="form-control input-phone-10"
+                    placeholder="9876543210"
+                    maxlength="10"
+                    pattern="\d{10}"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Please enter a valid 10-digit mobile number.
+                  </div>
+                </div>
+
+                <!-- Subject -->
+                <div class="form-group">
+                  <label for="contact-subject" class="form-label"
+                    >Subject / Department
+                    <span class="required-star">*</span></label
+                  >
+                  <select id="contact-subject" class="form-control" required>
+                    <option value="">-- Choose Subject / Specialty --</option>
+                    <option value="Appointment Request">
+                      Appointment Request
+                    </option>
+                    <option value="Cardiology Consultation">
+                      Cardiology Consultation
+                    </option>
+                    <option value="Pediatrics Inquiry">
+                      Pediatrics Inquiry
+                    </option>
+                    <option value="Diagnostic Lab Results">
+                      Diagnostic Lab Results
+                    </option>
+                    <option value="Insurance & Billing">
+                      Insurance & Billing
+                    </option>
+                    <option value="General Feedback">General Feedback</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a subject or specialty.
+                  </div>
+                </div>
+
+                <!-- Message with Character Counter -->
+                <div class="form-group">
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      margin-bottom: 7px;
+                    "
+                  >
+                    <label
+                      for="contact-message"
+                      class="form-label"
+                      style="margin-bottom: 0"
+                      >Message / Symptoms
+                      <span class="required-star">*</span></label
+                    >
+                    <span
+                      id="char-counter"
+                      style="
+                        font-size: 12px;
+                        color: var(--text-muted);
+                        font-weight: 500;
+                      "
+                      >0 / 500</span
+                    >
+                  </div>
+                  <textarea
+                    id="contact-message"
+                    class="form-control"
+                    rows="4"
+                    maxlength="500"
+                    placeholder="Please describe how we can assist you..."
+                    required
+                  ></textarea>
+                  <div class="invalid-feedback">
+                    Please write your message (at least 10 characters).
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  class="btn btn-primary btn-block btn-lg"
+                  style="margin-top: 10px"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+
+            <!-- Section 7 (Embedded): Google Maps Embed & Transit -->
+            <div
+              class="card"
+              style="padding: 0; overflow: hidden; box-shadow: var(--shadow-md)"
+            >
+              <div
+                style="
+                  padding: 20px 24px;
+                  border-bottom: 1px solid var(--border-color);
+                  background: white;
+                "
+              >
+                <h3
+                  style="
+                    font-family: var(--font-heading);
+                    font-size: 18px;
+                    font-weight: 700;
+                    color: var(--text-main);
+                  "
+                >
+                  Salem Hospital Campus Location
+                </h3>
+                <p
+                  style="
+                    font-size: 13px;
+                    color: var(--text-muted);
+                    margin-top: 4px;
+                  "
+                >
+                  MMR Complex, Chinna Thirupathi, Salem. Dedicated 24/7
+                  ambulance entry ramp and free patient parking available.
+                </p>
+              </div>
+              <iframe
+                title="ProHealth Salem Hospital Google Map Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15629.897452358896!2d78.16524316087532!3d11.66645398284534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf038f8cf625d%3A0xe5426749ca248386!2sChinna%20Thirupathi%2C%20Salem%2C%20Tamil%20Nadu%20636008!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                width="100%"
+                height="430"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              >
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Emergency & Trauma Care Triage Protocol -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">24/7 Critical Response</span>
+            <h2 class="section-title">Emergency Trauma Protocols</h2>
+            <p class="section-desc">
+              Our emergency medical team operates at zero waiting time for
+              life-threatening acute cardiac, trauma, and stroke situations.
+            </p>
+          </div>
+
+          <div class="grid-3">
+            <div class="card">
+              <div
+                class="card-icon"
+                style="background: #fee2e2; color: #dc2626"
+              >
+                🚨
+              </div>
+              <h3 class="card-title">Code Red Emergency</h3>
+              <p class="card-desc">
+                Immediate ICU bed allocation, computerized triage within 90
+                seconds, and dedicated surgical team on standby.
+              </p>
+              <button class="btn btn-sm btn-outline" data-action="404">
+                Emergency Manual &rarr;
+              </button>
+            </div>
+            <div class="card">
+              <div
+                class="card-icon"
+                style="background: var(--primary-light); color: var(--primary)"
+              >
+                🚑
+              </div>
+              <h3 class="card-title">Rapid Ambulance Dispatch</h3>
+              <p class="card-desc">
+                Advanced Life Support (ALS) ambulances equipped with digital
+                defibrillators and mobile ventilators across Salem.
+              </p>
+              <button class="btn btn-sm btn-outline" data-action="404">
+                Fleet Status &rarr;
+              </button>
+            </div>
+            <div class="card">
+              <div
+                class="card-icon"
+                style="
+                  background: var(--secondary-light);
+                  color: var(--secondary-dark);
+                "
+              >
+                🩸
+              </div>
+              <h3 class="card-title">24/7 Blood Bank & Trauma</h3>
+              <p class="card-desc">
+                Immediate availability of all blood components, plasma, and
+                cross-matching facilities certified by NABH.
+              </p>
+              <button class="btn btn-sm btn-outline" data-action="404">
+                Component Roster &rarr;
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Direct Clinical Department Extension Directory -->
+      <section class="section section-subtle">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Phone Directory</span>
+            <h2 class="section-title">Department Direct Dial Extensions</h2>
+            <p class="section-desc">
+              Direct lines for inquiries, diagnostic lab scheduling, and billing
+              coordination.
+            </p>
+          </div>
+
+          <div class="grid-4">
+            <div class="card" style="padding: 20px">
+              <h4 style="font-size: 16px; margin-bottom: 6px">
+                Cardiology OPD
+              </h4>
+              <p
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  margin-bottom: 12px;
+                "
+              >
+                Ext: 101 • Room 204
+              </p>
+              <a
+                href="tel:+919876543210"
+                class="btn btn-sm btn-secondary btn-block"
+                >Dial Ext 101</a
+              >
+            </div>
+            <div class="card" style="padding: 20px">
+              <h4 style="font-size: 16px; margin-bottom: 6px">
+                Neurology & Spine
+              </h4>
+              <p
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  margin-bottom: 12px;
+                "
+              >
+                Ext: 104 • Room 301
+              </p>
+              <a
+                href="tel:+919876543210"
+                class="btn btn-sm btn-secondary btn-block"
+                >Dial Ext 104</a
+              >
+            </div>
+            <div class="card" style="padding: 20px">
+              <h4 style="font-size: 16px; margin-bottom: 6px">
+                Pediatrics Wing
+              </h4>
+              <p
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  margin-bottom: 12px;
+                "
+              >
+                Ext: 108 • Level 2 NICU
+              </p>
+              <a
+                href="tel:+919876543210"
+                class="btn btn-sm btn-secondary btn-block"
+                >Dial Ext 108</a
+              >
+            </div>
+            <div class="card" style="padding: 20px">
+              <h4 style="font-size: 16px; margin-bottom: 6px">
+                Cashless TPA Desk
+              </h4>
+              <p
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  margin-bottom: 12px;
+                "
+              >
+                Ext: 112 • Ground Floor
+              </p>
+              <a
+                href="tel:+919876543210"
+                class="btn btn-sm btn-secondary btn-block"
+                >Dial Ext 112</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Inpatient Visiting Hours & Visitor Regulations -->
+      <section class="section">
+        <div class="container">
+          <div class="grid-2" style="align-items: center">
+            <div>
+              <span class="section-tag">Visitor Information</span>
+              <h2 class="section-title">
+                Inpatient Visiting Hours & Campus Guidelines
+              </h2>
+              <p class="section-desc" style="margin-bottom: 16px">
+                To ensure optimal rest and infection control for recovering
+                patients, we request all visitors to adhere to our scheduled
+                visiting hours:
+              </p>
+              <ul
+                style="
+                  font-size: 14px;
+                  color: var(--text-main);
+                  display: flex;
+                  flex-direction: column;
+                  gap: 12px;
+                  margin-bottom: 24px;
+                "
+              >
+                <li>
+                  <strong>• General Inpatient Wards:</strong> 11:00 AM – 01:00
+                  PM & 05:00 PM – 07:00 PM
+                </li>
+                <li>
+                  <strong>• Intensive Care Units (ICU/CCU):</strong> 04:30 PM –
+                  05:30 PM (1 Attendant only)
+                </li>
+                <li>
+                  <strong>• Pediatric & NICU:</strong> Parents permitted 24/7
+                  with sterile gown protocol
+                </li>
+              </ul>
+              <button class="btn btn-outline" data-action="404">
+                Download Complete Visitor Handbook (PDF)
+              </button>
+            </div>
+            <div>
+              <div
+                class="card"
+                style="
+                  background: var(--bg-subtle);
+                  border-left: 4px solid var(--primary);
+                "
+              >
+                <h3 style="font-size: 18px; margin-bottom: 10px">
+                  Safety Guidelines for Visitors
+                </h3>
+                <p
+                  style="
+                    font-size: 13px;
+                    color: var(--text-muted);
+                    line-height: 1.7;
+                  "
+                >
+                  1. Wear sanitized medical masks in all clinical corridors.<br />
+                  2. Children below 12 years are not permitted inside intensive
+                  care zones for safety.<br />
+                  3. Outside food and unsealed floral arrangements are strictly
+                  restricted to maintain hospital sanitation standards.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 8: Urgent Care Rapid Action Banner -->
+      <section class="section" style="padding-top: 0">
+        <div class="container">
+          <div class="cta-banner">
+            <div>
+              <h2>Immediate Medical Emergency?</h2>
+              <p>
+                Our trauma triage desk and emergency operating suites in Salem
+                are staffed 24/7. Call our emergency dispatch immediately.
+              </p>
+            </div>
+            <div class="cta-btn-group">
+              <a
+                href="tel:+919876543210"
+                class="btn btn-lg btn-primary"
+                style="background: white; color: var(--danger)"
+                >Emergency Call: +91 9876543210</a
+              >
+              <button
+                class="btn btn-lg btn-outline"
+                style="border-color: white; color: white"
+                data-action="404"
+              >
+                Request Ambulance
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Site Footer (Containing the social media links as requested) -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="brand-logo" style="color: white">
+              <img
+                src="assets/images/logo.webp"
+                alt="Stackly Healthcare"
+                class="brand-logo-img"
+              />
+              <span class="brand-tag light-tag">Healthcare</span>
+            </div>
+            <p>
+              ProHealth provides comprehensive tertiary healthcare, advanced
+              robotic surgeries, and compassionate 24/7 care in Salem.
+            </p>
+            <!-- Social Media Links in Footer -->
+            <div class="footer-social-icons">
+              <a href="404.html" class="social-icon-btn" aria-label="Facebook">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  />
+                </svg>
+              </a>
+              <a href="404.html" class="social-icon-btn" aria-label="Twitter">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                  />
+                </svg>
+              </a>
+              <a href="404.html" class="social-icon-btn" aria-label="LinkedIn">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.6a1.5 1.5 0 0 0-1.5 1.5 1.5 1.5 0 0 0 1.5 1.5 1.5 1.5 0 0 0 1.5-1.5 1.5 1.5 0 0 0-1.5-1.5z"
+                  />
+                </svg>
+              </a>
+              <a href="404.html" class="social-icon-btn" aria-label="Instagram">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-title">Navigation</h4>
+            <div class="footer-links">
+              <a href="index.html">Home Overview</a>
+              <a href="about.html">About ProHealth</a>
+              <a href="services.html">Clinical Services</a>
+              <a href="contact.html">Contact Us</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-title">Departments</h4>
+            <div class="footer-links">
+              <a href="services.html">Cardiology</a>
+              <a href="services.html">Neurology</a>
+              <a href="services.html">Pediatrics</a>
+              <a href="services.html">Orthopedics</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-title">Salem Medical Center</h4>
+            <div class="footer-contact-item">
+              <span>📍</span>
+              <span
+                >MMR Complex, Chinna Thirupathi, Salem, Tamil Nadu 636008</span
+              >
+            </div>
+            <div class="footer-contact-item">
+              <span>📞</span>
+              <a href="tel:+919876543210" style="color: inherit"
+                >+91 9876543210</a
+              >
+            </div>
+            <div class="footer-contact-item">
+              <span>✉️</span>
+              <a href="mailto:hello@thestackly.com" style="color: inherit"
+                >hello@thestackly.com</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div>&copy; 2026 ProHealth Medical Care. All rights reserved.</div>
+          <div class="footer-legal-links">
+            <a href="404.html">Privacy Policy</a>
+            <a href="404.html">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+      // Character counter & form validation
+      const messageInput = document.getElementById("contact-message");
+      const counter = document.getElementById("char-counter");
+      const contactForm = document.getElementById("contact-form");
+      const successBox = document.getElementById("contact-success");
+
+      if (messageInput && counter) {
+        messageInput.addEventListener("input", () => {
+          const len = messageInput.value.length;
+          counter.textContent = `${len} / 500`;
+        });
+      }
+
+      function setContactError(input, message) {
+        if (!input) return;
+        input.classList.add("is-invalid");
+        const group = input.closest(".form-group");
+        if (group) {
+          group.classList.add("has-error");
+          const fb = group.querySelector(".invalid-feedback");
+          if (fb) {
+            if (message) fb.textContent = message;
+            fb.classList.add("show-error");
+            fb.style.display = "block";
+          }
+        }
+      }
+
+      function clearContactError(input) {
+        if (!input) return;
+        input.classList.remove("is-invalid");
+        const group = input.closest(".form-group");
+        if (group) {
+          group.classList.remove("has-error");
+          const fb = group.querySelector(".invalid-feedback");
+          if (fb) {
+            fb.classList.remove("show-error");
+            fb.style.display = "none";
+          }
+        }
+      }
+
+      if (contactForm) {
+        const name = document.getElementById("contact-name");
+        const email = document.getElementById("contact-email");
+        const phone = document.getElementById("contact-phone");
+        const subject = document.getElementById("contact-subject");
+        const message = document.getElementById("contact-message");
+
+        [name, email, phone, subject, message].forEach((input) => {
+          if (!input) return;
+          input.addEventListener("input", () => clearContactError(input));
+          input.addEventListener("change", () => clearContactError(input));
+        });
+
+        contactForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          [name, email, phone, subject, message].forEach((el) =>
+            clearContactError(el)
+          );
+          let firstInvalid = null;
+
+          // Alphabets only name validation
+          if (
+            !name.value.trim() ||
+            !/^[A-Za-z\s]{2,50}$/.test(name.value.trim())
+          ) {
+            setContactError(
+              name,
+              "Please enter your full name using alphabets only (2-50 characters)."
+            );
+            if (!firstInvalid) firstInvalid = name;
+          }
+
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!email.value.trim() || !emailRegex.test(email.value.trim())) {
+            setContactError(
+              email,
+              "Please enter a valid email address (e.g. sarah@example.com)."
+            );
+            if (!firstInvalid) firstInvalid = email;
+          }
+
+          // 10 digits mobile validation
+          const phoneClean = phone.value.replace(/\D/g, "");
+          if (phoneClean.length !== 10) {
+            setContactError(
+              phone,
+              "Please enter a valid 10-digit mobile number."
+            );
+            if (!firstInvalid) firstInvalid = phone;
+          }
+
+          if (!subject.value) {
+            setContactError(
+              subject,
+              "Please select a clinical specialty or inquiry subject."
+            );
+            if (!firstInvalid) firstInvalid = subject;
+          }
+
+          if (!message.value.trim() || message.value.trim().length < 10) {
+            setContactError(
+              message,
+              "Please enter a message containing at least 10 characters."
+            );
+            if (!firstInvalid) firstInvalid = message;
+          }
+
+          if (firstInvalid) {
+            firstInvalid.focus();
+            return;
+          }
+
+          successBox.style.display = "block";
+          contactForm.reset();
+          counter.textContent = "0 / 500";
+        });
+      }
+    </script>
+  </body>
+</html>

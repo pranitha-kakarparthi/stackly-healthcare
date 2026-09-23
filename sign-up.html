@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account - ProHealth Medical Portal</title>
+    <meta
+      name="description"
+      content="Register for ProHealth's clinical patient portal or clinician workspace. Secure appointment booking and electronic medical telemetry."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <!-- Pure CSS Page Loader -->
+    <div id="page-loader" aria-live="polite">
+      <div class="loader-brand">
+        <img
+          src="assets/images/logo.webp"
+          alt="Stackly Healthcare Logo"
+          class="brand-logo-img"
+        />
+        <span class="brand-tag">Healthcare</span>
+      </div>
+      <div class="loader-spinner"></div>
+      <p class="loader-text">Initializing registration security...</p>
+    </div>
+
+    <!-- Fixed Navbar (No Dashboard Option as per requirement) -->
+    <header class="fixed-navbar" role="banner">
+      <div class="nav-container">
+        <a
+          href="index.html"
+          class="brand-logo"
+          aria-label="Stackly Healthcare Home"
+        >
+          <img
+            src="assets/images/logo.webp"
+            alt="Stackly Healthcare"
+            class="brand-logo-img"
+          />
+          <span class="brand-tag">Healthcare</span>
+        </a>
+
+        <nav class="nav-menu" role="navigation" aria-label="Primary Navigation">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About Us</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="blog.html" class="nav-link">Blog</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="sign-in.html" class="btn btn-sm btn-secondary">Sign In</a>
+          <a href="sign-up.html" class="btn btn-sm btn-primary"
+            >Create Account</a
+          >
+          <button
+            class="nav-toggle"
+            aria-label="Toggle Navigation Menu"
+            aria-expanded="false"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-nav-overlay" aria-hidden="true">
+      <div
+        class="mobile-nav-drawer"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile Menu"
+      >
+        <div class="mobile-nav-header">
+          <div class="brand-logo">
+            <img
+              src="assets/images/logo.webp"
+              alt="Stackly Healthcare"
+              class="brand-logo-img"
+            />
+            <span class="brand-tag">Healthcare</span>
+          </div>
+          <button class="mobile-nav-close" aria-label="Close menu">
+            &times;
+          </button>
+        </div>
+        <div class="mobile-nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About Us</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="blog.html" class="nav-link">Blog</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+        <div class="mobile-nav-actions">
+          <a href="sign-in.html" class="btn btn-secondary btn-block">Sign In</a>
+          <a href="sign-up.html" class="btn btn-primary btn-block"
+            >Create Account</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <main class="page-content-wrapper">
+      <div class="auth-wrapper">
+        <!-- Left Hero Sidebar -->
+        <div class="auth-sidebar">
+          <div>
+            <div class="brand-logo" style="color: white; margin-bottom: 40px">
+              <img
+                src="assets/images/logo.webp"
+                alt="Stackly Healthcare"
+                class="brand-logo-img"
+              />
+              <span class="brand-tag light-tag">Healthcare Register</span>
+            </div>
+
+            <div class="auth-sidebar-hero">
+              <h2>Join 50,000+ Families Under ProHealth Care</h2>
+              <p>
+                Register your profile to book instant consultations with leading
+                surgeons, access live telemetry, manage family health records,
+                and receive timely clinical updates.
+              </p>
+            </div>
+
+            <div class="auth-features-list">
+              <div class="auth-feature-item">
+                <span class="auth-feature-check">✓</span>
+                <span
+                  >Personalized health dashboards tailored for Patients, Doctors
+                  & Admins</span
+                >
+              </div>
+              <div class="auth-feature-item">
+                <span class="auth-feature-check">✓</span>
+                <span>Priority scheduling at our Salem clinical campus</span>
+              </div>
+              <div class="auth-feature-item">
+                <span class="auth-feature-check">✓</span>
+                <span>Encrypted prescription refill delivery to your home</span>
+              </div>
+              <div class="auth-feature-item">
+                <span class="auth-feature-check">✓</span>
+                <span
+                  >Full compliance with international medical privacy
+                  standards</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="auth-testimonial-mini">
+            <p>
+              "Setting up our medical files was effortless. We receive all
+              doctor prescriptions and lab results within minutes."
+            </p>
+            <strong style="font-size: 12px; opacity: 0.9"
+              >— Patient Portal Services</strong
+            >
+          </div>
+        </div>
+
+        <!-- Right Form Container -->
+        <div
+          class="auth-form-container"
+          style="max-width: 620px; padding: 40px 50px"
+        >
+          <div class="auth-header" style="margin-bottom: 24px">
+            <h1>Create Your Account</h1>
+            <p>Register as a Patient, Doctor, or Hospital Administrator.</p>
+          </div>
+
+          <!-- Alert Notification Box -->
+          <div
+            id="signup-alert"
+            style="
+              display: none;
+              padding: 12px;
+              background: #fee2e2;
+              color: #991b1b;
+              border-radius: var(--radius-md);
+              margin-bottom: 20px;
+              font-size: 13px;
+              font-weight: 600;
+            "
+          ></div>
+
+          <!-- Success Notification Box -->
+          <div
+            id="signup-success"
+            style="
+              display: none;
+              padding: 14px;
+              background: var(--success-light);
+              color: #047857;
+              border-radius: var(--radius-md);
+              margin-bottom: 20px;
+              font-size: 14px;
+              font-weight: 600;
+            "
+          ></div>
+
+          <form id="signup-form" novalidate>
+            <!-- Role Selector -->
+            <div class="form-group">
+              <label for="signup-role" class="form-label"
+                >Select Role <span class="required-star">*</span></label
+              >
+              <select id="signup-role" class="form-control" required>
+                <option value="">-- Choose Role --</option>
+                <option value="Patient" selected>Patient</option>
+                <option value="Doctor">Doctor / Physician</option>
+                <option value="Admin">Hospital Administrator</option>
+              </select>
+              <div class="invalid-feedback">Please select your role.</div>
+            </div>
+
+            <!-- First & Last Name (Alphabets Only) -->
+            <div
+              style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px"
+            >
+              <div class="form-group">
+                <label for="signup-firstname" class="form-label"
+                  >First Name (Alphabets Only)
+                  <span class="required-star">*</span></label
+                >
+                <input
+                  type="text"
+                  id="signup-firstname"
+                  class="form-control input-alpha-only"
+                  placeholder="e.g. Sarah"
+                  pattern="[A-Za-z\s]+"
+                  required
+                  autocomplete="given-name"
+                />
+                <div class="invalid-feedback">
+                  First name must contain alphabets only.
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="signup-lastname" class="form-label"
+                  >Last Name (Alphabets Only)
+                  <span class="required-star">*</span></label
+                >
+                <input
+                  type="text"
+                  id="signup-lastname"
+                  class="form-control input-alpha-only"
+                  placeholder="e.g. Jenkins"
+                  pattern="[A-Za-z\s]+"
+                  required
+                  autocomplete="family-name"
+                />
+                <div class="invalid-feedback">
+                  Last name must contain alphabets only.
+                </div>
+              </div>
+            </div>
+
+            <!-- Email Address -->
+            <div class="form-group">
+              <label for="signup-email" class="form-label"
+                >Email Address <span class="required-star">*</span></label
+              >
+              <input
+                type="email"
+                id="signup-email"
+                class="form-control"
+                placeholder="e.g. sarah.jenkins@example.com"
+                required
+                autocomplete="email"
+              />
+              <div class="invalid-feedback">
+                Please provide a valid email address.
+              </div>
+            </div>
+
+            <!-- Mobile Number (Strictly 10 Digits) -->
+            <div class="form-group">
+              <label for="signup-phone" class="form-label"
+                >Mobile Number (10 Digits)
+                <span class="required-star">*</span></label
+              >
+              <div class="phone-input-split">
+                <select
+                  id="signup-phone-code"
+                  class="form-control phone-country-code"
+                  aria-label="Country Dial Code"
+                >
+                  <option value="+91" selected>🇮🇳 +91 (IN)</option>
+                  <option value="+1">🇺🇸 +1 (US)</option>
+                  <option value="+44">🇬🇧 +44 (UK)</option>
+                  <option value="+971">🇦🇪 +971 (UAE)</option>
+                  <option value="+65">🇸🇬 +65 (SG)</option>
+                  <option value="+61">🇦🇺 +61 (AU)</option>
+                </select>
+                <input
+                  type="tel"
+                  id="signup-phone"
+                  class="form-control input-phone-10"
+                  placeholder="9876543210"
+                  maxlength="10"
+                  pattern="\d{10}"
+                  required
+                  autocomplete="tel-national"
+                />
+              </div>
+              <div class="invalid-feedback">
+                Mobile number must be exactly 10 digits.
+              </div>
+            </div>
+
+            <!-- Password with Strength Indicator -->
+            <div class="form-group">
+              <label for="signup-password" class="form-label"
+                >Password <span class="required-star">*</span></label
+              >
+              <div class="password-input-group">
+                <input
+                  type="password"
+                  id="signup-password"
+                  class="form-control"
+                  placeholder="Min. 8 chars, 1 uppercase, 1 number & 1 special char"
+                  required
+                  autocomplete="new-password"
+                />
+                <button
+                  type="button"
+                  class="password-toggle-btn"
+                  aria-label="Toggle password visibility"
+                >
+                  🔒
+                </button>
+              </div>
+              <!-- Strength Bar & Status -->
+              <div class="password-strength-container">
+                <div class="strength-bar">
+                  <div id="signup-strength-meter" class="strength-meter"></div>
+                </div>
+                <div id="signup-strength-text" class="strength-text">
+                  Enter password to check strength
+                </div>
+              </div>
+              <div class="invalid-feedback">
+                Password must have at least 8 characters including 1 uppercase,
+                1 number & 1 special character.
+              </div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-group">
+              <label for="signup-confirmpassword" class="form-label"
+                >Confirm Password <span class="required-star">*</span></label
+              >
+              <div class="password-input-group">
+                <input
+                  type="password"
+                  id="signup-confirmpassword"
+                  class="form-control"
+                  placeholder="Re-enter your password"
+                  required
+                  autocomplete="new-password"
+                />
+                <button
+                  type="button"
+                  class="password-toggle-btn"
+                  aria-label="Toggle password visibility"
+                >
+                  🔒
+                </button>
+              </div>
+              <div class="invalid-feedback">Passwords do not match.</div>
+            </div>
+
+            <!-- Terms Checkbox (Mandatory, Links to 404) -->
+            <div class="form-group" style="margin-bottom: 12px">
+              <label class="form-check">
+                <input type="checkbox" id="signup-terms" required />
+                <span
+                  >I agree to the
+                  <a href="404.html" class="terms-link">Terms of Use</a> and
+                  <a href="404.html" class="terms-link">Privacy Policy</a>.
+                  <span class="required-star">*</span></span
+                >
+              </label>
+              <div
+                class="invalid-feedback"
+                style="display: none"
+                id="terms-feedback"
+              >
+                You must agree to the Terms of Use and Privacy Policy.
+              </div>
+            </div>
+
+            <!-- Newsletter Checkbox (Optional, Links to 404) -->
+            <div class="form-group" style="margin-bottom: 24px">
+              <label class="form-check">
+                <input type="checkbox" id="signup-newsletter" />
+                <span
+                  >I would like to receive newsletters, medical updates, and
+                  health announcements.
+                  <a href="404.html" class="newsletter-link">Read More</a></span
+                >
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-lg">
+              Create Account &rarr;
+            </button>
+          </form>
+
+          <div class="auth-divider">
+            <span>Or register with</span>
+          </div>
+
+          <!-- Social Signup Buttons -> Redirect to 404 -->
+          <div class="social-auth-grid">
+            <button
+              type="button"
+              class="social-auth-btn"
+              data-action="404"
+              title="Sign Up with Google"
+            >
+              Google
+            </button>
+            <button
+              type="button"
+              class="social-auth-btn"
+              data-action="404"
+              title="Sign Up with Microsoft"
+            >
+              Microsoft
+            </button>
+            <button
+              type="button"
+              class="social-auth-btn"
+              data-action="404"
+              title="Sign Up with LinkedIn"
+            >
+              LinkedIn
+            </button>
+            <button
+              type="button"
+              class="social-auth-btn"
+              data-action="404"
+              title="Sign Up with Apple"
+            >
+              Apple
+            </button>
+          </div>
+
+          <div
+            style="
+              text-align: center;
+              margin-top: 20px;
+              font-size: 14px;
+              color: var(--text-muted);
+            "
+          >
+            Already registered with ProHealth?
+            <a
+              href="sign-in.html"
+              style="color: var(--primary); font-weight: 700; margin-left: 4px"
+              >Sign In here</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-bottom" style="border-top: none; padding-top: 0">
+          <div>&copy; 2026 ProHealth Medical Care. All rights reserved.</div>
+          <div class="footer-legal-links">
+            <a href="404.html">Privacy Policy</a>
+            <a href="404.html">Terms of Service</a>
+            <a href="index.html">Back to Home</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/auth.js"></script>
+  </body>
+</html>

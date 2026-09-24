@@ -10,6 +10,34 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+  // If on generic dashboard.html, redirect immediately to role-specific dashboard page
+  const currentPath = window.location.pathname.toLowerCase();
+  const isPatientDash = currentPath.includes("patient-dashboard");
+  const isDoctorDash = currentPath.includes("doctor-dashboard");
+  const isAdminDash = currentPath.includes("admin-dashboard");
+  const isGenericDashboard =
+    !isPatientDash &&
+    !isDoctorDash &&
+    !isAdminDash &&
+    (currentPath.endsWith("/dashboard.html") ||
+      currentPath.endsWith("\\dashboard.html") ||
+      currentPath.endsWith("dashboard.html") ||
+      currentPath.endsWith("/dashboard") ||
+      currentPath.endsWith("\\dashboard"));
+
+  if (isGenericDashboard) {
+    if (currentUser.role === "Doctor") {
+      window.location.replace("doctor-dashboard.html");
+      return;
+    } else if (currentUser.role === "Admin") {
+      window.location.replace("admin-dashboard.html");
+      return;
+    } else {
+      window.location.replace("patient-dashboard.html");
+      return;
+    }
+  }
+
   // Render Role-specific Dashboard
   renderDashboard(currentUser);
 
@@ -71,16 +99,16 @@ function renderDashboard(user) {
   // 2. Render Sidebar Navigation Items based on Role (Links to separate pages)
   renderSidebarNav(role);
 
-  // 3. Render Dynamic Metrics & Main Role View
+  // 3. Render Dynamic Metrics & Main Role View if dynamic placeholder exists
   const mainContentEl = document.getElementById("dashboard-dynamic-content");
-  if (!mainContentEl) return;
-
-  if (role === "Patient") {
-    mainContentEl.innerHTML = getPatientDashboardHTML(user);
-  } else if (role === "Doctor") {
-    mainContentEl.innerHTML = getDoctorDashboardHTML(user);
-  } else if (role === "Admin") {
-    mainContentEl.innerHTML = getAdminDashboardHTML(user);
+  if (mainContentEl) {
+    if (role === "Patient") {
+      mainContentEl.innerHTML = getPatientDashboardHTML(user);
+    } else if (role === "Doctor") {
+      mainContentEl.innerHTML = getDoctorDashboardHTML(user);
+    } else if (role === "Admin") {
+      mainContentEl.innerHTML = getAdminDashboardHTML(user);
+    }
   }
 
   // Attach 404 redirections on all action buttons
@@ -88,6 +116,12 @@ function renderDashboard(user) {
     .querySelectorAll('[data-action="404"], .btn-action-404')
     .forEach((btn) => {
       btn.addEventListener("click", (e) => {
+        if (
+          btn.hasAttribute("data-no-action") ||
+          btn.closest('[data-no-action="true"]')
+        ) {
+          return;
+        }
         e.preventDefault();
         window.location.href = "404.html";
       });
@@ -102,8 +136,17 @@ function renderSidebarNav(role) {
   if (!navContainer) return;
 
   const currentPath = window.location.pathname.toLowerCase();
+  const isPatientDash = currentPath.includes("patient-dashboard");
+  const isDoctorDash = currentPath.includes("doctor-dashboard");
+  const isAdminDash = currentPath.includes("admin-dashboard");
+  const isGenericDash =
+    !isPatientDash &&
+    !isDoctorDash &&
+    !isAdminDash &&
+    (currentPath.endsWith("dashboard.html") ||
+      currentPath.endsWith("dashboard"));
   const isOverview =
-    currentPath.endsWith("dashboard.html") || currentPath.endsWith("dashboard");
+    isGenericDash || isPatientDash || isDoctorDash || isAdminDash;
   const isAppts = currentPath.includes("appointments.html");
   const isRecords = currentPath.includes("records.html");
   const isRx = currentPath.includes("prescriptions.html");
@@ -116,7 +159,7 @@ function renderSidebarNav(role) {
       {
         icon: "📊",
         label: "My Health Overview",
-        href: "dashboard.html",
+        href: "patient-dashboard.html",
         active: isOverview,
       },
       {
@@ -155,7 +198,7 @@ function renderSidebarNav(role) {
       {
         icon: "🩺",
         label: "Clinical Dashboard",
-        href: "dashboard.html",
+        href: "doctor-dashboard.html",
         active: isOverview,
       },
       {
@@ -195,7 +238,7 @@ function renderSidebarNav(role) {
       {
         icon: "🏛️",
         label: "Hospital Operations",
-        href: "dashboard.html",
+        href: "admin-dashboard.html",
         active: isOverview,
       },
       {

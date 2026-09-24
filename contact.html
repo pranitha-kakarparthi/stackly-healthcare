@@ -245,24 +245,6 @@
                 </p>
               </div>
 
-              <!-- Form Success Alert -->
-              <div
-                id="contact-success"
-                style="
-                  display: none;
-                  padding: 14px;
-                  background: var(--success-light);
-                  color: #047857;
-                  border-radius: var(--radius-md);
-                  margin-bottom: 20px;
-                  font-size: 14px;
-                  font-weight: 600;
-                "
-              >
-                ✓ Thank you! Your message has been received by our clinical
-                desk. A representative will contact you shortly.
-              </div>
-
               <form id="contact-form" novalidate>
                 <!-- Name Field (Alphabets Only) -->
                 <div class="form-group">
@@ -829,7 +811,6 @@
       const messageInput = document.getElementById("contact-message");
       const counter = document.getElementById("char-counter");
       const contactForm = document.getElementById("contact-form");
-      const successBox = document.getElementById("contact-success");
 
       if (messageInput && counter) {
         messageInput.addEventListener("input", () => {
@@ -940,9 +921,27 @@
             return;
           }
 
-          successBox.style.display = "block";
+          // Reset the form and flag submission in sessionStorage
           contactForm.reset();
-          counter.textContent = "0 / 500";
+          if (counter) counter.textContent = "0 / 500";
+          sessionStorage.setItem("stackly_contact_form_submitted", "true");
+
+          // Redirect to 404 page rather than displaying a success message
+          window.location.href = "404.html";
+        });
+
+        // Reset contact form whenever navigated back (e.g. Go Back button from 404)
+        window.addEventListener("pageshow", () => {
+          if (
+            sessionStorage.getItem("stackly_contact_form_submitted") === "true"
+          ) {
+            contactForm.reset();
+            if (counter) counter.textContent = "0 / 500";
+            [name, email, phone, subject, message].forEach((el) => {
+              if (el) clearContactError(el);
+            });
+            sessionStorage.removeItem("stackly_contact_form_submitted");
+          }
         });
       }
     </script>

@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Health Overview - Stackly Healthcare Portal</title>
+    <meta
+      name="description"
+      content="Patient health portal dashboard with real-time biometric telemetry, upcoming appointments, prescriptions, and encrypted medical records."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <!-- Pure CSS Page Loader -->
+    <div id="page-loader" aria-live="polite">
+      <div class="loader-brand">
+        <img
+          src="assets/images/logo.webp"
+          alt="Stackly Healthcare Logo"
+          class="brand-logo-img"
+        />
+        <span class="brand-tag">Healthcare</span>
+      </div>
+      <div class="loader-spinner"></div>
+      <p class="loader-text">Loading authenticated patient telemetry...</p>
+    </div>
+
+    <main class="dashboard-page-wrapper">
+      <div class="dashboard-container">
+        <!-- Dashboard Sidebar -->
+        <aside class="dashboard-sidebar" aria-label="Dashboard Navigation">
+          <!-- Portal Brand Header -->
+          <div class="dash-brand-header">
+            <a
+              href="index.html"
+              class="brand-logo"
+              title="Back to Stackly Healthcare Home"
+            >
+              <img
+                src="assets/images/logo.webp"
+                alt="Stackly Healthcare"
+                class="brand-logo-img"
+              />
+              <span class="brand-tag">Portal</span>
+            </a>
+            <button
+              id="dash-sidebar-toggle"
+              class="dash-sidebar-toggle-btn"
+              aria-label="Toggle Sidebar"
+              title="Expand / Collapse Sidebar"
+              type="button"
+              data-no-action="true"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+              >
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+
+          <!-- User Badge -->
+          <div class="dash-user-badge">
+            <div id="dash-sidebar-avatar" class="dash-user-avatar">JD</div>
+            <div class="dash-user-info">
+              <h4 id="dash-user-name">John Doe</h4>
+              <span
+                id="dash-role-badge"
+                class="dash-role-badge role-badge-patient"
+                >Patient</span
+              >
+            </div>
+          </div>
+
+          <!-- Role Nav items (Static HTML) -->
+          <nav id="dash-sidebar-nav" class="dash-nav">
+            <a
+              href="patient-dashboard.html"
+              class="dash-nav-item active"
+              title="My Health Overview"
+            >
+              <span>📊</span>
+              <span>My Health Overview</span>
+            </a>
+            <a
+              href="appointments.html"
+              class="dash-nav-item"
+              title="Appointments & Visits"
+            >
+              <span>📅</span>
+              <span>Appointments & Visits</span>
+            </a>
+            <a
+              href="prescriptions.html"
+              class="dash-nav-item"
+              title="Prescriptions & Rx"
+            >
+              <span>💊</span>
+              <span>Prescriptions & Rx</span>
+            </a>
+            <a
+              href="records.html"
+              class="dash-nav-item"
+              title="Lab Reports & EHR"
+            >
+              <span>🔬</span>
+              <span>Lab Reports & EHR</span>
+            </a>
+            <a
+              href="care-team.html"
+              class="dash-nav-item"
+              title="Care Team Directory"
+            >
+              <span>🩺</span>
+              <span>Care Team Directory</span>
+            </a>
+            <a
+              href="settings.html"
+              class="dash-nav-item"
+              title="Account & Security"
+            >
+              <span>⚙️</span>
+              <span>Account & Security</span>
+            </a>
+          </nav>
+        </aside>
+
+        <!-- Mobile Sidebar Backdrop Overlay -->
+        <div
+          id="dash-sidebar-backdrop"
+          class="dash-sidebar-backdrop"
+          aria-hidden="true"
+        ></div>
+
+        <!-- Dashboard Main Content View -->
+        <section
+          class="dashboard-main"
+          role="region"
+          aria-label="Patient Dashboard Content"
+        >
+          <!-- Top Bar with Greeting & Timestamp -->
+          <div class="dashboard-top-bar">
+            <div class="dash-greeting-box">
+              <h1 id="dash-greeting-text">Welcome back</h1>
+              <p id="dash-session-time">Verified Session</p>
+            </div>
+            <div class="dash-portal-actions">
+              <span
+                id="dash-role-badge-top"
+                class="dash-role-badge role-badge-patient"
+                >Patient</span
+              >
+              <button
+                class="btn btn-secondary btn-sm"
+                data-action="404"
+                title="Alerts"
+              >
+                🔔 Alerts
+              </button>
+              <button id="dash-signout-btn" class="btn btn-danger btn-sm">
+                Sign Out
+              </button>
+            </div>
+          </div>
+
+          <!-- Static Patient Dashboard Content -->
+          <div id="dashboard-static-content">
+            <!-- Patient KPI Cards -->
+            <div class="dash-stats-grid">
+              <div class="dash-stat-card">
+                <div class="dash-stat-info">
+                  <h5>Upcoming Visits</h5>
+                  <h3>2 Visits</h3>
+                </div>
+                <div class="dash-stat-icon stat-sky">📅</div>
+              </div>
+              <div class="dash-stat-card">
+                <div class="dash-stat-info">
+                  <h5>Active Prescriptions</h5>
+                  <h3>3 Active</h3>
+                </div>
+                <div class="dash-stat-icon stat-teal">💊</div>
+              </div>
+              <div class="dash-stat-card">
+                <div class="dash-stat-info">
+                  <h5>Heart Rate</h5>
+                  <h3>72 bpm</h3>
+                </div>
+                <div class="dash-stat-icon stat-amber">❤️</div>
+              </div>
+              <div class="dash-stat-card">
+                <div class="dash-stat-info">
+                  <h5>Blood Pressure</h5>
+                  <h3>118/76</h3>
+                </div>
+                <div class="dash-stat-icon stat-indigo">🩸</div>
+              </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="dash-card" style="margin-bottom: 28px">
+              <div class="dash-card-header">
+                <h3>Patient Self-Service Quick Actions</h3>
+                <span class="status-badge status-confirmed"
+                  >Instant Access</span
+                >
+              </div>
+              <div class="dash-actions-row">
+                <button class="dash-action-btn-card" data-action="404">
+                  <span style="font-size: 26px">🩺</span>
+                  <strong>Book Specialist Visit</strong>
+                  <span style="font-size: 12px; color: var(--text-muted)"
+                    >Cardiology, Dental & Neuro</span
+                  >
+                </button>
+                <button class="dash-action-btn-card" data-action="404">
+                  <span style="font-size: 26px">📑</span>
+                  <strong>Download Medical Records</strong>
+                  <span style="font-size: 12px; color: var(--text-muted)"
+                    >Encrypted PDF Health Dossier</span
+                  >
+                </button>
+                <button class="dash-action-btn-card" data-action="404">
+                  <span style="font-size: 26px">📦</span>
+                  <strong>Order Pharmacy Refill</strong>
+                  <span style="font-size: 12px; color: var(--text-muted)"
+                    >Same-day doorstep delivery</span
+                  >
+                </button>
+              </div>
+            </div>
+
+            <!-- 2 Column Widgets -->
+            <div class="dashboard-grid-2">
+              <!-- Upcoming Appointments -->
+              <div class="dash-card">
+                <div class="dash-card-header">
+                  <h3>Upcoming Clinical Appointments</h3>
+                  <a href="appointments.html" class="btn btn-sm btn-outline"
+                    >View All &rarr;</a
+                  >
+                </div>
+                <div class="data-table-container">
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th>Doctor</th>
+                        <th>Department</th>
+                        <th>Date & Time</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Dr. Alexander Wright</strong></td>
+                        <td>Cardiology</td>
+                        <td>Tomorrow, 10:30 AM</td>
+                        <td>
+                          <span class="status-badge status-confirmed"
+                            >Confirmed</span
+                          >
+                        </td>
+                        <td>
+                          <button
+                            class="btn btn-sm btn-secondary"
+                            data-action="404"
+                          >
+                            Details
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>Dr. Priya Sharma</strong></td>
+                        <td>Pediatrics & Family Care</td>
+                        <td>Sep 28, 03:00 PM</td>
+                        <td>
+                          <span class="status-badge status-pending"
+                            >Pending Review</span
+                          >
+                        </td>
+                        <td>
+                          <button
+                            class="btn btn-sm btn-secondary"
+                            data-action="404"
+                          >
+                            Reschedule
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Vitals Telemetry -->
+              <div class="dash-card">
+                <div class="dash-card-header">
+                  <h3>Recent Vitals & Lab Telemetry</h3>
+                  <span class="status-badge status-completed">Verified</span>
+                </div>
+                <ul
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    gap: 14px;
+                    font-size: 14px;
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                  "
+                >
+                  <li
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      border-bottom: 1px solid var(--border-light);
+                      padding-bottom: 10px;
+                    "
+                  >
+                    <span>Fasting Blood Glucose</span>
+                    <strong>94 mg/dL (Normal)</strong>
+                  </li>
+                  <li
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      border-bottom: 1px solid var(--border-light);
+                      padding-bottom: 10px;
+                    "
+                  >
+                    <span>Cholesterol (Total)</span>
+                    <strong>174 mg/dL (Optimal)</strong>
+                  </li>
+                  <li
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      border-bottom: 1px solid var(--border-light);
+                      padding-bottom: 10px;
+                    "
+                  >
+                    <span>Oxygen Saturation (SpO2)</span>
+                    <strong>99% (Excellent)</strong>
+                  </li>
+                  <li
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      padding-bottom: 4px;
+                    "
+                  >
+                    <span>BMI & Body Weight</span>
+                    <strong>22.4 • 64 kg</strong>
+                  </li>
+                </ul>
+                <button
+                  class="btn btn-primary btn-block"
+                  style="margin-top: 18px"
+                  data-action="404"
+                >
+                  Sync Wearable Tracker
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+  </body>
+</html>

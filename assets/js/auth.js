@@ -342,7 +342,13 @@ function initSignInForm() {
     localStorage.setItem(STORAGE_KEYS.ROLE, sessionUser.role);
 
     // Redirect to role-specific dashboard
-    window.location.href = "dashboard.html";
+    if (sessionUser.role === "Doctor") {
+      window.location.href = "doctor-dashboard.html";
+    } else if (sessionUser.role === "Admin") {
+      window.location.href = "admin-dashboard.html";
+    } else {
+      window.location.href = "patient-dashboard.html";
+    }
   });
 }
 

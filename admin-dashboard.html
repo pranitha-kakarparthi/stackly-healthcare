@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hospital Operations Directorate - Stackly Healthcare Portal</title>
+    <meta
+      name="description"
+      content="Hospital operations and clinical governance dashboard with real-time bed census, staff rosters, departmental metrics, and compliance audit logs."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+    <!-- Pure CSS Page Loader -->
+    <div id="page-loader" aria-live="polite">
+      <div class="loader-brand">
+        <img
+          src="assets/images/logo.webp"
+          alt="Stackly Healthcare Logo"
+          class="brand-logo-img"
+        />
+        <span class="brand-tag">Healthcare</span>
+      </div>
+      <div class="loader-spinner"></div>
+      <p class="loader-text">
+        Loading hospital operations directorate telemetry...
+      </p>
+    </div>
+
+    <main class="dashboard-page-wrapper">
+      <div class="dashboard-container">
+        <!-- Dashboard Sidebar -->
+        <aside class="dashboard-sidebar" aria-label="Dashboard Navigation">
+          <!-- Portal Brand Header -->
+          <div class="dash-brand-header">
+            <a
+              href="index.html"
+              class="brand-logo"
+              title="Back to Stackly Healthcare Home"
+            >
+              <img
+                src="assets/images/logo.webp"
+                alt="Stackly Healthcare"
+                class="brand-logo-img"
+              />
+              <span class="brand-tag">Portal</span>
+            </a>
+            <button
+              id="dash-sidebar-toggle"
+              class="dash-sidebar-toggle-btn"
+              aria-label="Toggle Sidebar"
+              title="Expand / Collapse Sidebar"
+              type="button"
+              data-no-action="true"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+              >
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+
+          <!-- User Badge -->
+          <div class="dash-user-badge">
+            <div id="dash-sidebar-avatar" class="dash-user-avatar">SA</div>
+            <div class="dash-user-info">
+              <h4 id="dash-user-name">Directorate Admin</h4>
+              <span
+                id="dash-role-badge"
+                class="dash-role-badge role-badge-admin"
+                >Admin</span
+              >
+            </div>
+          </div>
+
+          <!-- Role Nav items (Static HTML) -->
+          <nav id="dash-sidebar-nav" class="dash-nav">
+            <a
+              href="admin-dashboard.html"
+              class="dash-nav-item active"
+              title="Hospital Operations"
+            >
+              <span>📊</span>
+              <span>Hospital Operations</span>
+            </a>
+            <a
+              href="appointments.html"
+              class="dash-nav-item"
+              title="Duty & Staff Schedule"
+            >
+              <span>📅</span>
+              <span>Duty & Staff Schedule</span>
+            </a>
+            <a
+              href="records.html"
+              class="dash-nav-item"
+              title="Clinical EHR & Audit Logs"
+            >
+              <span>📋</span>
+              <span>Clinical EHR & Audit Logs</span>
+            </a>
+            <a
+              href="prescriptions.html"
+              class="dash-nav-item"
+              title="Pharmacy Inventory"
+            >
+              <span>💊</span>
+              <span>Pharmacy Inventory</span>
+            </a>
+            <a
+              href="care-team.html"
+              class="dash-nav-item"
+              title="Care Team & Governance"
+            >
+              <span>🛡️</span>
+              <span>Care Team & Governance</span>
+            </a>
+            <a
+              href="settings.html"
+              class="dash-nav-item"
+              title="System & Security Policies"
+            >
+              <span>⚙️</span>
+              <span>System & Security Policies</span>
+            </a>
+          </nav>
+        </aside>
+
+        <!-- Mobile Sidebar Backdrop Overlay -->
+        <div
+          id="dash-sidebar-backdrop"
+          class="dash-sidebar-backdrop"
+          aria-hidden="true"
+        ></div>
+
+        <!-- Dashboard Main Content View -->
+        <section
+          class="dashboard-main"
+          role="region"
+          aria-label="Admin Dashboard Content"
+        >
+          <!-- Top Bar with Greeting & Timestamp -->
+          <div class="dashboard-top-bar">
+            <div class="dash-greeting-box">
+              <h1 id="dash-greeting-text">Welcome back</h1>
+              <p id="dash-session-time">Verified Session</p>
+            </div>
+            <div class="dash-portal-actions">
+              <span
+                id="dash-role-badge-top"
+                class="dash-role-badge role-badge-admin"
+                >Admin</span
+              >
+              <button
+                class="btn btn-secondary btn-sm"
+                data-action="404"
+                title="Alerts"
+              >
+                🔔 Alerts
+              </button>
+              <button id="dash-signout-btn" class="btn btn-danger btn-sm">
+                Sign Out
+              </button>
+            </div>
+          </div>
+
+          <!-- Static Admin Dashboard Content -->
+          <div id="dashboard-static-content">
+            <!-- Hospital System Metrics -->
+            <div class="dash-stats-grid">
+              <div class="dash-stat-card">
+                <div class="dash-stat-info">
+                  <h5>Total Bed Occupancy</h5>
+                  <h3>87% (248/285)</h3>
+                </div>
+                <div class="dash-stat-icon stat-sky">🏥</div>
+              </div>
+              <div class="dash-stat-card">
+                <div class="dash-stat-info">
+                  <h5>Active Clinical Staff</h5>
+                  <h3>64 On Duty</h3>
+                </div>
+                <div class="dash-stat-icon stat-teal">👨‍⚕️</div>
+              </div>
+              <div class="dash-stat-card">
+                <div class="dash-stat-info">
+                  <h5>Today's Outpatient Flow</h5>
+                  <h3>342 Visits</h3>
+                </div>
+                <div class="dash-stat-icon stat-amber">📈</div>
+              </div>
+              <div class="dash-stat-card">
+                <div class="dash-stat-info">
+                  <h5>Critical Care ICU Load</h5>
+                  <h3>92% High Load</h3>
+                </div>
+                <div class="dash-stat-icon stat-indigo">🚨</div>
+              </div>
+            </div>
+
+            <!-- Hospital Operations Actions -->
+            <div class="dash-card" style="margin-bottom: 28px">
+              <div class="dash-card-header">
+                <h3>Directorate Operations & Governance</h3>
+                <span class="status-badge status-confirmed"
+                  >System Administrator</span
+                >
+              </div>
+              <div class="dash-actions-row">
+                <button class="dash-action-btn-card" data-action="404">
+                  <span style="font-size: 26px">🏥</span>
+                  <strong>Allocate Ward Capacity</strong>
+                  <span style="font-size: 12px; color: var(--text-muted)"
+                    >Manage ICU and General Ward Beds</span
+                  >
+                </button>
+                <button class="dash-action-btn-card" data-action="404">
+                  <span style="font-size: 26px">📊</span>
+                  <strong>Generate Regulatory Audit</strong>
+                  <span style="font-size: 12px; color: var(--text-muted)"
+                    >NABH / ISO Healthcare Compliance</span
+                  >
+                </button>
+                <button class="dash-action-btn-card" data-action="404">
+                  <span style="font-size: 26px">🛡️</span>
+                  <strong>Staff Roster Scheduler</strong>
+                  <span style="font-size: 12px; color: var(--text-muted)"
+                    >Reassign shift duty protocols</span
+                  >
+                </button>
+              </div>
+            </div>
+
+            <!-- Department Operations Table -->
+            <div class="dashboard-grid-2">
+              <div class="dash-card">
+                <div class="dash-card-header">
+                  <h3>Departmental Capacity & Census</h3>
+                  <a href="records.html" class="btn btn-sm btn-outline"
+                    >Audit Records &rarr;</a
+                  >
+                </div>
+                <div class="data-table-container">
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th>Department</th>
+                        <th>Head Physician</th>
+                        <th>Capacity</th>
+                        <th>Current Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Cardiology</strong></td>
+                        <td>Dr. Alexander Wright</td>
+                        <td>42 / 45 Beds</td>
+                        <td>
+                          <span class="status-badge status-pending"
+                            >Near Capacity</span
+                          >
+                        </td>
+                        <td>
+                          <button
+                            class="btn btn-sm btn-secondary"
+                            data-action="404"
+                          >
+                            Manage
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>Neurology</strong></td>
+                        <td>Dr. David Vance</td>
+                        <td>28 / 35 Beds</td>
+                        <td>
+                          <span class="status-badge status-confirmed"
+                            >Optimal</span
+                          >
+                        </td>
+                        <td>
+                          <button
+                            class="btn btn-sm btn-secondary"
+                            data-action="404"
+                          >
+                            Manage
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>Pediatrics</strong></td>
+                        <td>Dr. Priya Sharma</td>
+                        <td>30 / 30 Beds</td>
+                        <td>
+                          <span class="status-badge status-cancelled"
+                            >Full (Overflow)</span
+                          >
+                        </td>
+                        <td>
+                          <button
+                            class="btn btn-sm btn-secondary"
+                            data-action="404"
+                          >
+                            Divert
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="dash-card">
+                <div class="dash-card-header">
+                  <h3>Security & System Audit Log</h3>
+                  <span class="status-badge status-confirmed">Live Stream</span>
+                </div>
+                <ul
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                    font-size: 13px;
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                  "
+                >
+                  <li
+                    style="
+                      border-bottom: 1px solid var(--border-light);
+                      padding-bottom: 8px;
+                    "
+                  >
+                    <strong>Chief Medical Officer</strong> accessed Cardiology
+                    EHR records.
+                    <div style="color: var(--text-muted); font-size: 11px">
+                      10 minutes ago • Terminal #Salem-04
+                    </div>
+                  </li>
+                  <li
+                    style="
+                      border-bottom: 1px solid var(--border-light);
+                      padding-bottom: 8px;
+                    "
+                  >
+                    <strong>Pharmacy System</strong> dispatched automatic stock
+                    refill.
+                    <div style="color: var(--text-muted); font-size: 11px">
+                      28 minutes ago • Bot Worker
+                    </div>
+                  </li>
+                  <li style="padding-bottom: 4px">
+                    <strong>Admin Console</strong> updated duty shift for
+                    Emergency ICU.
+                    <div style="color: var(--text-muted); font-size: 11px">
+                      1 hour ago • Clinical Operations
+                    </div>
+                  </li>
+                </ul>
+                <button
+                  class="btn btn-secondary btn-block"
+                  style="margin-top: 18px"
+                  data-action="404"
+                >
+                  View Complete Security Log
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+  </body>
+</html>

@@ -102,7 +102,9 @@
           <!-- Portal Top Bar -->
           <div class="dashboard-top-bar">
             <div class="dash-greeting-box">
-              <h1>Care Team & Physician Directory</h1>
+              <h1 id="care-team-page-title">
+                Care Team &amp; Physician Directory
+              </h1>
               <p id="dash-session-time">Verified Session</p>
             </div>
             <div class="dash-portal-actions">
@@ -149,7 +151,11 @@
           </div>
 
           <!-- Section 2: Department Search & Specialty Filter -->
-          <div class="dash-card" style="margin-bottom: 28px">
+          <div
+            class="dash-card"
+            style="margin-bottom: 28px"
+            data-no-action="true"
+          >
             <div
               style="
                 display: flex;
@@ -162,6 +168,7 @@
               <div style="flex: 1 1 300px; display: flex; gap: 8px">
                 <input
                   type="text"
+                  id="care-search-input"
                   placeholder="Search doctor by name, specialty, or room #..."
                   style="
                     flex: 1;
@@ -171,24 +178,58 @@
                     font-size: 14px;
                   "
                 />
-                <button class="btn btn-primary btn-sm" data-action="404">
+                <button
+                  type="button"
+                  id="care-search-btn"
+                  class="btn btn-primary btn-sm"
+                  data-no-action="true"
+                >
                   Search
                 </button>
               </div>
-              <div style="display: flex; gap: 8px; flex-wrap: wrap">
-                <button class="btn btn-sm btn-primary" data-action="404">
+              <div
+                id="care-dept-filters"
+                style="display: flex; gap: 8px; flex-wrap: wrap"
+                data-no-action="true"
+              >
+                <button
+                  type="button"
+                  class="btn btn-sm btn-primary filter-dept-btn active"
+                  data-dept="all"
+                  data-no-action="true"
+                >
                   All Departments
                 </button>
-                <button class="btn btn-sm btn-secondary" data-action="404">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-secondary filter-dept-btn"
+                  data-dept="cardio"
+                  data-no-action="true"
+                >
                   Cardiology
                 </button>
-                <button class="btn btn-sm btn-secondary" data-action="404">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-secondary filter-dept-btn"
+                  data-dept="neuro"
+                  data-no-action="true"
+                >
                   Neurology
                 </button>
-                <button class="btn btn-sm btn-secondary" data-action="404">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-secondary filter-dept-btn"
+                  data-dept="pediat"
+                  data-no-action="true"
+                >
                   Pediatrics
                 </button>
-                <button class="btn btn-sm btn-secondary" data-action="404">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-secondary filter-dept-btn"
+                  data-dept="ortho"
+                  data-no-action="true"
+                >
                   Orthopedics
                 </button>
               </div>
@@ -703,24 +744,96 @@
       </div>
     </main>
 
-    <!-- Site Footer -->
-    <footer class="site-footer" role="contentinfo">
-      <div class="container">
-        <div class="footer-bottom" style="border-top: none; padding-top: 0">
-          <div>
-            &copy; 2026 Stackly Medical Care. Physician & Care Team Directory.
-          </div>
-          <div class="footer-bottom-links">
-            <a href="404.html">Medical Staff Bylaws</a>
-            <a href="404.html">Physician Credentialing</a>
-            <a href="404.html">HIPAA Compliance</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
     <script src="assets/js/auth.js"></script>
     <script src="assets/js/dashboard.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const user = getCurrentUser();
+        if (user) {
+          const titleEl = document.getElementById("care-team-page-title");
+          if (titleEl) {
+            if (user.role === "Doctor") {
+              titleEl.textContent = "Medical Staff Roster";
+            } else if (user.role === "Admin") {
+              titleEl.textContent = "Care Team & Governance";
+            } else {
+              titleEl.textContent = "Care Team Directory";
+            }
+          }
+        }
+
+        const searchInput = document.getElementById("care-search-input");
+        const searchBtn = document.getElementById("care-search-btn");
+        const filterBtns = document.querySelectorAll(".filter-dept-btn");
+        const cards = document.querySelectorAll(".care-member-card");
+        const tableRows = document.querySelectorAll(".data-table tbody tr");
+
+        let activeDept = "all";
+
+        function applyFilter() {
+          const term = searchInput
+            ? searchInput.value.toLowerCase().trim()
+            : "";
+
+          // Filter cards
+          cards.forEach((card) => {
+            const text = card.textContent.toLowerCase();
+            const matchesSearch = !term || text.includes(term);
+            let matchesDept = true;
+            if (activeDept !== "all") {
+              matchesDept = text.includes(activeDept);
+            }
+            card.style.display = matchesSearch && matchesDept ? "" : "none";
+          });
+
+          // Filter table rows
+          tableRows.forEach((row) => {
+            const text = row.textContent.toLowerCase();
+            const matchesSearch = !term || text.includes(term);
+            let matchesDept = true;
+            if (activeDept !== "all") {
+              matchesDept = text.includes(activeDept);
+            }
+            row.style.display = matchesSearch && matchesDept ? "" : "none";
+          });
+        }
+
+        if (filterBtns) {
+          filterBtns.forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              filterBtns.forEach((b) => {
+                b.classList.remove("btn-primary", "active");
+                b.classList.add("btn-secondary");
+              });
+              btn.classList.remove("btn-secondary");
+              btn.classList.add("btn-primary", "active");
+              activeDept = btn.getAttribute("data-dept") || "all";
+              applyFilter();
+            });
+          });
+        }
+
+        if (searchBtn) {
+          searchBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            applyFilter();
+          });
+        }
+
+        if (searchInput) {
+          searchInput.addEventListener("input", applyFilter);
+          searchInput.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              applyFilter();
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>

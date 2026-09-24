@@ -15,6 +15,30 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <script>
+      (function () {
+        try {
+          var session =
+            localStorage.getItem("stackly_current_user") ||
+            sessionStorage.getItem("stackly_current_user") ||
+            localStorage.getItem("prohealth_current_user");
+          if (session) {
+            var user = JSON.parse(session);
+            if (user && user.role === "Doctor") {
+              window.location.replace("doctor-dashboard.html");
+            } else if (user && user.role === "Admin") {
+              window.location.replace("admin-dashboard.html");
+            } else {
+              window.location.replace("patient-dashboard.html");
+            }
+          } else {
+            window.location.replace("sign-in.html");
+          }
+        } catch (e) {
+          window.location.replace("patient-dashboard.html");
+        }
+      })();
+    </script>
   </head>
   <body>
     <!-- Pure CSS Page Loader -->
@@ -127,22 +151,6 @@
         </section>
       </div>
     </main>
-
-    <!-- Site Footer -->
-    <footer class="site-footer" role="contentinfo">
-      <div class="container">
-        <div class="footer-bottom" style="border-top: none; padding-top: 0">
-          <div>
-            &copy; 2026 Stackly Medical Care. Authenticated Clinical Session.
-          </div>
-          <div class="footer-legal-links">
-            <a href="404.html">Privacy Policy</a>
-            <a href="404.html">HIPAA Security Notice</a>
-            <a href="index.html">Stackly Home</a>
-          </div>
-        </div>
-      </div>
-    </footer>
 
     <script src="assets/js/main.js"></script>
     <script src="assets/js/auth.js"></script>

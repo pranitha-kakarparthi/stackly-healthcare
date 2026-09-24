@@ -1,5 +1,5 @@
 /**
- * ProHealth Healthcare Platform - Core Main Script
+ * Stackly Healthcare Platform - Core Main Script
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -149,6 +149,14 @@ function setupActionButtonsRedirect() {
     );
     if (!target) return;
 
+    // Elements explicitly designated to have no action or redirection (e.g. blog topic filters)
+    if (
+      target.hasAttribute("data-no-action") ||
+      target.closest('[data-no-action="true"]')
+    ) {
+      return;
+    }
+
     // Allow actual form submissions on auth/contact forms
     if (
       target.type === "submit" &&
@@ -163,7 +171,12 @@ function setupActionButtonsRedirect() {
     if (
       target.classList.contains("nav-toggle") ||
       target.classList.contains("mobile-nav-close") ||
-      target.classList.contains("password-toggle-btn")
+      target.classList.contains("password-toggle-btn") ||
+      target.id === "dash-sidebar-toggle" ||
+      target.closest("#dash-sidebar-toggle") ||
+      target.classList.contains("dash-hamburger-btn") ||
+      target.classList.contains("dash-sidebar-toggle-btn") ||
+      target.closest(".dashboard-sidebar")
     ) {
       return;
     }

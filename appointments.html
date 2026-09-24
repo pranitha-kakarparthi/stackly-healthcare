@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Appointments & Clinical Visits - ProHealth Healthcare System</title>
+    <title>Appointments & Clinical Visits - Stackly Healthcare System</title>
     <meta
       name="description"
       content="View and manage scheduled outpatient consultations, diagnostic testing slots, and physician appointments."
@@ -49,6 +49,28 @@
               />
               <span class="brand-tag">Portal</span>
             </a>
+            <button
+              id="dash-sidebar-toggle"
+              class="dash-sidebar-toggle-btn"
+              aria-label="Toggle Sidebar"
+              title="Expand / Collapse Sidebar"
+              type="button"
+              data-no-action="true"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+              >
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            </button>
           </div>
 
           <div class="dash-user-badge">
@@ -60,19 +82,14 @@
           </div>
 
           <nav id="dash-sidebar-nav" class="dash-nav"></nav>
-
-          <div
-            style="
-              margin-top: auto;
-              padding-top: 20px;
-              border-top: 1px solid var(--border-color);
-            "
-          >
-            <a href="settings.html" class="btn btn-secondary btn-block btn-sm">
-              <span>⚙️</span> Portal Settings
-            </a>
-          </div>
         </aside>
+
+        <!-- Mobile Sidebar Backdrop Overlay -->
+        <div
+          id="dash-sidebar-backdrop"
+          class="dash-sidebar-backdrop"
+          aria-hidden="true"
+        ></div>
 
         <!-- Main Appointments Workspace -->
         <section
@@ -287,12 +304,12 @@
       <div class="container">
         <div class="footer-bottom" style="border-top: none; padding-top: 0">
           <div>
-            &copy; 2026 ProHealth Medical Care. Authenticated Clinical Session.
+            &copy; 2026 Stackly Medical Care. Authenticated Clinical Session.
           </div>
           <div class="footer-legal-links">
             <a href="404.html">Privacy Policy</a>
             <a href="404.html">HIPAA Security Notice</a>
-            <a href="index.html">ProHealth Home</a>
+            <a href="index.html">Stackly Home</a>
           </div>
         </div>
       </div>

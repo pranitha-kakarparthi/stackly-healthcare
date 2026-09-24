@@ -1,16 +1,40 @@
 /**
- * ProHealth Healthcare Platform - Authentication & Validation System
+ * Stackly Healthcare Platform - Authentication & Validation System
  */
 
 const STORAGE_KEYS = {
-  USERS: "prohealth_users",
-  CURRENT_USER: "prohealth_current_user",
-  ROLE: "prohealth_role",
-  PREFERENCES: "prohealth_preferences",
+  USERS: "stackly_users",
+  CURRENT_USER: "stackly_current_user",
+  ROLE: "stackly_role",
+  PREFERENCES: "stackly_preferences",
 };
 
-// Purge any old demo accounts and initialize clean storage
+// Purge any old demo accounts and initialize clean storage with migration
 function initializeAuthStorage() {
+  // Seamless migration from legacy storage keys if present
+  if (
+    localStorage.getItem("prohealth_current_user") &&
+    !localStorage.getItem(STORAGE_KEYS.CURRENT_USER)
+  ) {
+    localStorage.setItem(
+      STORAGE_KEYS.CURRENT_USER,
+      localStorage.getItem("prohealth_current_user")
+    );
+    localStorage.setItem(
+      STORAGE_KEYS.ROLE,
+      localStorage.getItem("prohealth_role") || "Patient"
+    );
+  }
+  if (
+    localStorage.getItem("prohealth_users") &&
+    !localStorage.getItem(STORAGE_KEYS.USERS)
+  ) {
+    localStorage.setItem(
+      STORAGE_KEYS.USERS,
+      localStorage.getItem("prohealth_users")
+    );
+  }
+
   const existingUsers = localStorage.getItem(STORAGE_KEYS.USERS);
   if (!existingUsers) {
     localStorage.setItem(STORAGE_KEYS.USERS, JSON.stringify([]));
@@ -20,9 +44,9 @@ function initializeAuthStorage() {
       // Filter out any previous demo seed accounts
       const cleaned = users.filter(
         (u) =>
-          u.email !== "patient@prohealth.com" &&
-          u.email !== "doctor@prohealth.com" &&
-          u.email !== "admin@prohealth.com"
+          u.email !== "patient@thestackly.com" &&
+          u.email !== "doctor@thestackly.com" &&
+          u.email !== "admin@thestackly.com"
       );
       localStorage.setItem(STORAGE_KEYS.USERS, JSON.stringify(cleaned));
     } catch (e) {

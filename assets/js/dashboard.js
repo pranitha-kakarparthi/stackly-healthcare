@@ -1,5 +1,5 @@
 /**
- * ProHealth Healthcare Platform - Role-Aware Interactive Dashboard System
+ * Stackly Healthcare Platform - Role-Aware Interactive Dashboard System
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -15,6 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Setup Sign Out Handler
   setupSignOut();
+
+  // Setup Dashboard Sidebar Toggle
+  setupDashboardSidebarToggle();
 });
 
 /**
@@ -231,7 +234,7 @@ function renderSidebarNav(role) {
   navContainer.innerHTML = navItems
     .map(
       (item) => `
-    <a href="${item.href}" class="dash-nav-item ${item.active ? "active" : ""}">
+    <a href="${item.href}" class="dash-nav-item ${item.active ? "active" : ""}" title="${item.label}">
       <span>${item.icon}</span>
       <span>${item.label}</span>
     </a>
@@ -647,4 +650,101 @@ function setupSignOut() {
         window.location.href = "sign-in.html";
       });
     });
+}
+
+/**
+ * Setup Dashboard Sidebar Toggle inside the sidebar to expand/collapse alone
+ */
+function setupDashboardSidebarToggle() {
+  const toggleBtn = document.getElementById("dash-sidebar-toggle");
+  const sidebar = document.querySelector(".dashboard-sidebar");
+  const container = document.querySelector(".dashboard-container");
+  const backdrop = document.getElementById("dash-sidebar-backdrop");
+
+  if (!toggleBtn || !sidebar) return;
+
+  // Restore saved collapsed state on desktop
+  if (window.innerWidth >= 992) {
+    try {
+      const isSavedCollapsed =
+        localStorage.getItem("stackly_sidebar_collapsed") === "true";
+      if (isSavedCollapsed) {
+        sidebar.classList.add("collapsed");
+        if (container) container.classList.add("sidebar-collapsed");
+        toggleBtn.setAttribute("aria-expanded", "false");
+      } else {
+        toggleBtn.setAttribute("aria-expanded", "true");
+      }
+    } catch (err) {}
+  }
+
+  const toggleSidebar = (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (e.stopImmediatePropagation) e.stopImmediatePropagation();
+    }
+
+    const isMobile = window.innerWidth < 992;
+    if (isMobile) {
+      const isExpanded = sidebar.classList.contains("mobile-expanded");
+      if (isExpanded) {
+        sidebar.classList.remove("mobile-expanded");
+        if (backdrop) backdrop.classList.remove("show");
+        toggleBtn.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      } else {
+        sidebar.classList.add("mobile-expanded");
+        if (backdrop) backdrop.classList.add("show");
+        toggleBtn.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+      }
+    } else {
+      sidebar.classList.toggle("collapsed");
+      const isCollapsed = sidebar.classList.contains("collapsed");
+      if (container) {
+        container.classList.toggle("sidebar-collapsed", isCollapsed);
+      }
+      toggleBtn.setAttribute("aria-expanded", String(!isCollapsed));
+      try {
+        localStorage.setItem(
+          "stackly_sidebar_collapsed",
+          isCollapsed ? "true" : "false"
+        );
+      } catch (err) {}
+    }
+  };
+
+  const closeMobileSidebar = (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    sidebar.classList.remove("mobile-expanded");
+    if (backdrop) backdrop.classList.remove("show");
+    toggleBtn.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  };
+
+  toggleBtn.addEventListener("click", toggleSidebar);
+
+  if (backdrop) {
+    backdrop.addEventListener("click", closeMobileSidebar);
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && sidebar.classList.contains("mobile-expanded")) {
+      closeMobileSidebar();
+    }
+  });
+
+  // Reset scroll lock & mobile state if resized to desktop
+  window.addEventListener("resize", () => {
+    if (
+      window.innerWidth >= 992 &&
+      sidebar.classList.contains("mobile-expanded")
+    ) {
+      closeMobileSidebar();
+    }
+  });
 }

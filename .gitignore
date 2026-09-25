@@ -11,3 +11,9 @@ build/
 Thumbs.db
 *.log
 
+# Scratch & Local Development Artifacts
+scratch/
+*.tmp
+*.temp
+.vscode/
+.idea/

@@ -3,6 +3,23 @@
  */
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Ensure preloader is dismissed immediately on dashboard pages to prevent click blocking
+  const loader = document.getElementById("page-loader");
+  if (loader) {
+    loader.classList.add("loaded");
+    loader.style.pointerEvents = "none";
+    loader.style.display = "none";
+  }
+
+  // Ensure dashboard root classes for strict viewport containment
+  if (document.querySelector(".dashboard-page-wrapper")) {
+    document.documentElement.classList.add("dashboard-html");
+    document.body.classList.add("dashboard-body");
+  }
+
+  // Universal 404 Action Redirection for all dashboard buttons and placeholder links
+  setupDashboard404Actions();
+
   // Check Authentication Session
   const currentUser = getCurrentUser();
   if (!currentUser) {
@@ -418,6 +435,94 @@ function getPatientDashboardHTML(user) {
         <button class="btn btn-primary btn-block" style="margin-top: 18px;" data-action="404">Sync Wearable Tracker</button>
       </div>
     </div>
+
+    <!-- Section 4: Active Therapeutic Medication Schedule & Daily Dosages -->
+    <div class="dash-card" style="margin-top: 28px; margin-bottom: 28px;">
+      <div class="dash-card-header">
+        <h3>Active Therapeutic Medication Schedule & Daily Dosages</h3>
+        <a href="prescriptions.html" class="btn btn-sm btn-outline">Pharmacy Refills &rarr;</a>
+      </div>
+      <div class="data-table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Medication</th>
+              <th>Strength & Form</th>
+              <th>Scheduled Frequency</th>
+              <th>Next Dose Time</th>
+              <th>Compliance Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Telmisartan</strong></td>
+              <td>40 mg Tablet</td>
+              <td>Once Daily with Morning Breakfast</td>
+              <td>Tomorrow, 08:30 AM</td>
+              <td><span class="status-badge status-confirmed">Taken Today</span></td>
+              <td><button class="btn btn-sm btn-secondary" data-action="404">Mark Taken</button></td>
+            </tr>
+            <tr>
+              <td><strong>Atorvastatin</strong></td>
+              <td>10 mg Tablet</td>
+              <td>Once Daily at Bedtime</td>
+              <td>Tonight, 09:30 PM</td>
+              <td><span class="status-badge status-pending">Pending Tonight</span></td>
+              <td><button class="btn btn-sm btn-secondary" data-action="404">Remind Me</button></td>
+            </tr>
+            <tr>
+              <td><strong>Omega-3 Fish Oil</strong></td>
+              <td>1000 mg Softgel</td>
+              <td>Twice Daily post Meals</td>
+              <td>Tonight, 08:00 PM</td>
+              <td><span class="status-badge status-pending">Pending Tonight</span></td>
+              <td><button class="btn btn-sm btn-secondary" data-action="404">Remind Me</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Section 5: Preventive Health Screenings & Wellness Milestones -->
+    <div class="dash-card" style="margin-bottom: 28px;">
+      <div class="dash-card-header">
+        <h3>Preventive Health Screenings & Wellness Milestones</h3>
+        <span class="status-badge status-confirmed">Up to Date</span>
+      </div>
+      <div class="data-table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Preventive Screening</th>
+              <th>Target Specialty</th>
+              <th>Last Certified Date</th>
+              <th>Next Due Date</th>
+              <th>Clinical Recommendation</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Cardiovascular Stress Echo</strong></td>
+              <td>Cardiology Institute</td>
+              <td>Aug 14, 2026</td>
+              <td>Aug 2027 (Annual)</td>
+              <td>Normal left ventricular ejection fraction (62%)</td>
+              <td><button class="btn btn-sm btn-outline" data-action="404">View Echo</button></td>
+            </tr>
+            <tr>
+              <td><strong>Comprehensive Ophthalmic Retinopathy</strong></td>
+              <td>Ophthalmology Wing</td>
+              <td>Nov 02, 2025</td>
+              <td>Nov 2026 (Due Soon)</td>
+              <td>Annual diabetic and hypertensive retinal assessment</td>
+              <td><button class="btn btn-sm btn-primary" data-action="404">Book Slot</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   `;
 }
 
@@ -546,6 +651,94 @@ function getDoctorDashboardHTML(user) {
           </div>
         </div>
         <button class="btn btn-outline btn-block" style="margin-top: 20px;" data-action="404">Acknowledge All Alerts</button>
+      </div>
+    </div>
+
+    <!-- Section 4: Inpatient Ward Bedside Census & Rounds -->
+    <div class="dash-card" style="margin-top: 28px; margin-bottom: 28px;">
+      <div class="dash-card-header">
+        <h3>Inpatient Ward Bedside Census & Rounds</h3>
+        <span class="status-badge status-confirmed">Bedside Roster Active</span>
+      </div>
+      <div class="data-table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Bed / Ward</th>
+              <th>Patient Name & Demographics</th>
+              <th>Admitting Diagnosis</th>
+              <th>Primary Nurse</th>
+              <th>Clinical Hemodynamics</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>ICU - Bed 04</strong></td>
+              <td>Margaret Evans (64/F)</td>
+              <td>Acute Coronary Syndrome (Post-PCI)</td>
+              <td>Nurse Elena Rostova</td>
+              <td><span class="status-badge status-confirmed">BP 124/80 • HR 72</span></td>
+              <td><button class="btn btn-sm btn-secondary" data-action="404">Rounds Note</button></td>
+            </tr>
+            <tr>
+              <td><strong>Ward 3B - Bed 12</strong></td>
+              <td>Ramesh Natarajan (48/M)</td>
+              <td>Severe Hyperkalemia & Arrhythmia</td>
+              <td>Nurse Rajeshwari</td>
+              <td><span class="status-badge status-pending">Potassium 6.1 (Stat)</span></td>
+              <td><button class="btn btn-sm btn-primary" data-action="404">Urgent Review</button></td>
+            </tr>
+            <tr>
+              <td><strong>Post-Op - Bed 08</strong></td>
+              <td>David Chen (52/M)</td>
+              <td>Coronary Artery Bypass Graft (Day 3)</td>
+              <td>Nurse Thomas K.</td>
+              <td><span class="status-badge status-completed">Stable • Extubated</span></td>
+              <td><button class="btn btn-sm btn-secondary" data-action="404">Step-down</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Section 5: Pending Diagnostic Test Authorizations & Lab Reviews -->
+    <div class="dash-card" style="margin-bottom: 28px;">
+      <div class="dash-card-header">
+        <h3>Pending Diagnostic Test Authorizations & Lab Reviews</h3>
+        <span class="status-badge status-pending">3 Orders Awaiting Sign-off</span>
+      </div>
+      <div class="data-table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Patient Name</th>
+              <th>Diagnostic Investigation</th>
+              <th>Clinical Urgency</th>
+              <th>Ordering Resident</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>#ORD-9104</strong></td>
+              <td>Robert Miller</td>
+              <td>High-Sensitivity Troponin-I Serial Panel</td>
+              <td><span class="status-badge status-cancelled">STAT Urgent</span></td>
+              <td>Dr. Maya Lin, Resident</td>
+              <td><button class="btn btn-sm btn-primary" data-action="404">Sign & Authorize</button></td>
+            </tr>
+            <tr>
+              <td><strong>#ORD-9105</strong></td>
+              <td>Clara Oswald</td>
+              <td>Contrast-Enhanced Abdominal CT Angiogram</td>
+              <td><span class="status-badge status-pending">Within 4 Hours</span></td>
+              <td>Dr. Marcus Brody, Fellow</td>
+              <td><button class="btn btn-sm btn-secondary" data-action="404">Review Renal Panel</button></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   `;
@@ -680,6 +873,94 @@ function getAdminDashboardHTML(user) {
         <button class="btn btn-secondary btn-block" style="margin-top: 18px;" data-action="404">View Complete Security Log</button>
       </div>
     </div>
+
+    <!-- Section 4: Critical Diagnostic Medical Equipment & Infrastructure Telemetry -->
+    <div class="dash-card" style="margin-top: 28px; margin-bottom: 28px;">
+      <div class="dash-card-header">
+        <h3>Critical Diagnostic Medical Equipment & Infrastructure Telemetry</h3>
+        <span class="status-badge status-confirmed">Sensors Online</span>
+      </div>
+      <div class="data-table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Biomedical Asset</th>
+              <th>Location / Wing</th>
+              <th>Uptime & Operational Status</th>
+              <th>Calibration Status</th>
+              <th>Service Contract</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Siemens Magnetom Vida 3T MRI</strong></td>
+              <td>Radiology Wing (Ground Floor)</td>
+              <td><span class="status-badge status-confirmed">99.8% Uptime • Active</span></td>
+              <td>Certified Sep 15, 2026</td>
+              <td>OEM Platinum Care</td>
+              <td><button class="btn btn-sm btn-secondary" data-action="404">Diagnostics</button></td>
+            </tr>
+            <tr>
+              <td><strong>GE 128-Slice Optima CT Scanner</strong></td>
+              <td>Emergency Radiology Suite</td>
+              <td><span class="status-badge status-confirmed">Active (24/7 STAT)</span></td>
+              <td>Certified Aug 20, 2026</td>
+              <td>OEM 24/7 Coverage</td>
+              <td><button class="btn btn-sm btn-secondary" data-action="404">Diagnostics</button></td>
+            </tr>
+            <tr>
+              <td><strong>Philips Azurion 7 Biplane Cath Lab</strong></td>
+              <td>Cardiology Interventional OR 1</td>
+              <td><span class="status-badge status-confirmed">Active • Clean Room</span></td>
+              <td>Certified Sep 01, 2026</td>
+              <td>Comprehensive AMC</td>
+              <td><button class="btn btn-sm btn-secondary" data-action="404">Logs</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Section 5: Regulatory Accreditation & Clinical Quality Compliance Registry -->
+    <div class="dash-card" style="margin-bottom: 28px;">
+      <div class="dash-card-header">
+        <h3>Regulatory Accreditation & Clinical Quality Compliance Registry</h3>
+        <span class="status-badge status-confirmed">NABH Accredited</span>
+      </div>
+      <div class="data-table-container">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Compliance Protocol</th>
+              <th>Governing Standards Body</th>
+              <th>Audit Frequency</th>
+              <th>Last Certified Rating</th>
+              <th>Compliance Officer</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>NABH Hospital Safety Standard v5.1</strong></td>
+              <td>National Accreditation Board (NABH)</td>
+              <td>Annual Inspection</td>
+              <td><span class="status-badge status-confirmed">Grade A+ (98.4%)</span></td>
+              <td>Dr. Rajeshwari Swaminathan</td>
+              <td><button class="btn btn-sm btn-outline" data-action="404">View Certificate</button></td>
+            </tr>
+            <tr>
+              <td><strong>ISO 27001:2022 Healthcare Data Vault</strong></td>
+              <td>International Organization for Standardization</td>
+              <td>Biannual Cryptographic Audit</td>
+              <td><span class="status-badge status-confirmed">Full Conformance</span></td>
+              <td>Chief Information Security Officer</td>
+              <td><button class="btn btn-sm btn-outline" data-action="404">Audit Log</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   `;
 }
 
@@ -733,6 +1014,7 @@ function setupDashboardSidebarToggle() {
     }
 
     const isMobile = window.innerWidth < 992;
+    const mainEl = document.querySelector(".dashboard-main");
     if (isMobile) {
       const isExpanded = sidebar.classList.contains("mobile-expanded");
       if (isExpanded) {
@@ -740,11 +1022,13 @@ function setupDashboardSidebarToggle() {
         if (backdrop) backdrop.classList.remove("show");
         toggleBtn.setAttribute("aria-expanded", "false");
         document.body.style.overflow = "";
+        if (mainEl) mainEl.style.overflow = "";
       } else {
         sidebar.classList.add("mobile-expanded");
         if (backdrop) backdrop.classList.add("show");
         toggleBtn.setAttribute("aria-expanded", "true");
         document.body.style.overflow = "hidden";
+        if (mainEl) mainEl.style.overflow = "hidden";
       }
     } else {
       sidebar.classList.toggle("collapsed");
@@ -771,6 +1055,8 @@ function setupDashboardSidebarToggle() {
     if (backdrop) backdrop.classList.remove("show");
     toggleBtn.setAttribute("aria-expanded", "false");
     document.body.style.overflow = "";
+    const mainEl = document.querySelector(".dashboard-main");
+    if (mainEl) mainEl.style.overflow = "";
   };
 
   toggleBtn.addEventListener("click", toggleSidebar);
@@ -794,6 +1080,24 @@ function setupDashboardSidebarToggle() {
       closeMobileSidebar();
     }
   });
+
+  // Forward wheel events from sidebar to main content when sidebar has no internal scroll
+  const mainContentEl = document.querySelector(".dashboard-main");
+  if (sidebar && mainContentEl) {
+    sidebar.addEventListener(
+      "wheel",
+      (e) => {
+        const canScrollUp = e.deltaY < 0 && sidebar.scrollTop > 0;
+        const canScrollDown =
+          e.deltaY > 0 &&
+          sidebar.scrollTop + sidebar.clientHeight < sidebar.scrollHeight - 1;
+        if (!canScrollUp && !canScrollDown) {
+          mainContentEl.scrollTop += e.deltaY;
+        }
+      },
+      { passive: true }
+    );
+  }
 }
 
 /**
@@ -905,4 +1209,92 @@ function initSettingsPage(user) {
   if (ln && !ln.value) ln.value = user.lastName || "";
   if (em && !em.value) em.value = user.email || "";
   if (ph && !ph.value) ph.value = user.phone || "9876543210";
+}
+
+/**
+ * Universal Action Redirection to 404 Page
+ * Redirects all non-navigational action buttons, cards, and dummy links in dashboard pages
+ */
+function setupDashboard404Actions() {
+  if (window._dash404Initialized) return;
+  window._dash404Initialized = true;
+
+  // Capture-phase click listener to guarantee all actions trigger 404 redirection
+  document.addEventListener(
+    "click",
+    (e) => {
+      // Find the clicked button, link, or action card
+      const actionEl = e.target.closest(
+        "button, a, .dash-action-btn-card, [data-action='404'], .btn-action-404"
+      );
+      if (!actionEl) return;
+
+      // 1. Allow sidebar toggle inside sidebar
+      if (
+        actionEl.id === "dash-sidebar-toggle" ||
+        actionEl.closest("#dash-sidebar-toggle")
+      ) {
+        return;
+      }
+
+      // 2. Allow Sign Out button
+      if (
+        actionEl.id === "dash-signout-btn" ||
+        actionEl.classList.contains("btn-signout")
+      ) {
+        return;
+      }
+
+      // 3. Allow real navigation links (valid .html files, mailto, tel)
+      if (actionEl.tagName === "A") {
+        const href = actionEl.getAttribute("href");
+        if (
+          href &&
+          href !== "#" &&
+          href !== "" &&
+          !href.startsWith("javascript:") &&
+          (href.endsWith(".html") ||
+            href.includes(".html#") ||
+            href.startsWith("mailto:") ||
+            href.startsWith("tel:"))
+        ) {
+          return; // Allow standard navigation to page
+        }
+      }
+
+      // 4. Allow Care Team live search & filter buttons, and password eye toggle
+      if (
+        actionEl.id === "care-search-btn" ||
+        actionEl.classList.contains("filter-dept-btn") ||
+        actionEl.classList.contains("password-toggle-btn") ||
+        actionEl.hasAttribute("data-no-action") ||
+        actionEl.closest('[data-no-action="true"]')
+      ) {
+        return; // Handled by dedicated in-page logic
+      }
+
+      // All other action buttons, cards, and placeholder links redirect to 404.html
+      e.preventDefault();
+      e.stopPropagation();
+      window.location.href = "404.html";
+    },
+    true
+  );
+
+  // Form submissions (like Settings forms) redirect to 404.html
+  document.addEventListener(
+    "submit",
+    (e) => {
+      if (
+        e.target.hasAttribute("data-no-action") ||
+        e.target.closest('[data-no-action="true"]')
+      ) {
+        return;
+      }
+      e.preventDefault();
+      e.stopPropagation();
+      window.location.href = "404.html";
+    },
+    true
+  );
 }

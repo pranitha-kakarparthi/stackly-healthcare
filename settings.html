@@ -16,6 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body>
@@ -120,8 +121,59 @@
             </div>
           </div>
 
+          <!-- Welcome Hero Telemetry Card with Background Overlay -->
+          <div class="dash-welcome-banner dash-bg-settings" data-aos="fade-up">
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 16px;
+              "
+            >
+              <div>
+                <span
+                  class="status-badge status-confirmed"
+                  style="margin-bottom: 8px"
+                  >HIPAA & Security Governance</span
+                >
+                <h2
+                  style="
+                    font-size: 24px;
+                    font-weight: 800;
+                    color: var(--text-main);
+                    margin-bottom: 6px;
+                  "
+                >
+                  Portal Security & Account Administration
+                </h2>
+                <p
+                  style="
+                    font-size: 14px;
+                    color: var(--text-muted);
+                    max-width: 600px;
+                    margin: 0;
+                  "
+                >
+                  Manage clinical identity data, multi-factor biometric
+                  authentication, HIPAA data access permissions, and linked
+                  caregiver emergency contacts.
+                </p>
+              </div>
+              <div class="dash-banner-actions">
+                <button class="btn btn-primary btn-sm" data-action="404">
+                  Security Audit Log
+                </button>
+                <button class="btn btn-outline btn-sm" data-action="404">
+                  Download Credentials
+                </button>
+              </div>
+            </div>
+          </div>
+
           <!-- Section 1: Security & Compliance Status KPI Cards -->
-          <div class="dash-stats-grid">
+          <div class="dash-stats-grid" data-aos="fade-up" data-aos-delay="100">
             <div class="dash-stat-card">
               <div class="dash-stat-info">
                 <h5>HIPAA Compliance</h5>
@@ -153,7 +205,11 @@
           </div>
 
           <!-- Section 2: Profile Identity & Contact Details -->
-          <div class="settings-section-card">
+          <div
+            class="settings-section-card"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
             <div class="settings-section-header">
               <div>
                 <h3>Personal Identity & Clinical Contact Details</h3>
@@ -593,24 +649,9 @@
       </div>
     </main>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
     <script src="assets/js/auth.js"></script>
     <script src="assets/js/dashboard.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script>
-      // Populate fields from current user session
-      document.addEventListener("DOMContentLoaded", () => {
-        const user = getCurrentUser();
-        if (user) {
-          const fn = document.getElementById("settings-firstname");
-          const ln = document.getElementById("settings-lastname");
-          const em = document.getElementById("settings-email");
-          const ph = document.getElementById("settings-phone");
-          if (fn) fn.value = user.firstName || "";
-          if (ln) ln.value = user.lastName || "";
-          if (em) em.value = user.email || "";
-          if (ph) ph.value = user.phone || "9876543210";
-        }
-      });
-    </script>
   </body>
 </html>

@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body>
@@ -181,8 +182,63 @@
 
           <!-- Static Admin Dashboard Content -->
           <div id="dashboard-static-content">
+            <!-- Welcome Hero Telemetry Card with Background Overlay -->
+            <div class="dash-welcome-banner dash-bg-admin" data-aos="fade-up">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  flex-wrap: wrap;
+                  gap: 16px;
+                "
+              >
+                <div>
+                  <span
+                    class="status-badge status-confirmed"
+                    style="margin-bottom: 8px"
+                    >Hospital Operations Command Center</span
+                  >
+                  <h2
+                    style="
+                      font-size: 24px;
+                      font-weight: 800;
+                      color: var(--text-main);
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Directorate Operations & Governance Dashboard
+                  </h2>
+                  <p
+                    style="
+                      font-size: 14px;
+                      color: var(--text-muted);
+                      max-width: 600px;
+                      margin: 0;
+                    "
+                  >
+                    Salem Central Medical Campus • Real-time clinical capacity
+                    monitoring, departmental bed census, biomedical asset
+                    tracking, and NABH compliance.
+                  </p>
+                </div>
+                <div class="dash-banner-actions">
+                  <button class="btn btn-primary btn-sm" data-action="404">
+                    Audit Report PDF
+                  </button>
+                  <button class="btn btn-outline btn-sm" data-action="404">
+                    Resource Allocator
+                  </button>
+                </div>
+              </div>
+            </div>
+
             <!-- Hospital System Metrics -->
-            <div class="dash-stats-grid">
+            <div
+              class="dash-stats-grid"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
               <div class="dash-stat-card">
                 <div class="dash-stat-info">
                   <h5>Total Bed Occupancy</h5>
@@ -214,7 +270,12 @@
             </div>
 
             <!-- Hospital Operations Actions -->
-            <div class="dash-card" style="margin-bottom: 28px">
+            <div
+              class="dash-card"
+              style="margin-bottom: 28px"
+              data-aos="fade-up"
+              data-aos-delay="150"
+            >
               <div class="dash-card-header">
                 <h3>Directorate Operations & Governance</h3>
                 <span class="status-badge status-confirmed"
@@ -246,8 +307,13 @@
               </div>
             </div>
 
-            <!-- Department Operations Table -->
-            <div class="dashboard-grid-2">
+            <!-- Department Operations Table & Security Log -->
+            <div
+              class="dashboard-grid-2"
+              style="margin-bottom: 28px"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               <div class="dash-card">
                 <div class="dash-card-header">
                   <h3>Departmental Capacity & Census</h3>
@@ -383,11 +449,246 @@
                 </button>
               </div>
             </div>
+
+            <!-- Section 5: Medical Equipment & Critical Diagnostic Asset Telemetry -->
+            <div
+              class="dash-card"
+              style="margin-bottom: 28px"
+              data-aos="fade-up"
+              data-aos-delay="250"
+            >
+              <div class="dash-card-header">
+                <h3>
+                  Critical Diagnostic Medical Equipment & Infrastructure
+                  Telemetry
+                </h3>
+                <span class="status-badge status-confirmed"
+                  >Sensors Online</span
+                >
+              </div>
+              <div class="data-table-container">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Biomedical Asset</th>
+                      <th>Location / Wing</th>
+                      <th>Uptime & Operational Status</th>
+                      <th>Calibration Status</th>
+                      <th>Service Contract</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Siemens Magnetom Vida 3T MRI</strong></td>
+                      <td>Radiology Wing (Ground Floor)</td>
+                      <td>
+                        <span class="status-badge status-confirmed"
+                          >99.8% Uptime • Active</span
+                        >
+                      </td>
+                      <td>Certified Sep 15, 2026</td>
+                      <td>OEM Platinum Care</td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-secondary"
+                          data-action="404"
+                        >
+                          Diagnostics
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>GE 128-Slice Optima CT Scanner</strong></td>
+                      <td>Emergency Radiology Suite</td>
+                      <td>
+                        <span class="status-badge status-confirmed"
+                          >Active (24/7 STAT)</span
+                        >
+                      </td>
+                      <td>Certified Aug 20, 2026</td>
+                      <td>OEM 24/7 Coverage</td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-secondary"
+                          data-action="404"
+                        >
+                          Diagnostics
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Philips Azurion 7 Biplane Cath Lab</strong>
+                      </td>
+                      <td>Cardiology Interventional OR 1</td>
+                      <td>
+                        <span class="status-badge status-confirmed"
+                          >Active • Clean Room</span
+                        >
+                      </td>
+                      <td>Certified Sep 01, 2026</td>
+                      <td>Comprehensive AMC</td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-secondary"
+                          data-action="404"
+                        >
+                          Logs
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong
+                          >Dräger Evita V500 Ventilator Fleet (12 units)</strong
+                        >
+                      </td>
+                      <td>Intensive Care Unit (ICU)</td>
+                      <td>
+                        <span class="status-badge status-confirmed"
+                          >10 In Use • 2 Standby</span
+                        >
+                      </td>
+                      <td>Daily Bio-Check Passed</td>
+                      <td>Hospital Bio-Engineering</td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-outline"
+                          data-action="404"
+                        >
+                          Fleet Check
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Section 6: Hospital Accreditation & Safety Compliance Registry -->
+            <div class="dash-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="dash-card-header">
+                <h3>
+                  Regulatory Accreditation & Clinical Quality Compliance
+                  Registry
+                </h3>
+                <span class="status-badge status-confirmed"
+                  >NABH Accredited</span
+                >
+              </div>
+              <div class="data-table-container">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Compliance Protocol</th>
+                      <th>Governing Standards Body</th>
+                      <th>Audit Frequency</th>
+                      <th>Last Certified Rating</th>
+                      <th>Compliance Officer</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <strong>NABH Hospital Safety Standard v5.1</strong>
+                      </td>
+                      <td>National Accreditation Board (NABH)</td>
+                      <td>Annual Inspection</td>
+                      <td>
+                        <span class="status-badge status-confirmed"
+                          >Grade A+ (98.6%)</span
+                        >
+                      </td>
+                      <td>Dr. Richard Harrison</td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-outline"
+                          data-action="404"
+                        >
+                          View Certificate
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Biomedical Waste Management Protocols</strong>
+                      </td>
+                      <td>State Pollution Control Board</td>
+                      <td>Monthly Environmental Audit</td>
+                      <td>
+                        <span class="status-badge status-confirmed"
+                          >100% Barcode Compliant</span
+                        >
+                      </td>
+                      <td>Hospital Infection Control</td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-outline"
+                          data-action="404"
+                        >
+                          Waste Log
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong
+                          >Liquid Medical Oxygen (LMO) Cryogenic
+                          Reserves</strong
+                        >
+                      </td>
+                      <td>Drug Controller & Petroleum Safety</td>
+                      <td>Daily Automated Sensor Level</td>
+                      <td>
+                        <span class="status-badge status-confirmed"
+                          >96.4% Bulk Reserve (40,000L)</span
+                        >
+                      </td>
+                      <td>Chief Biomedical Engineer</td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-outline"
+                          data-action="404"
+                        >
+                          Tank Sensors
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong
+                          >Hospital Fire Safety & Evacuation Drills</strong
+                        >
+                      </td>
+                      <td>Fire & Rescue Services Salem</td>
+                      <td>Quarterly Drills</td>
+                      <td>
+                        <span class="status-badge status-completed"
+                          >NOC Valid until 2027</span
+                        >
+                      </td>
+                      <td>Safety Directorate</td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-outline"
+                          data-action="404"
+                        >
+                          NOC Document
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </section>
       </div>
     </main>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/auth.js"></script>
     <script src="assets/js/dashboard.js"></script>

@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body>
@@ -179,8 +180,63 @@
 
           <!-- Static Doctor Dashboard Content -->
           <div id="dashboard-static-content">
+            <!-- Welcome Hero Telemetry Card with Background Overlay -->
+            <div class="dash-welcome-banner dash-bg-doctor" data-aos="fade-up">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  flex-wrap: wrap;
+                  gap: 16px;
+                "
+              >
+                <div>
+                  <span
+                    class="status-badge status-confirmed"
+                    style="margin-bottom: 8px"
+                    >Active Clinician Duty: OPD & Cardiology Care</span
+                  >
+                  <h2
+                    style="
+                      font-size: 24px;
+                      font-weight: 800;
+                      color: var(--text-main);
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Physician Clinical Workstation & Ward Census
+                  </h2>
+                  <p
+                    style="
+                      font-size: 14px;
+                      color: var(--text-muted);
+                      max-width: 600px;
+                      margin: 0;
+                    "
+                  >
+                    Salem Medical Campus • Cardiology & Internal Medicine Ward.
+                    Real-time patient telemetry feeds, digital E-prescriptions,
+                    and emergency trauma triage.
+                  </p>
+                </div>
+                <div class="dash-banner-actions">
+                  <button class="btn btn-primary btn-sm" data-action="404">
+                    Stat Triage Call
+                  </button>
+                  <button class="btn btn-outline btn-sm" data-action="404">
+                    Ward Census Log
+                  </button>
+                </div>
+              </div>
+            </div>
+
             <!-- Doctor Clinical KPI Cards -->
-            <div class="dash-stats-grid">
+            <div
+              class="dash-stats-grid"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
               <div class="dash-stat-card">
                 <div class="dash-stat-info">
                   <h5>Today's Outpatients</h5>
@@ -212,7 +268,12 @@
             </div>
 
             <!-- Quick Doctor Action Tools -->
-            <div class="dash-card" style="margin-bottom: 28px">
+            <div
+              class="dash-card"
+              style="margin-bottom: 28px"
+              data-aos="fade-up"
+              data-aos-delay="150"
+            >
               <div class="dash-card-header">
                 <h3>Physician Clinical Workstation</h3>
                 <span class="status-badge status-confirmed"
@@ -244,8 +305,13 @@
               </div>
             </div>
 
-            <!-- 2 Column Layout -->
-            <div class="dashboard-grid-2">
+            <!-- 2 Column Layout: Today's Queue & Critical Alerts -->
+            <div
+              class="dashboard-grid-2"
+              style="margin-bottom: 28px"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               <!-- Today's Queue -->
               <div class="dash-card">
                 <div class="dash-card-header">
@@ -383,11 +449,183 @@
                 </button>
               </div>
             </div>
+
+            <!-- Section 5: Inpatient Ward Bedside Census & Rounds -->
+            <div
+              class="dash-card"
+              style="margin-bottom: 28px"
+              data-aos="fade-up"
+              data-aos-delay="250"
+            >
+              <div class="dash-card-header">
+                <h3>Inpatient Ward Bedside Census & Rounds</h3>
+                <span class="status-badge status-confirmed"
+                  >Bedside Roster Active</span
+                >
+              </div>
+              <div class="data-table-container">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Bed / Ward</th>
+                      <th>Patient Name & Demographics</th>
+                      <th>Admitting Diagnosis</th>
+                      <th>Primary Nurse</th>
+                      <th>Clinical Hemodynamics</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>ICU - Bed 04</strong></td>
+                      <td>Margaret Evans (64/F)</td>
+                      <td>Acute Coronary Syndrome (Post-PCI)</td>
+                      <td>Nurse Elena Rostova</td>
+                      <td>
+                        <span class="status-badge status-confirmed"
+                          >BP 124/80 • HR 72</span
+                        >
+                      </td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-secondary"
+                          data-action="404"
+                        >
+                          Rounds Note
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Ward 3B - Bed 12</strong></td>
+                      <td>Ramesh Natarajan (48/M)</td>
+                      <td>Severe Hyperkalemia & Arrhythmia</td>
+                      <td>Nurse Rajeshwari</td>
+                      <td>
+                        <span class="status-badge status-pending"
+                          >Potassium 6.1 (Stat)</span
+                        >
+                      </td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-primary"
+                          data-action="404"
+                        >
+                          Urgent Review
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Post-Op - Bed 08</strong></td>
+                      <td>David Chen (52/M)</td>
+                      <td>Coronary Artery Bypass Graft (Day 3)</td>
+                      <td>Nurse Thomas K.</td>
+                      <td>
+                        <span class="status-badge status-completed"
+                          >Stable • Extubated</span
+                        >
+                      </td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-secondary"
+                          data-action="404"
+                        >
+                          Step-down
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Section 6: Pending Diagnostic Authorizations & Stat Orders -->
+            <div class="dash-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="dash-card-header">
+                <h3>Pending Diagnostic Test Authorizations & Lab Reviews</h3>
+                <span class="status-badge status-pending"
+                  >3 Orders Awaiting Sign-off</span
+                >
+              </div>
+              <div class="data-table-container">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Order ID</th>
+                      <th>Patient Name</th>
+                      <th>Diagnostic Investigation</th>
+                      <th>Clinical Urgency</th>
+                      <th>Ordering Resident</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>#ORD-9104</strong></td>
+                      <td>Robert Miller</td>
+                      <td>High-Sensitivity Troponin-I Serial Panel</td>
+                      <td>
+                        <span class="status-badge status-cancelled"
+                          >STAT Urgent</span
+                        >
+                      </td>
+                      <td>Dr. Maya Lin, Resident</td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-primary"
+                          data-action="404"
+                        >
+                          Sign & Authorize
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>#ORD-9108</strong></td>
+                      <td>Margaret Evans</td>
+                      <td>2D Transthoracic Echocardiogram (Echo)</td>
+                      <td>
+                        <span class="status-badge status-confirmed"
+                          >Scheduled Today</span
+                        >
+                      </td>
+                      <td>Dr. Samuel O'Connor</td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-secondary"
+                          data-action="404"
+                        >
+                          Approve Order
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>#ORD-9112</strong></td>
+                      <td>Ananya Ramesh</td>
+                      <td>Contrast Brain & Cervical Spine 3T MRI</td>
+                      <td>
+                        <span class="status-badge status-pending"
+                          >Pre-Auth Required</span
+                        >
+                      </td>
+                      <td>Dr. Catherine Brooks</td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-secondary"
+                          data-action="404"
+                        >
+                          Verify Pre-Auth
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </section>
       </div>
     </main>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/auth.js"></script>
     <script src="assets/js/dashboard.js"></script>

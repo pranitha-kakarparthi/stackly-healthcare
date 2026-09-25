@@ -20,6 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 6. Time of Day Greetings
   updateTimeGreeting();
+
+  // 7. Newsletter Form Validation & Redirection
+  initNewsletterForm();
+
+  // 8. Initialize AOS Animations
+  initAOS();
 });
 
 /**
@@ -157,12 +163,13 @@ function setupActionButtonsRedirect() {
       return;
     }
 
-    // Allow actual form submissions on auth/contact forms
+    // Allow actual form submissions on auth/contact/newsletter forms
     if (
       target.type === "submit" &&
       (target.closest("#contact-form") ||
         target.closest("#signin-form") ||
-        target.closest("#signup-form"))
+        target.closest("#signup-form") ||
+        target.closest("#newsletter-form"))
     ) {
       return;
     }
@@ -240,4 +247,98 @@ function updateTimeGreeting() {
   greetingElements.forEach((el) => {
     el.textContent = greeting;
   });
+}
+
+/**
+ * Newsletter Form Email Validation and Submission Handler
+ */
+function initNewsletterForm() {
+  const form = document.getElementById("newsletter-form");
+  if (!form) return;
+
+  const emailInput = document.getElementById("newsletter-email");
+  const errorBox = document.getElementById("newsletter-error");
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const validate = () => {
+    const val = emailInput ? emailInput.value.trim() : "";
+    if (!val || !emailRegex.test(val)) {
+      if (emailInput) {
+        emailInput.classList.add("is-invalid");
+        emailInput.style.borderColor = "#dc2626";
+      }
+      if (errorBox) {
+        errorBox.style.display = "block";
+        errorBox.style.color = "#dc2626";
+        errorBox.textContent =
+          "Please enter a valid email address (e.g. sarah@example.com).";
+      }
+      return false;
+    } else {
+      if (emailInput) {
+        emailInput.classList.remove("is-invalid");
+        emailInput.style.borderColor = "";
+      }
+      if (errorBox) {
+        errorBox.style.display = "none";
+      }
+      return true;
+    }
+  };
+
+  if (emailInput) {
+    emailInput.addEventListener("input", () => {
+      if (emailInput.classList.contains("is-invalid")) {
+        validate();
+      }
+    });
+  }
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!validate()) {
+      if (emailInput) emailInput.focus();
+      return;
+    }
+    // Reset the input field once clicked on submit button
+    form.reset();
+    if (emailInput) {
+      emailInput.value = "";
+      emailInput.classList.remove("is-invalid");
+      emailInput.style.borderColor = "";
+    }
+    if (errorBox) {
+      errorBox.style.display = "none";
+    }
+    window.location.href = "404.html";
+  });
+
+  // Reset form when navigated back (e.g. Go Back from 404)
+  window.addEventListener("pageshow", () => {
+    if (form) {
+      form.reset();
+      if (emailInput) {
+        emailInput.value = "";
+        emailInput.classList.remove("is-invalid");
+        emailInput.style.borderColor = "";
+      }
+      if (errorBox) {
+        errorBox.style.display = "none";
+      }
+    }
+  });
+}
+
+/**
+ * Animate On Scroll (AOS) Initializer
+ */
+function initAOS() {
+  if (typeof AOS !== "undefined") {
+    AOS.init({
+      duration: 650,
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 40,
+    });
+  }
 }

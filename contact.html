@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body>
@@ -176,9 +177,13 @@
                 MMR Complex, Chinna Thirupathi,<br />
                 Salem, Tamil Nadu 636008
               </p>
-              <a href="404.html" class="btn btn-sm btn-outline"
-                >Open in Google Maps</a
+              <button
+                type="button"
+                class="btn btn-sm btn-outline"
+                data-action="404"
               >
+                Open in Google Maps
+              </button>
             </div>
 
             <!-- Card 2: Phone -->
@@ -194,12 +199,16 @@
               </div>
               <h3 class="card-title">Direct Helplines</h3>
               <p class="card-desc" style="margin-bottom: 14px">
-                Emergency & Triage: <strong>+91 9876543210</strong><br />
+                Emergency &amp; Triage: <strong>+91 9876543210</strong><br />
                 OPD Appointments: +91 9876543211
               </p>
-              <a href="404.html" class="btn btn-sm btn-primary"
-                >Call Now (+91 9876543210)</a
+              <button
+                type="button"
+                class="btn btn-sm btn-primary"
+                data-action="404"
               >
+                Call Now (+91 9876543210)
+              </button>
             </div>
 
             <!-- Card 3: Email -->
@@ -215,7 +224,13 @@
                 General Inquiries: <strong>hello@thestackly.com</strong><br />
                 Response within 2-4 business hours
               </p>
-              <a href="404.html" class="btn btn-sm btn-secondary">Send Email</a>
+              <button
+                type="button"
+                class="btn btn-sm btn-secondary"
+                data-action="404"
+              >
+                Send Email
+              </button>
             </div>
           </div>
         </div>
@@ -282,21 +297,34 @@
                   </div>
                 </div>
 
-                <!-- Mobile Number (10 Digits Only) -->
+                <!-- Mobile Number (10 Digits with Country Code Selector) -->
                 <div class="form-group">
                   <label for="contact-phone" class="form-label"
                     >Mobile Number (10 Digits)
                     <span class="required-star">*</span></label
                   >
-                  <input
-                    type="tel"
-                    id="contact-phone"
-                    class="form-control input-phone-10"
-                    placeholder="9876543210"
-                    maxlength="10"
-                    pattern="\d{10}"
-                    required
-                  />
+                  <div class="phone-input-split">
+                    <select
+                      id="contact-country-code"
+                      class="form-control phone-country-code"
+                      aria-label="Country Calling Code"
+                    >
+                      <option value="+1" selected>🇺🇸 +1</option>
+                      <option value="+44">🇬🇧 +44</option>
+                      <option value="+91">🇮🇳 +91</option>
+                      <option value="+61">🇦🇺 +61</option>
+                      <option value="+49">🇩🇪 +49</option>
+                    </select>
+                    <input
+                      type="tel"
+                      id="contact-phone"
+                      class="form-control input-phone-10"
+                      placeholder="9876543210"
+                      maxlength="10"
+                      pattern="\d{10}"
+                      required
+                    />
+                  </div>
                   <div class="invalid-feedback">
                     Please enter a valid 10-digit mobile number.
                   </div>
@@ -332,7 +360,7 @@
                   </div>
                 </div>
 
-                <!-- Message with Character Counter -->
+                <!-- Message with Character Counter (Optional) -->
                 <div class="form-group">
                   <div
                     style="
@@ -346,8 +374,7 @@
                       for="contact-message"
                       class="form-label"
                       style="margin-bottom: 0"
-                      >Message / Symptoms
-                      <span class="required-star">*</span></label
+                      >Message / Symptoms (Optional)</label
                     >
                     <span
                       id="char-counter"
@@ -364,11 +391,10 @@
                     class="form-control"
                     rows="4"
                     maxlength="500"
-                    placeholder="Please describe how we can assist you..."
-                    required
+                    placeholder="Please describe how we can assist you (optional)..."
                   ></textarea>
                   <div class="invalid-feedback">
-                    Please write your message (at least 10 characters).
+                    Message cannot exceed 500 characters.
                   </div>
                 </div>
 
@@ -525,13 +551,17 @@
               >
                 Ext: 101 • Room 204
               </p>
-              <a href="404.html" class="btn btn-sm btn-secondary btn-block"
-                >Dial Ext 101</a
+              <button
+                type="button"
+                class="btn btn-sm btn-secondary btn-block"
+                data-action="404"
               >
+                Dial Ext 101
+              </button>
             </div>
             <div class="card" style="padding: 20px">
               <h4 style="font-size: 16px; margin-bottom: 6px">
-                Neurology & Spine
+                Neurology &amp; Spine
               </h4>
               <p
                 style="
@@ -542,9 +572,13 @@
               >
                 Ext: 104 • Room 301
               </p>
-              <a href="404.html" class="btn btn-sm btn-secondary btn-block"
-                >Dial Ext 104</a
+              <button
+                type="button"
+                class="btn btn-sm btn-secondary btn-block"
+                data-action="404"
               >
+                Dial Ext 104
+              </button>
             </div>
             <div class="card" style="padding: 20px">
               <h4 style="font-size: 16px; margin-bottom: 6px">
@@ -559,9 +593,13 @@
               >
                 Ext: 108 • Level 2 NICU
               </p>
-              <a href="404.html" class="btn btn-sm btn-secondary btn-block"
-                >Dial Ext 108</a
+              <button
+                type="button"
+                class="btn btn-sm btn-secondary btn-block"
+                data-action="404"
               >
+                Dial Ext 108
+              </button>
             </div>
             <div class="card" style="padding: 20px">
               <h4 style="font-size: 16px; margin-bottom: 6px">
@@ -576,9 +614,13 @@
               >
                 Ext: 112 • Ground Floor
               </p>
-              <a href="404.html" class="btn btn-sm btn-secondary btn-block"
-                >Dial Ext 112</a
+              <button
+                type="button"
+                class="btn btn-sm btn-secondary btn-block"
+                data-action="404"
               >
+                Dial Ext 112
+              </button>
             </div>
           </div>
         </div>
@@ -658,10 +700,13 @@
       <!-- Section 8: Urgent Care Rapid Action Banner -->
       <section class="section" style="padding-top: 0">
         <div class="container">
-          <div class="cta-banner">
+          <div
+            class="cta-banner section-bg-campus bg-overlay-dark"
+            data-aos="fade-up"
+          >
             <div>
               <h2>Immediate Medical Emergency?</h2>
-              <p>
+              <p style="color: #e2e8f0">
                 Our trauma triage desk and emergency operating suites in Salem
                 are staffed 24/7. Call our emergency dispatch immediately.
               </p>
@@ -765,6 +810,7 @@
               <a href="index.html">Home Overview</a>
               <a href="about.html">About Stackly</a>
               <a href="services.html">Clinical Services</a>
+              <a href="blog.html">Blog &amp; Insights</a>
               <a href="contact.html">Contact Us</a>
             </div>
           </div>
@@ -796,15 +842,18 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <div>&copy; 2026 Stackly Medical Care. All rights reserved.</div>
+          <div>&copy; 2026 Stackly Healthcare System. All rights reserved.</div>
           <div class="footer-legal-links">
             <a href="404.html">Privacy Policy</a>
             <a href="404.html">Terms of Service</a>
+            <a href="404.html">HIPAA Security Notice</a>
+            <a href="404.html">Security Whitepaper</a>
           </div>
         </div>
       </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
       // Character counter & form validation
@@ -855,6 +904,57 @@
         const subject = document.getElementById("contact-subject");
         const message = document.getElementById("contact-message");
 
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Real-time blur validation
+        name.addEventListener("blur", () => {
+          if (
+            !name.value.trim() ||
+            !/^[A-Za-z\s]{2,50}$/.test(name.value.trim())
+          ) {
+            setContactError(
+              name,
+              "Please enter your full name using alphabets only (2-50 characters)."
+            );
+          } else {
+            clearContactError(name);
+          }
+        });
+
+        email.addEventListener("blur", () => {
+          if (!email.value.trim() || !emailRegex.test(email.value.trim())) {
+            setContactError(
+              email,
+              "Please enter a valid email address (e.g. sarah@example.com)."
+            );
+          } else {
+            clearContactError(email);
+          }
+        });
+
+        phone.addEventListener("blur", () => {
+          const phoneClean = phone.value.replace(/\D/g, "");
+          if (phoneClean.length !== 10) {
+            setContactError(
+              phone,
+              "Please enter a valid 10-digit mobile number."
+            );
+          } else {
+            clearContactError(phone);
+          }
+        });
+
+        subject.addEventListener("change", () => {
+          if (!subject.value) {
+            setContactError(
+              subject,
+              "Please select a clinical specialty or inquiry subject."
+            );
+          } else {
+            clearContactError(subject);
+          }
+        });
+
         [name, email, phone, subject, message].forEach((input) => {
           if (!input) return;
           input.addEventListener("input", () => clearContactError(input));
@@ -881,7 +981,6 @@
             if (!firstInvalid) firstInvalid = name;
           }
 
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
           if (!email.value.trim() || !emailRegex.test(email.value.trim())) {
             setContactError(
               email,
@@ -908,11 +1007,9 @@
             if (!firstInvalid) firstInvalid = subject;
           }
 
-          if (!message.value.trim() || message.value.trim().length < 10) {
-            setContactError(
-              message,
-              "Please enter a message containing at least 10 characters."
-            );
+          // Message is optional: only validate max length if entered
+          if (message.value.trim().length > 500) {
+            setContactError(message, "Message cannot exceed 500 characters.");
             if (!firstInvalid) firstInvalid = message;
           }
 

@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body>
@@ -113,8 +114,62 @@
             </div>
           </div>
 
+          <!-- Welcome Hero Telemetry Card with Background Overlay -->
+          <div
+            class="dash-welcome-banner dash-bg-prescriptions"
+            data-aos="fade-up"
+          >
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 16px;
+              "
+            >
+              <div>
+                <span
+                  class="status-badge status-confirmed"
+                  style="margin-bottom: 8px"
+                  >Salem Central Dispensary & E-Pharmacy</span
+                >
+                <h2
+                  style="
+                    font-size: 24px;
+                    font-weight: 800;
+                    color: var(--text-main);
+                    margin-bottom: 6px;
+                  "
+                >
+                  Digital Prescriptions & Therapeutic Refills
+                </h2>
+                <p
+                  style="
+                    font-size: 14px;
+                    color: var(--text-muted);
+                    max-width: 600px;
+                    margin: 0;
+                  "
+                >
+                  Legally signed digital e-prescriptions with
+                  batch-authenticated safety verification, automatic refill
+                  scheduling, and 4-hour Salem doorstep dispatch.
+                </p>
+              </div>
+              <div class="dash-banner-actions">
+                <button class="btn btn-primary btn-sm" data-action="404">
+                  Request Refill
+                </button>
+                <button class="btn btn-outline btn-sm" data-action="404">
+                  Pharmacist Consult
+                </button>
+              </div>
+            </div>
+          </div>
+
           <!-- Pharmacy Overview Metric Cards -->
-          <div class="dash-stats-grid">
+          <div class="dash-stats-grid" data-aos="fade-up" data-aos-delay="100">
             <div class="dash-stat-card">
               <div class="dash-stat-info">
                 <h5>Active Medications</h5>
@@ -146,7 +201,12 @@
           </div>
 
           <!-- Active Prescriptions Table -->
-          <div class="dash-card" style="margin-bottom: 30px">
+          <div
+            class="dash-card"
+            style="margin-bottom: 30px"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
             <div class="dash-card-header">
               <h3>Active Therapeutic Regimen & Dosage Table</h3>
               <span class="status-badge status-confirmed"
@@ -226,8 +286,13 @@
             </div>
           </div>
 
-          <!-- Pharmacy Delivery Address & Refill Card -->
-          <div class="dashboard-grid-2">
+          <!-- Pharmacy Delivery Address & Refill Card (Sections 3 & 4) -->
+          <div
+            class="dashboard-grid-2"
+            style="margin-bottom: 30px"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <div class="dash-card">
               <div class="dash-card-header">
                 <h3>Direct Pharmacy Dispatch Guidelines</h3>
@@ -291,38 +356,173 @@
               </button>
             </div>
           </div>
+
+          <!-- Section 5: Prescription Refill Fulfillment History & Delivery Tracking -->
+          <div
+            class="dash-card"
+            style="margin-bottom: 30px"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          >
+            <div class="dash-card-header">
+              <h3>
+                Prescription Refill Fulfillment History & Dispatch Tracking
+              </h3>
+              <span class="status-badge status-confirmed"
+                >Cold-Chain Logged</span
+              >
+            </div>
+            <div class="data-table-container">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Fulfillment ID</th>
+                    <th>Medications Dispatched</th>
+                    <th>Dispatch Timestamp</th>
+                    <th>Delivery Destination</th>
+                    <th>Courier Tracking</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>#DSP-1094</strong></td>
+                    <td>
+                      Telmisartan 40mg (30 Tabs), Atorvastatin 10mg (30 Tabs)
+                    </td>
+                    <td>Today, 11:30 AM</td>
+                    <td>Chinna Thirupathi, Salem - 636008</td>
+                    <td>
+                      <span class="status-badge status-pending"
+                        >Out for Delivery (Rider: Suresh)</span
+                      >
+                    </td>
+                    <td>
+                      <button class="btn btn-sm btn-primary" data-action="404">
+                        Live GPS
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>#DSP-1082</strong></td>
+                    <td>Multivitamin & Zinc Chelate (60 Caps)</td>
+                    <td>Aug 28, 2026</td>
+                    <td>Chinna Thirupathi, Salem - 636008</td>
+                    <td>
+                      <span class="status-badge status-completed"
+                        >Delivered & Signed</span
+                      >
+                    </td>
+                    <td>
+                      <button
+                        class="btn btn-sm btn-secondary"
+                        data-action="404"
+                      >
+                        Receipt PDF
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>#DSP-1051</strong></td>
+                    <td>Oral Electrolyte Hydration Packets (10 Sachets)</td>
+                    <td>Jul 14, 2026</td>
+                    <td>Chinna Thirupathi, Salem - 636008</td>
+                    <td>
+                      <span class="status-badge status-completed"
+                        >Delivered & Signed</span
+                      >
+                    </td>
+                    <td>
+                      <button
+                        class="btn btn-sm btn-secondary"
+                        data-action="404"
+                      >
+                        Receipt PDF
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Section 6: Pharmacological Storage & Adherence Guidelines -->
+          <div class="dash-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="dash-card-header">
+              <h3>
+                Pharmacological Safety, Storage & Clinical Adherence Protocols
+              </h3>
+              <span class="status-badge status-confirmed"
+                >Certified Guidelines</span
+              >
+            </div>
+            <div class="dashboard-grid-2">
+              <div
+                style="
+                  font-size: 13.5px;
+                  color: var(--text-muted);
+                  line-height: 1.7;
+                "
+              >
+                <strong
+                  style="
+                    color: var(--text-main);
+                    display: block;
+                    margin-bottom: 6px;
+                  "
+                  >🌡️ Storage Recommendations</strong
+                >
+                <p>
+                  Keep all cardiovascular medication in a cool, dry place away
+                  from direct sunlight (below 25°C). Never store tablets inside
+                  bathroom medicine cabinets due to moisture fluctuations.
+                </p>
+              </div>
+              <div
+                style="
+                  font-size: 13.5px;
+                  color: var(--text-muted);
+                  line-height: 1.7;
+                "
+              >
+                <strong
+                  style="
+                    color: var(--text-main);
+                    display: block;
+                    margin-bottom: 6px;
+                  "
+                  >⏰ Missed Dose Protocol</strong
+                >
+                <p>
+                  If you miss a scheduled dose by more than 4 hours, do not take
+                  a double dose. Resume normal scheduled timing at your next
+                  interval and record the event in your patient portal log.
+                </p>
+              </div>
+            </div>
+            <div
+              style="
+                margin-top: 18px;
+                display: flex;
+                gap: 12px;
+                flex-wrap: wrap;
+              "
+            >
+              <button class="btn btn-sm btn-primary" data-action="404">
+                Download Medication Guide
+              </button>
+              <button class="btn btn-sm btn-outline" data-action="404">
+                Report Adverse Reaction
+              </button>
+            </div>
+          </div>
         </section>
       </div>
     </main>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/auth.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const user = getCurrentUser();
-        if (!user) {
-          window.location.href = "sign-in.html";
-          return;
-        }
-        const userInitials =
-          (user.firstName ? user.firstName[0] : "U") +
-          (user.lastName ? user.lastName[0] : "");
-        const userNameDisplay = `${user.role === "Doctor" ? "Dr. " : ""}${user.firstName} ${user.lastName}`;
-
-        document.getElementById("dash-avatar").textContent = userInitials;
-        document.getElementById("dash-sidebar-avatar").textContent =
-          userInitials;
-        document.getElementById("dash-user-name").textContent = userNameDisplay;
-
-        const roleBadge = document.getElementById("dash-role-badge");
-        roleBadge.textContent = user.role;
-        roleBadge.className = `dash-role-badge role-badge-${user.role.toLowerCase()}`;
-
-        renderSidebarNav(user.role);
-        setupSignOut();
-        setupActionButtonsRedirect();
-      });
-    </script>
     <script src="assets/js/dashboard.js"></script>
   </body>
 </html>

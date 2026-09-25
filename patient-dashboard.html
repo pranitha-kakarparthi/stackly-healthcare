@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body>
@@ -179,8 +180,60 @@
 
           <!-- Static Patient Dashboard Content -->
           <div id="dashboard-static-content">
+            <!-- Welcome Hero Telemetry Card with Background Overlay -->
+            <div class="dash-welcome-banner dash-bg-patient" data-aos="fade-up">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  flex-wrap: wrap;
+                  gap: 16px;
+                "
+              >
+                <div>
+                  <span
+                    class="status-badge status-confirmed"
+                    style="margin-bottom: 8px"
+                    >Continuous Telemetry Active</span
+                  >
+                  <h2
+                    style="
+                      font-size: 24px;
+                      font-weight: 800;
+                      color: var(--text-main);
+                      margin-bottom: 6px;
+                    "
+                  >
+                    Patient Care Overview & Vitals Hub
+                  </h2>
+                  <p
+                    style="
+                      font-size: 14px;
+                      color: var(--text-muted);
+                      max-width: 600px;
+                      margin: 0;
+                    "
+                  >
+                    Your vitals and biometric feeds are continuously
+                    synchronized with the Salem Cardiology and Endocrinology
+                    teams. Next in-clinic review in 24 hours.
+                  </p>
+                </div>
+                <div class="dash-banner-actions">
+                  <button class="btn btn-primary btn-sm" data-action="404">
+                    Download Health Passport
+                  </button>
+                </div>
+              </div>
+            </div>
+
             <!-- Patient KPI Cards -->
-            <div class="dash-stats-grid">
+            <div
+              class="dash-stats-grid"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
               <div class="dash-stat-card">
                 <div class="dash-stat-info">
                   <h5>Upcoming Visits</h5>
@@ -212,7 +265,12 @@
             </div>
 
             <!-- Quick Actions -->
-            <div class="dash-card" style="margin-bottom: 28px">
+            <div
+              class="dash-card"
+              style="margin-bottom: 28px"
+              data-aos="fade-up"
+              data-aos-delay="150"
+            >
               <div class="dash-card-header">
                 <h3>Patient Self-Service Quick Actions</h3>
                 <span class="status-badge status-confirmed"
@@ -244,8 +302,13 @@
               </div>
             </div>
 
-            <!-- 2 Column Widgets -->
-            <div class="dashboard-grid-2">
+            <!-- 2 Column Widgets: Appointments & Vitals -->
+            <div
+              class="dashboard-grid-2"
+              style="margin-bottom: 28px"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               <!-- Upcoming Appointments -->
               <div class="dash-card">
                 <div class="dash-card-header">
@@ -377,11 +440,192 @@
                 </button>
               </div>
             </div>
+
+            <!-- Section 5: Active Therapeutic Medication Schedule & Daily Dosages -->
+            <div
+              class="dash-card"
+              style="margin-bottom: 28px"
+              data-aos="fade-up"
+              data-aos-delay="250"
+            >
+              <div class="dash-card-header">
+                <h3>Active Therapeutic Medication Schedule & Daily Dosages</h3>
+                <a href="prescriptions.html" class="btn btn-sm btn-outline"
+                  >Pharmacy Refills &rarr;</a
+                >
+              </div>
+              <div class="data-table-container">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Medication</th>
+                      <th>Strength & Form</th>
+                      <th>Scheduled Frequency</th>
+                      <th>Next Dose Time</th>
+                      <th>Compliance Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Telmisartan</strong></td>
+                      <td>40 mg Tablet</td>
+                      <td>Once Daily with Morning Breakfast</td>
+                      <td>Tomorrow, 08:30 AM</td>
+                      <td>
+                        <span class="status-badge status-confirmed"
+                          >Taken Today</span
+                        >
+                      </td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-secondary"
+                          data-action="404"
+                        >
+                          Mark Taken
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Atorvastatin</strong></td>
+                      <td>10 mg Tablet</td>
+                      <td>Once Daily at Bedtime</td>
+                      <td>Tonight, 09:30 PM</td>
+                      <td>
+                        <span class="status-badge status-pending"
+                          >Pending Tonight</span
+                        >
+                      </td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-secondary"
+                          data-action="404"
+                        >
+                          Remind Me
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Omega-3 Fish Oil</strong></td>
+                      <td>1000 mg Softgel</td>
+                      <td>Twice Daily post Meals</td>
+                      <td>Tonight, 08:00 PM</td>
+                      <td>
+                        <span class="status-badge status-pending"
+                          >Pending Tonight</span
+                        >
+                      </td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-secondary"
+                          data-action="404"
+                        >
+                          Remind Me
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Section 6: Preventive Health Screenings & Wellness Milestones -->
+            <div class="dash-card" data-aos="fade-up" data-aos-delay="300">
+              <div class="dash-card-header">
+                <h3>Preventive Health Screenings & Wellness Milestones</h3>
+                <span class="status-badge status-confirmed">Up to Date</span>
+              </div>
+              <div class="data-table-container">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Preventive Screening</th>
+                      <th>Target Specialty</th>
+                      <th>Last Certified Date</th>
+                      <th>Next Due Date</th>
+                      <th>Clinical Recommendation</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Cardiovascular Stress Echo</strong></td>
+                      <td>Cardiology Institute</td>
+                      <td>Aug 14, 2026</td>
+                      <td>Aug 2027 (Annual)</td>
+                      <td>Normal left ventricular ejection fraction (62%)</td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-outline"
+                          data-action="404"
+                        >
+                          View Echo
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Comprehensive Ophthalmic Retinopathy</strong>
+                      </td>
+                      <td>Ophthalmology Wing</td>
+                      <td>Nov 02, 2025</td>
+                      <td>Nov 2026 (Due Soon)</td>
+                      <td>
+                        Annual diabetic and hypertensive retinal assessment
+                      </td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-primary"
+                          data-action="404"
+                        >
+                          Book Slot
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Annual Dental Prophylaxis & Scaling</strong>
+                      </td>
+                      <td>Dental Surgery</td>
+                      <td>Apr 19, 2026</td>
+                      <td>Oct 2026 (Recommended)</td>
+                      <td>Routine plaque removal and periodontal check</td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-outline"
+                          data-action="404"
+                        >
+                          Schedule
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Quadrivalent Seasonal Influenza Vaccine</strong>
+                      </td>
+                      <td>Preventive Medicine</td>
+                      <td>Sep 10, 2026</td>
+                      <td>Sep 2027</td>
+                      <td>Immunization active • Batch #FL-9021 certified</td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-outline"
+                          data-action="404"
+                        >
+                          Certificate
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </section>
       </div>
     </main>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/auth.js"></script>
     <script src="assets/js/dashboard.js"></script>

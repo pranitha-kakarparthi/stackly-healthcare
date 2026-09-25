@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body>
@@ -184,18 +185,18 @@
                 hospital equipped with hybrid operating theaters, dedicated
                 cardiac ICUs, and advanced robotic surgery consoles.
               </p>
-              <div style="display: flex; gap: 18px">
+              <div style="display: flex; gap: 14px; flex-wrap: wrap">
                 <button class="btn btn-primary" data-action="404">
                   Download Annual Quality Report
                 </button>
-                <a href="404.html" class="btn btn-outline" data-action="404"
-                  >Schedule Campus Tour</a
-                >
+                <button type="button" class="btn btn-outline" data-action="404">
+                  Schedule Campus Tour
+                </button>
               </div>
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80"
+                src="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=800&q=80"
                 alt="Stackly Modern Building Exterior"
                 style="
                   border-radius: var(--radius-lg);
@@ -373,7 +374,7 @@
 
             <div class="doctor-card">
               <img
-                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80"
+                src="https://images.unsplash.com/photo-1623854767648-e7bb8009f0db?auto=format&fit=crop&w=600&q=80"
                 alt="Dr. Priya Sharma - Academic Dean"
                 class="doctor-image"
                 loading="lazy"
@@ -395,7 +396,7 @@
 
             <div class="doctor-card">
               <img
-                src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=600&q=80"
+                src="https://images.unsplash.com/photo-1622902046580-2b47f47f5471?auto=format&fit=crop&w=600&q=80"
                 alt="Dr. Michael Chang - Surgical Quality Chair"
                 class="doctor-image"
                 loading="lazy"
@@ -525,7 +526,7 @@
             <div>
               <div class="hero-image-card">
                 <img
-                  src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=800&q=80"
+                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"
                   alt="Stackly Community Clinic Program"
                   loading="lazy"
                 />
@@ -538,10 +539,13 @@
       <!-- Section 8: Campus Tour & Appointment CTA -->
       <section class="section">
         <div class="container">
-          <div class="cta-banner">
+          <div
+            class="cta-banner section-bg-mission bg-overlay-dark"
+            data-aos="fade-up"
+          >
             <div>
               <h2>Experience World-Class Healthcare in Salem</h2>
-              <p>
+              <p style="color: #e2e8f0">
                 Schedule an in-person clinical tour of our facilities at MMR
                 Complex, Chinna Thirupathi, or consult one of our senior
                 specialists today.
@@ -644,8 +648,8 @@
               <a href="index.html">Home Overview</a>
               <a href="about.html">About Stackly</a>
               <a href="services.html">Clinical Services</a>
+              <a href="blog.html">Blog &amp; Insights</a>
               <a href="contact.html">Contact Us</a>
-              <a href="dashboard.html">Access Portal</a>
             </div>
           </div>
           <div>
@@ -676,15 +680,18 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <div>&copy; 2026 Stackly Medical Care. All rights reserved.</div>
+          <div>&copy; 2026 Stackly Healthcare System. All rights reserved.</div>
           <div class="footer-legal-links">
             <a href="404.html">Privacy Policy</a>
             <a href="404.html">Terms of Service</a>
+            <a href="404.html">HIPAA Security Notice</a>
+            <a href="404.html">Security Whitepaper</a>
           </div>
         </div>
       </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

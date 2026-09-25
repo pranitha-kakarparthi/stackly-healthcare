@@ -14,9 +14,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
-  <body>
+  <body class="auth-page">
     <!-- Pure CSS Page Loader -->
     <div id="page-loader" aria-live="polite">
       <div class="loader-brand">
@@ -31,107 +32,24 @@
       <p class="loader-text">Securing encrypted clinical session...</p>
     </div>
 
-    <!-- Fixed Navbar (No Dashboard Option as per requirement) -->
-    <header class="fixed-navbar" role="banner">
-      <div class="nav-container">
-        <a
-          href="index.html"
-          class="brand-logo"
-          aria-label="Stackly Healthcare Home"
-        >
-          <img
-            src="assets/images/logo.webp"
-            alt="Stackly Healthcare"
-            class="brand-logo-img"
-          />
-          <span class="brand-tag">Healthcare</span>
-        </a>
-
-        <nav class="nav-menu" role="navigation" aria-label="Primary Navigation">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="about.html" class="nav-link">About Us</a>
-          <a href="services.html" class="nav-link">Services</a>
-          <a href="blog.html" class="nav-link">Blog</a>
-          <a href="contact.html" class="nav-link">Contact</a>
-        </nav>
-
-        <div class="nav-actions">
-          <a href="sign-in.html" class="btn btn-sm btn-primary">Sign In</a>
-          <a href="sign-up.html" class="btn btn-sm btn-secondary"
-            >Create Account</a
-          >
-          <button
-            class="nav-toggle"
-            aria-label="Toggle Navigation Menu"
-            aria-expanded="false"
-          >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <line x1="3" y1="6" x2="21" y2="6"></line>
-              <line x1="3" y1="12" x2="21" y2="12"></line>
-              <line x1="3" y1="18" x2="21" y2="18"></line>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </header>
-
-    <!-- Mobile Drawer Menu -->
-    <div class="mobile-nav-overlay" aria-hidden="true">
-      <div
-        class="mobile-nav-drawer"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Mobile Menu"
-      >
-        <div class="mobile-nav-header">
-          <div class="brand-logo">
-            <img
-              src="assets/images/logo.webp"
-              alt="Stackly Healthcare"
-              class="brand-logo-img"
-            />
-            <span class="brand-tag">Healthcare</span>
-          </div>
-          <button class="mobile-nav-close" aria-label="Close menu">
-            &times;
-          </button>
-        </div>
-        <div class="mobile-nav-links">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="about.html" class="nav-link">About Us</a>
-          <a href="services.html" class="nav-link">Services</a>
-          <a href="blog.html" class="nav-link">Blog</a>
-          <a href="contact.html" class="nav-link">Contact</a>
-        </div>
-        <div class="mobile-nav-actions">
-          <a href="sign-in.html" class="btn btn-primary btn-block">Sign In</a>
-          <a href="sign-up.html" class="btn btn-secondary btn-block"
-            >Create Account</a
-          >
-        </div>
-      </div>
-    </div>
-
     <main class="page-content-wrapper">
       <div class="auth-wrapper">
         <!-- Left Hero Sidebar -->
         <div class="auth-sidebar">
           <div>
-            <div class="brand-logo" style="color: white; margin-bottom: 40px">
+            <a
+              href="index.html"
+              class="brand-logo"
+              style="color: white; margin-bottom: 40px; text-decoration: none"
+              aria-label="Stackly Healthcare Home"
+            >
               <img
                 src="assets/images/logo.webp"
                 alt="Stackly Healthcare"
                 class="brand-logo-img"
               />
               <span class="brand-tag light-tag">Healthcare Portal</span>
-            </div>
+            </a>
 
             <div class="auth-sidebar-hero">
               <h2>Unified Clinical Intelligence Portal</h2>
@@ -175,6 +93,53 @@
 
         <!-- Right Form Container -->
         <div class="auth-form-container">
+          <!-- Top Utility Bar: Back to Home & Vice-Versa Link -->
+          <div class="auth-top-bar">
+            <a
+              href="index.html"
+              class="auth-back-btn"
+              aria-label="Return to Homepage"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+              </svg>
+              <span>Back to Home</span>
+            </a>
+            <div class="auth-top-switch">
+              <span class="auth-switch-text">Don't have an account?</span>
+              <a href="sign-up.html" class="btn btn-sm btn-outline"
+                >Create Account</a
+              >
+            </div>
+          </div>
+
+          <!-- Mobile Brand Logo (Visible only on mobile/tablet viewports) -->
+          <div class="auth-mobile-logo">
+            <a
+              href="index.html"
+              class="brand-logo"
+              aria-label="Stackly Healthcare Home"
+            >
+              <img
+                src="assets/images/logo.webp"
+                alt="Stackly Healthcare"
+                class="brand-logo-img"
+              />
+              <span class="brand-tag">Healthcare</span>
+            </a>
+          </div>
+
           <div class="auth-header">
             <h1>Sign In to Stackly</h1>
             <p>
@@ -409,6 +374,7 @@
         </div>
       </div>
     </main>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/auth.js"></script>
   </body>

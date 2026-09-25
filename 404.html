@@ -14,17 +14,14 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
-  <body
-    style="
-      background: radial-gradient(circle at center, #ffffff 0%, #f1f5f9 100%);
-    "
-  >
+  <body class="section-bg-404 bg-overlay-light" style="min-height: 100vh">
     <!-- Strictly NO navbar rendered on this 404 page as requested -->
 
     <main class="error-page-wrapper">
-      <div class="error-card">
+      <div class="error-card" data-aos="fade-up">
         <!-- Brand Logo Header on 404 Card -->
         <div
           style="display: flex; justify-content: center; margin-bottom: 24px"
@@ -80,6 +77,7 @@
       </div>
     </main>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

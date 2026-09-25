@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body>
@@ -113,8 +114,62 @@
             </div>
           </div>
 
+          <!-- Welcome Hero Telemetry Card with Background Overlay -->
+          <div
+            class="dash-welcome-banner dash-bg-appointments"
+            data-aos="fade-up"
+          >
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 16px;
+              "
+            >
+              <div>
+                <span
+                  class="status-badge status-confirmed"
+                  style="margin-bottom: 8px"
+                  >Salem Central OPD Scheduling</span
+                >
+                <h2
+                  style="
+                    font-size: 24px;
+                    font-weight: 800;
+                    color: var(--text-main);
+                    margin-bottom: 6px;
+                  "
+                >
+                  Outpatient Clinics & Teleconsultation Hub
+                </h2>
+                <p
+                  style="
+                    font-size: 14px;
+                    color: var(--text-muted);
+                    max-width: 600px;
+                    margin: 0;
+                  "
+                >
+                  Manage in-person doctor appointments, virtual video
+                  consultations, and diagnostic testing slots across all Salem
+                  medical departments.
+                </p>
+              </div>
+              <div class="dash-banner-actions">
+                <button class="btn btn-primary btn-sm" data-action="404">
+                  + New Booking
+                </button>
+                <button class="btn btn-outline btn-sm" data-action="404">
+                  Export Schedule
+                </button>
+              </div>
+            </div>
+          </div>
+
           <!-- Appointment Overview Metric Cards -->
-          <div class="dash-stats-grid">
+          <div class="dash-stats-grid" data-aos="fade-up" data-aos-delay="100">
             <div class="dash-stat-card">
               <div class="dash-stat-info">
                 <h5>Confirmed Visits</h5>
@@ -146,10 +201,15 @@
           </div>
 
           <!-- Detailed Appointments Schedule Table -->
-          <div class="dash-card" style="margin-bottom: 30px">
+          <div
+            class="dash-card"
+            style="margin-bottom: 30px"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
             <div class="dash-card-header">
               <h3>Scheduled Outpatient & In-Clinic Consultations</h3>
-              <div style="display: flex; gap: 8px">
+              <div class="dash-card-actions">
                 <button class="btn btn-sm btn-outline" data-action="404">
                   Filter by Specialty
                 </button>
@@ -257,8 +317,13 @@
             </div>
           </div>
 
-          <!-- Appointment Guidelines Card -->
-          <div class="dash-card">
+          <!-- Section 3: Appointment Guidelines Card -->
+          <div
+            class="dash-card"
+            style="margin-bottom: 30px"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <div class="dash-card-header">
               <h3>Patient Visit Protocol & Reminders</h3>
               <span class="status-badge status-confirmed"
@@ -286,7 +351,14 @@
                 your camera and microphone audio connection.
               </p>
             </div>
-            <div style="margin-top: 20px; display: flex; gap: 12px">
+            <div
+              style="
+                margin-top: 20px;
+                display: flex;
+                gap: 12px;
+                flex-wrap: wrap;
+              "
+            >
               <button class="btn btn-primary" data-action="404">
                 Book Follow-up Appointment
               </button>
@@ -295,40 +367,167 @@
               </button>
             </div>
           </div>
+
+          <!-- Section 4: Available Clinical Specialties & Instant Booking Slots -->
+          <div
+            class="dash-card"
+            style="margin-bottom: 30px"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          >
+            <div class="dash-card-header">
+              <h3>
+                Available Clinical Specialties & Next Immediate Open Slots
+              </h3>
+              <span class="status-badge status-confirmed"
+                >Live Doctor Availability</span
+              >
+            </div>
+            <div class="data-table-container">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Medical Specialty</th>
+                    <th>Lead Attending Physician</th>
+                    <th>Next Available Slot</th>
+                    <th>Consultation Fee</th>
+                    <th>Available Format</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Cardiology & Heart Care</strong></td>
+                    <td>Dr. Alexander Wright, MD</td>
+                    <td>Today, 04:30 PM (Room 204)</td>
+                    <td>$75 (Insurance Covered)</td>
+                    <td>In-Person / Virtual</td>
+                    <td>
+                      <button class="btn btn-sm btn-primary" data-action="404">
+                        Book Slot
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Neurology & Stroke Institute</strong></td>
+                    <td>Dr. David Vance, DM</td>
+                    <td>Tomorrow, 11:00 AM (Room 108)</td>
+                    <td>$90 (Insurance Covered)</td>
+                    <td>In-Person Only</td>
+                    <td>
+                      <button class="btn btn-sm btn-primary" data-action="404">
+                        Book Slot
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Pediatrics & Child Wellness</strong></td>
+                    <td>Dr. Priya Sharma, MD</td>
+                    <td>Sep 29, 10:00 AM (Room 302)</td>
+                    <td>$65 (Insurance Covered)</td>
+                    <td>In-Person / Virtual</td>
+                    <td>
+                      <button class="btn btn-sm btn-primary" data-action="404">
+                        Book Slot
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Orthopedics & Joint Reconstruction</strong></td>
+                    <td>Dr. Michael Chang, MS</td>
+                    <td>Oct 01, 02:30 PM (Room 215)</td>
+                    <td>$85 (Insurance Covered)</td>
+                    <td>In-Person Only</td>
+                    <td>
+                      <button class="btn btn-sm btn-primary" data-action="404">
+                        Book Slot
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Section 5: Historical Consultation Records & Clinical Discharge Summaries -->
+          <div class="dash-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="dash-card-header">
+              <h3>
+                Historical Consultation Records & Clinical Discharge Summaries
+              </h3>
+              <a href="records.html" class="btn btn-sm btn-outline"
+                >Full EHR Archive &rarr;</a
+              >
+            </div>
+            <div class="data-table-container">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Record ID</th>
+                    <th>Visit Date</th>
+                    <th>Attending Specialist</th>
+                    <th>Clinical Assessment / Impression</th>
+                    <th>Disposition</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>#HIST-8891</strong></td>
+                    <td>Aug 15, 2026</td>
+                    <td>Dr. Alexander Wright</td>
+                    <td>Hypertension Stage 1 • Controlled with Telmisartan</td>
+                    <td>Discharged with Home BP Diary</td>
+                    <td>
+                      <button
+                        class="btn btn-sm btn-secondary"
+                        data-action="404"
+                      >
+                        Download Summary
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>#HIST-8762</strong></td>
+                    <td>Jun 22, 2026</td>
+                    <td>Dr. Priya Sharma</td>
+                    <td>Acute Viral Bronchitis • Resolved post antibiotics</td>
+                    <td>Full Clinical Recovery</td>
+                    <td>
+                      <button
+                        class="btn btn-sm btn-secondary"
+                        data-action="404"
+                      >
+                        Download Summary
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>#HIST-8620</strong></td>
+                    <td>Mar 10, 2026</td>
+                    <td>Dr. Catherine Brooks</td>
+                    <td>Routine Diagnostic Chest Radiograph & Echo</td>
+                    <td>Clear Lung Fields • Sinus Rhythm</td>
+                    <td>
+                      <button
+                        class="btn btn-sm btn-secondary"
+                        data-action="404"
+                      >
+                        Download Summary
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </section>
       </div>
     </main>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/auth.js"></script>
-    <script>
-      // Initialize user session & sidebar for appointments.html
-      document.addEventListener("DOMContentLoaded", () => {
-        const user = getCurrentUser();
-        if (!user) {
-          window.location.href = "sign-in.html";
-          return;
-        }
-        const userInitials =
-          (user.firstName ? user.firstName[0] : "U") +
-          (user.lastName ? user.lastName[0] : "");
-        const userNameDisplay = `${user.role === "Doctor" ? "Dr. " : ""}${user.firstName} ${user.lastName}`;
-
-        document.getElementById("dash-avatar").textContent = userInitials;
-        document.getElementById("dash-sidebar-avatar").textContent =
-          userInitials;
-        document.getElementById("dash-user-name").textContent = userNameDisplay;
-
-        const roleBadge = document.getElementById("dash-role-badge");
-        roleBadge.textContent = user.role;
-        roleBadge.className = `dash-role-badge role-badge-${user.role.toLowerCase()}`;
-
-        // Populate sidebar
-        renderSidebarNav(user.role);
-        setupSignOut();
-        setupActionButtonsRedirect();
-      });
-    </script>
     <script src="assets/js/dashboard.js"></script>
   </body>
 </html>

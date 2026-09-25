@@ -16,6 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body>
@@ -156,22 +157,16 @@
             style="margin-bottom: 28px"
             data-no-action="true"
           >
-            <div
-              style="
-                display: flex;
-                gap: 12px;
-                flex-wrap: wrap;
-                align-items: center;
-                justify-content: space-between;
-              "
-            >
-              <div style="flex: 1 1 300px; display: flex; gap: 8px">
+            <div class="care-search-row">
+              <div class="care-search-box-wrap">
                 <input
                   type="text"
                   id="care-search-input"
                   placeholder="Search doctor by name, specialty, or room #..."
+                  class="care-search-input"
                   style="
                     flex: 1;
+                    min-width: 0;
                     padding: 10px 14px;
                     border: 1px solid var(--border-color);
                     border-radius: var(--radius-md);
@@ -189,7 +184,7 @@
               </div>
               <div
                 id="care-dept-filters"
-                style="display: flex; gap: 8px; flex-wrap: wrap"
+                class="care-dept-pill-group"
                 data-no-action="true"
               >
                 <button
@@ -256,7 +251,7 @@
                   "
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=150&q=80"
+                    src="https://images.unsplash.com/photo-1584467735871-8e85353a8413?auto=format&fit=crop&w=150&q=80"
                     alt="Dr. Alexander Wright"
                     style="
                       width: 60px;
@@ -302,12 +297,8 @@
                   Oversees your cardiovascular therapy protocols, lipid
                   profiles, and periodic stress testing evaluations.
                 </p>
-                <div style="display: flex; gap: 8px">
-                  <button
-                    class="btn btn-sm btn-primary"
-                    style="flex: 1"
-                    data-action="404"
-                  >
+                <div class="care-card-actions">
+                  <button class="btn btn-sm btn-primary" data-action="404">
                     Send Message
                   </button>
                   <button class="btn btn-sm btn-secondary" data-action="404">
@@ -327,7 +318,7 @@
                   "
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=150&q=80"
+                    src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?auto=format&fit=crop&w=150&q=80"
                     alt="Dr. Priya Sharma"
                     style="
                       width: 60px;
@@ -373,12 +364,8 @@
                   Primary physician managing annual metabolic screening, blood
                   panels, immunizations, and preventive plans.
                 </p>
-                <div style="display: flex; gap: 8px">
-                  <button
-                    class="btn btn-sm btn-primary"
-                    style="flex: 1"
-                    data-action="404"
-                  >
+                <div class="care-card-actions">
+                  <button class="btn btn-sm btn-primary" data-action="404">
                     Send Message
                   </button>
                   <button class="btn btn-sm btn-secondary" data-action="404">
@@ -444,12 +431,8 @@
                   Coordinates prescription refills, diagnostic lab appointments,
                   and triage pre-consultation questionnaires.
                 </p>
-                <div style="display: flex; gap: 8px">
-                  <button
-                    class="btn btn-sm btn-primary"
-                    style="flex: 1"
-                    data-action="404"
-                  >
+                <div class="care-card-actions">
+                  <button class="btn btn-sm btn-primary" data-action="404">
                     Quick Chat
                   </button>
                   <button class="btn btn-sm btn-secondary" data-action="404">
@@ -701,14 +684,9 @@
 
           <!-- Section 6: Care Navigation Desk & Help Hotline -->
           <div
-            class="dash-card"
-            style="
-              background: radial-gradient(
-                circle at bottom right,
-                var(--primary-light) 0%,
-                white 60%
-              );
-            "
+            class="dash-card section-bg-symposium bg-overlay-dark"
+            data-aos="fade-up"
+            style="margin-top: 20px"
           >
             <div
               style="
@@ -721,20 +699,29 @@
             >
               <div>
                 <h3
-                  style="font-size: 18px; font-weight: 700; margin-bottom: 6px"
+                  style="
+                    font-size: 18px;
+                    font-weight: 700;
+                    margin-bottom: 6px;
+                    color: #ffffff;
+                  "
                 >
                   Dedicated Patient Care Coordinator Desk
                 </h3>
-                <p style="font-size: 14px; color: var(--text-muted); margin: 0">
+                <p style="font-size: 14px; color: #e2e8f0; margin: 0">
                   Have questions regarding your physician assignments or
                   referral authorizations? Call our coordinator desk.
                 </p>
               </div>
-              <div style="display: flex; gap: 10px">
+              <div style="display: flex; gap: 10px; flex-wrap: wrap">
                 <button class="btn btn-secondary" data-action="404">
                   📞 Call Desk (+1 800-456-7890)
                 </button>
-                <button class="btn btn-primary" data-action="404">
+                <button
+                  class="btn btn-primary"
+                  data-action="404"
+                  style="background: white; color: var(--primary-dark)"
+                >
                   Request Coordinator Callback
                 </button>
               </div>
@@ -744,96 +731,9 @@
       </div>
     </main>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
     <script src="assets/js/auth.js"></script>
     <script src="assets/js/dashboard.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const user = getCurrentUser();
-        if (user) {
-          const titleEl = document.getElementById("care-team-page-title");
-          if (titleEl) {
-            if (user.role === "Doctor") {
-              titleEl.textContent = "Medical Staff Roster";
-            } else if (user.role === "Admin") {
-              titleEl.textContent = "Care Team & Governance";
-            } else {
-              titleEl.textContent = "Care Team Directory";
-            }
-          }
-        }
-
-        const searchInput = document.getElementById("care-search-input");
-        const searchBtn = document.getElementById("care-search-btn");
-        const filterBtns = document.querySelectorAll(".filter-dept-btn");
-        const cards = document.querySelectorAll(".care-member-card");
-        const tableRows = document.querySelectorAll(".data-table tbody tr");
-
-        let activeDept = "all";
-
-        function applyFilter() {
-          const term = searchInput
-            ? searchInput.value.toLowerCase().trim()
-            : "";
-
-          // Filter cards
-          cards.forEach((card) => {
-            const text = card.textContent.toLowerCase();
-            const matchesSearch = !term || text.includes(term);
-            let matchesDept = true;
-            if (activeDept !== "all") {
-              matchesDept = text.includes(activeDept);
-            }
-            card.style.display = matchesSearch && matchesDept ? "" : "none";
-          });
-
-          // Filter table rows
-          tableRows.forEach((row) => {
-            const text = row.textContent.toLowerCase();
-            const matchesSearch = !term || text.includes(term);
-            let matchesDept = true;
-            if (activeDept !== "all") {
-              matchesDept = text.includes(activeDept);
-            }
-            row.style.display = matchesSearch && matchesDept ? "" : "none";
-          });
-        }
-
-        if (filterBtns) {
-          filterBtns.forEach((btn) => {
-            btn.addEventListener("click", (e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              filterBtns.forEach((b) => {
-                b.classList.remove("btn-primary", "active");
-                b.classList.add("btn-secondary");
-              });
-              btn.classList.remove("btn-secondary");
-              btn.classList.add("btn-primary", "active");
-              activeDept = btn.getAttribute("data-dept") || "all";
-              applyFilter();
-            });
-          });
-        }
-
-        if (searchBtn) {
-          searchBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            applyFilter();
-          });
-        }
-
-        if (searchInput) {
-          searchInput.addEventListener("input", applyFilter);
-          searchInput.addEventListener("keydown", (e) => {
-            if (e.key === "Enter") {
-              e.preventDefault();
-              applyFilter();
-            }
-          });
-        }
-      });
-    </script>
   </body>
 </html>

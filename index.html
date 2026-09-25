@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body>
@@ -139,15 +140,20 @@
                 tailored to your family's lifelong well-being.
               </p>
               <div class="hero-cta-group">
-                <a
-                  href="404.html"
+                <button
+                  type="button"
                   class="btn btn-lg btn-primary"
                   data-action="404"
-                  >Book an Appointment</a
                 >
-                <a href="404.html" class="btn btn-lg btn-outline"
-                  >Patient & Physician Portal</a
+                  Book an Appointment
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-lg btn-outline"
+                  data-action="404"
                 >
+                  Patient &amp; Physician Portal
+                </button>
               </div>
 
               <!-- Stats Row -->
@@ -171,7 +177,7 @@
             <div class="hero-image-wrapper">
               <div class="hero-image-card">
                 <img
-                  src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80"
+                  src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=800&q=80"
                   alt="Senior Chief Medical Physician in Consultation"
                   loading="eager"
                   width="800"
@@ -200,7 +206,11 @@
       </section>
 
       <!-- Key Features / Trust Bar -->
-      <section class="section section-subtle" style="padding: 50px 0">
+      <section
+        class="section section-subtle"
+        style="padding: 50px 0"
+        data-aos="fade-up"
+      >
         <div class="container">
           <div class="grid-4">
             <div
@@ -353,16 +363,16 @@
                   </p>
                 </div>
               </div>
-              <a href="404.html" class="btn btn-primary"
-                >Discover Our Full Heritage</a
-              >
+              <button type="button" class="btn btn-primary" data-action="404">
+                Discover Our Full Heritage
+              </button>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Clinical Services Section -->
-      <section class="section section-subtle">
+      <section class="section section-subtle" data-aos="fade-up">
         <div class="container">
           <div class="section-header">
             <span class="section-tag">Clinical Departments</span>
@@ -490,15 +500,15 @@
           </div>
 
           <div style="text-align: center; margin-top: 40px">
-            <a href="services.html" class="btn btn-secondary"
-              >Explore All 25+ Departments</a
-            >
+            <button type="button" class="btn btn-secondary" data-action="404">
+              Explore All 25+ Departments
+            </button>
           </div>
         </div>
       </section>
 
       <!-- Medical Specialists / Doctors Showcase -->
-      <section class="section">
+      <section class="section" data-aos="fade-up">
         <div class="container">
           <div class="section-header">
             <span class="section-tag">Medical Specialists</span>
@@ -555,7 +565,7 @@
             <!-- Doctor 3 -->
             <div class="doctor-card">
               <img
-                src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=600&q=80"
+                src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80"
                 alt="Dr. Michael Chang - Orthopedic Surgeon"
                 class="doctor-image"
                 loading="lazy"
@@ -576,7 +586,7 @@
             <!-- Doctor 4 -->
             <div class="doctor-card">
               <img
-                src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80"
+                src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=600&q=80"
                 alt="Dr. Catherine Brooks - Head of Pediatrics"
                 class="doctor-image"
                 loading="lazy"
@@ -655,7 +665,7 @@
       </section>
 
       <!-- Section 7: Testimonials Section -->
-      <section class="section section-subtle">
+      <section class="section section-subtle" data-aos="fade-up">
         <div class="container">
           <div class="section-header">
             <span class="section-tag">Patient Stories</span>
@@ -735,10 +745,13 @@
       <!-- Call to Action Banner -->
       <section class="section">
         <div class="container">
-          <div class="cta-banner">
+          <div
+            class="cta-banner section-bg-emergency bg-overlay-dark"
+            data-aos="fade-up"
+          >
             <div>
               <h2>Your Health Journey Starts Today</h2>
-              <p>
+              <p style="color: #e2e8f0">
                 Connect with our expert physicians online or schedule an
                 in-person clinical visit in Salem. Experience premium medical
                 care without delays.
@@ -845,8 +858,8 @@
               <a href="index.html">Home Overview</a>
               <a href="about.html">About Stackly</a>
               <a href="services.html">Clinical Departments</a>
+              <a href="blog.html">Blog &amp; Insights</a>
               <a href="contact.html">Locate Clinic</a>
-              <a href="dashboard.html">Access Portal</a>
             </div>
           </div>
 
@@ -890,17 +903,18 @@
 
         <!-- Footer Bottom -->
         <div class="footer-bottom">
-          <div>&copy; 2026 Stackly Medical Care. All rights reserved.</div>
+          <div>&copy; 2026 Stackly Healthcare System. All rights reserved.</div>
           <div class="footer-legal-links">
             <a href="404.html">Privacy Policy</a>
             <a href="404.html">Terms of Service</a>
-            <a href="404.html">HIPAA Compliance</a>
-            <a href="404.html">Sitemap</a>
+            <a href="404.html">HIPAA Security Notice</a>
+            <a href="404.html">Security Whitepaper</a>
           </div>
         </div>
       </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

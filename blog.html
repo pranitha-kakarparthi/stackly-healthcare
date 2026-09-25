@@ -16,6 +16,7 @@
       rel="stylesheet"
     />
 
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body>
@@ -142,9 +143,8 @@
             <a href="index.html" style="color: var(--primary)">Home</a> &bull;
             Health Library &amp; Articles
           </div>
-          <a
-            href="javascript:void(0)"
-            role="button"
+          <button
+            type="button"
             class="badge badge-primary"
             data-no-action="true"
             style="
@@ -155,11 +155,13 @@
               cursor: pointer;
               text-decoration: none;
               user-select: none;
+              border: none;
+              font-family: inherit;
+              font-size: 13px;
             "
-            onclick="event.preventDefault()"
           >
             <span>📰</span> Stackly Medical Library
-          </a>
+          </button>
           <h1
             style="
               font-family: var(--font-heading);
@@ -421,8 +423,8 @@
               >
                 <div style="display: flex; align-items: center; gap: 12px">
                   <img
-                    src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=120&q=80"
-                    alt="Dr. Marcus Bennett"
+                    src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?auto=format&fit=crop&w=120&q=80"
+                    alt="Dr. Alexander Wright"
                     style="
                       width: 44px;
                       height: 44px;
@@ -432,7 +434,7 @@
                   />
                   <div>
                     <h4 style="font-size: 14px; font-weight: 700; margin: 0">
-                      Dr. Marcus Bennett, MD, FACC
+                      Dr. Alexander Wright, MD, FACC
                     </h4>
                     <p
                       style="
@@ -1119,6 +1121,8 @@
                 border-radius: var(--radius-lg);
                 border: 1px solid var(--border-color);
                 background: var(--bg-subtle);
+                display: flex;
+                flex-direction: column;
               "
             >
               <div style="font-size: 32px; margin-bottom: 14px">🧬</div>
@@ -1139,7 +1143,11 @@
                 refractory hematological conditions with reduced cellular
                 cytotoxicity.
               </p>
-              <button class="btn btn-sm btn-outline" data-action="404">
+              <button
+                class="btn btn-sm btn-outline"
+                style="margin-top: auto; align-self: flex-start"
+                data-action="404"
+              >
                 View Trial Protocol &rarr;
               </button>
             </div>
@@ -1150,6 +1158,8 @@
                 border-radius: var(--radius-lg);
                 border: 1px solid var(--border-color);
                 background: var(--bg-subtle);
+                display: flex;
+                flex-direction: column;
               "
             >
               <div style="font-size: 32px; margin-bottom: 14px">🤖</div>
@@ -1170,7 +1180,11 @@
                 surgeries, reducing patient postoperative recovery periods by
                 35%.
               </p>
-              <button class="btn btn-sm btn-outline" data-action="404">
+              <button
+                class="btn btn-sm btn-outline"
+                style="margin-top: auto; align-self: flex-start"
+                data-action="404"
+              >
                 Review Surgical Data &rarr;
               </button>
             </div>
@@ -1181,6 +1195,8 @@
                 border-radius: var(--radius-lg);
                 border: 1px solid var(--border-color);
                 background: var(--bg-subtle);
+                display: flex;
+                flex-direction: column;
               "
             >
               <div style="font-size: 32px; margin-bottom: 14px">🧠</div>
@@ -1200,7 +1216,11 @@
                 Automated neuroimaging evaluation providing instant perfusion
                 analysis within 90 seconds of acute ischemic symptom onset.
               </p>
-              <button class="btn btn-sm btn-outline" data-action="404">
+              <button
+                class="btn btn-sm btn-outline"
+                style="margin-top: auto; align-self: flex-start"
+                data-action="404"
+              >
                 Clinical Study Brief &rarr;
               </button>
             </div>
@@ -1500,10 +1520,12 @@
                 border-radius: var(--radius-lg);
                 border: 1px solid var(--border-color);
                 background: var(--bg-card);
+                display: flex;
+                flex-direction: column;
               "
             >
               <img
-                src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=200&q=80"
+                src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&fit=crop&w=200&q=80"
                 alt="Dr. Alexander Wright"
                 style="
                   width: 90px;
@@ -1538,7 +1560,11 @@
                 16+ years clinical practice, Fellow of the American College of
                 Cardiology. Author of 42 published papers.
               </p>
-              <button class="btn btn-sm btn-secondary" data-action="404">
+              <button
+                class="btn btn-sm btn-secondary"
+                style="margin-top: auto; align-self: center"
+                data-action="404"
+              >
                 View 24 Articles &rarr;
               </button>
             </div>
@@ -1551,10 +1577,12 @@
                 border-radius: var(--radius-lg);
                 border: 1px solid var(--border-color);
                 background: var(--bg-card);
+                display: flex;
+                flex-direction: column;
               "
             >
               <img
-                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=200&q=80"
+                src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?auto=format&fit=crop&w=200&q=80"
                 alt="Dr. Elena Rostova"
                 style="
                   width: 90px;
@@ -1589,7 +1617,11 @@
                 Specialized in pediatric developmental immunology, child
                 preventive health, and adolescent medicine.
               </p>
-              <button class="btn btn-sm btn-secondary" data-action="404">
+              <button
+                class="btn btn-sm btn-secondary"
+                style="margin-top: auto; align-self: center"
+                data-action="404"
+              >
                 View 19 Articles &rarr;
               </button>
             </div>
@@ -1602,6 +1634,8 @@
                 border-radius: var(--radius-lg);
                 border: 1px solid var(--border-color);
                 background: var(--bg-card);
+                display: flex;
+                flex-direction: column;
               "
             >
               <img
@@ -1627,7 +1661,7 @@
                   margin-bottom: 10px;
                 "
               >
-                Pharmacology & Clinical Safety
+                Pharmacology &amp; Clinical Safety
               </p>
               <p
                 style="
@@ -1640,7 +1674,11 @@
                 Expert in drug-interaction epidemiology, patient e-prescribing
                 standards, and therapeutic biosimilars.
               </p>
-              <button class="btn btn-sm btn-secondary" data-action="404">
+              <button
+                class="btn btn-sm btn-secondary"
+                style="margin-top: auto; align-self: center"
+                data-action="404"
+              >
                 View 18 Articles &rarr;
               </button>
             </div>
@@ -1653,10 +1691,12 @@
                 border-radius: var(--radius-lg);
                 border: 1px solid var(--border-color);
                 background: var(--bg-card);
+                display: flex;
+                flex-direction: column;
               "
             >
               <img
-                src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=200&q=80"
+                src="https://images.unsplash.com/photo-1638202993928-7267aad84c31?auto=format&fit=crop&w=200&q=80"
                 alt="Dr. Samuel O'Connor"
                 style="
                   width: 90px;
@@ -1691,7 +1731,11 @@
                 Directs hospital clinical quality, surgical governance,
                 emergency readiness, and clinical trial compliance.
               </p>
-              <button class="btn btn-sm btn-secondary" data-action="404">
+              <button
+                class="btn btn-sm btn-secondary"
+                style="margin-top: auto; align-self: center"
+                data-action="404"
+              >
                 View 31 Articles &rarr;
               </button>
             </div>
@@ -1873,21 +1917,19 @@
 
       <!-- Section 8: Newsletter Subscription & Consultation CTA -->
       <section
-        style="
-          padding: 80px 0;
-          background: radial-gradient(
-            circle at bottom left,
-            var(--primary-light) 0%,
-            #f0fdf4 60%,
-            white 100%
-          );
-          border-top: 1px solid var(--border-color);
-        "
+        class="section-bg-newsletter bg-overlay-dark"
+        data-aos="fade-up"
+        style="padding: 80px 0; border-top: 1px solid var(--border-color)"
       >
         <div class="container text-center" style="max-width: 720px">
           <div
             class="badge badge-primary"
-            style="margin-bottom: 16px; display: inline-block"
+            style="
+              margin-bottom: 16px;
+              display: inline-block;
+              background: white;
+              color: var(--primary-dark);
+            "
           >
             Stay Informed
           </div>
@@ -1896,7 +1938,7 @@
               font-family: var(--font-heading);
               font-size: clamp(28px, 3.5vw, 42px);
               font-weight: 800;
-              color: var(--text-main);
+              color: #ffffff;
               margin-bottom: 16px;
               line-height: 1.25;
             "
@@ -1905,7 +1947,7 @@
           </h2>
           <p
             style="
-              color: var(--text-muted);
+              color: #e2e8f0;
               font-size: 16px;
               line-height: 1.6;
               margin-bottom: 32px;
@@ -1916,41 +1958,55 @@
             health strategies.
           </p>
 
-          <!-- Newsletter Form (Redirects to 404 on submission) -->
+          <!-- Newsletter Form with Client-Side Email Validation -->
           <form
-            onsubmit="
-              event.preventDefault();
-              window.location.href = '404.html';
-            "
-            style="
-              display: flex;
-              gap: 12px;
-              max-width: 520px;
-              margin: 0 auto 28px;
-              flex-wrap: wrap;
-              justify-content: center;
-            "
+            id="newsletter-form"
+            novalidate
+            style="max-width: 540px; margin: 0 auto 28px"
           >
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              required
+            <div
               style="
-                flex: 1 1 260px;
-                padding: 14px 20px;
-                border-radius: var(--radius-md);
-                border: 1px solid var(--border-color);
-                font-size: 15px;
-                outline: none;
+                display: flex;
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
               "
-            />
-            <button
-              type="submit"
-              class="btn btn-primary"
-              style="padding: 14px 28px"
             >
-              Subscribe Free
-            </button>
+              <input
+                type="email"
+                id="newsletter-email"
+                class="form-control"
+                placeholder="Enter your email address (e.g. name@example.com)"
+                required
+                aria-label="Email address for newsletter subscription"
+                style="
+                  flex: 1 1 280px;
+                  height: 48px;
+                  padding: 12px 18px;
+                  border-radius: var(--radius-md);
+                  font-size: 15px;
+                "
+              />
+              <button
+                type="submit"
+                class="btn btn-primary"
+                style="padding: 12px 28px; height: 48px"
+              >
+                Subscribe Free
+              </button>
+            </div>
+            <div
+              id="newsletter-error"
+              class="invalid-feedback"
+              style="
+                display: none;
+                text-align: left;
+                margin-top: 8px;
+                font-size: 13px;
+              "
+            >
+              Please enter a valid email address (e.g. name@example.com).
+            </div>
           </form>
 
           <p
@@ -1979,10 +2035,12 @@
               style="font-size: 15px; font-weight: 600; color: var(--text-main)"
               >Ready to speak with a physician?</span
             >
-            <a href="404.html" class="btn btn-primary" data-action="404"
-              >Book Consultation Now</a
-            >
-            <a href="404.html" class="btn btn-secondary">Contact Desk</a>
+            <button type="button" class="btn btn-primary" data-action="404">
+              Book Consultation Now
+            </button>
+            <button type="button" class="btn btn-secondary" data-action="404">
+              Contact Desk
+            </button>
           </div>
         </div>
       </section>
@@ -2070,9 +2128,8 @@
               <a href="index.html">Home Overview</a>
               <a href="about.html">About Stackly</a>
               <a href="services.html">Clinical Departments</a>
-              <a href="blog.html">Health Blog</a>
+              <a href="blog.html">Blog &amp; Insights</a>
               <a href="contact.html">Locate Clinic</a>
-              <a href="dashboard.html">Access Portal</a>
             </div>
           </div>
 
@@ -2116,17 +2173,18 @@
 
         <!-- Footer Bottom -->
         <div class="footer-bottom">
-          <div>&copy; 2026 Stackly Medical Care. All rights reserved.</div>
+          <div>&copy; 2026 Stackly Healthcare System. All rights reserved.</div>
           <div class="footer-legal-links">
             <a href="404.html">Privacy Policy</a>
             <a href="404.html">Terms of Service</a>
-            <a href="404.html">HIPAA Compliance</a>
-            <a href="404.html">Sitemap</a>
+            <a href="404.html">HIPAA Security Notice</a>
+            <a href="404.html">Security Whitepaper</a>
           </div>
         </div>
       </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

@@ -46,6 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Setup Dashboard Sidebar Toggle
   setupDashboardSidebarToggle();
+
+  // Page-specific Initializations for dedicated views
+  initCareTeamPage(currentUser);
+  initSettingsPage(currentUser);
 });
 
 /**
@@ -790,4 +794,115 @@ function setupDashboardSidebarToggle() {
       closeMobileSidebar();
     }
   });
+}
+
+/**
+ * Care Team / Roster Search & Filter Initializer
+ */
+function initCareTeamPage(user) {
+  if (user) {
+    const titleEl = document.getElementById("care-team-page-title");
+    if (titleEl) {
+      if (user.role === "Doctor") {
+        titleEl.textContent = "Medical Staff Roster";
+      } else if (user.role === "Admin") {
+        titleEl.textContent = "Care Team & Governance";
+      } else {
+        titleEl.textContent = "Care Team Directory";
+      }
+    }
+  }
+
+  const searchInput = document.getElementById("care-search-input");
+  const searchBtn = document.getElementById("care-search-btn");
+  const filterBtns = document.querySelectorAll(".filter-dept-btn");
+  const cards = document.querySelectorAll(".care-member-card");
+  const tableRows = document.querySelectorAll(".data-table tbody tr");
+
+  if (
+    !searchInput &&
+    !filterBtns.length &&
+    !cards.length &&
+    !tableRows.length
+  ) {
+    return;
+  }
+
+  let activeDept = "all";
+
+  function applyFilter() {
+    const term = searchInput ? searchInput.value.toLowerCase().trim() : "";
+
+    // Filter cards
+    cards.forEach((card) => {
+      const text = card.textContent.toLowerCase();
+      const matchesSearch = !term || text.includes(term);
+      let matchesDept = true;
+      if (activeDept !== "all") {
+        matchesDept = text.includes(activeDept);
+      }
+      card.style.display = matchesSearch && matchesDept ? "" : "none";
+    });
+
+    // Filter table rows
+    tableRows.forEach((row) => {
+      const text = row.textContent.toLowerCase();
+      const matchesSearch = !term || text.includes(term);
+      let matchesDept = true;
+      if (activeDept !== "all") {
+        matchesDept = text.includes(activeDept);
+      }
+      row.style.display = matchesSearch && matchesDept ? "" : "none";
+    });
+  }
+
+  if (filterBtns) {
+    filterBtns.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        filterBtns.forEach((b) => {
+          b.classList.remove("btn-primary", "active");
+          b.classList.add("btn-secondary");
+        });
+        btn.classList.remove("btn-secondary");
+        btn.classList.add("btn-primary", "active");
+        activeDept = btn.getAttribute("data-dept") || "all";
+        applyFilter();
+      });
+    });
+  }
+
+  if (searchBtn) {
+    searchBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      applyFilter();
+    });
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener("input", applyFilter);
+    searchInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        applyFilter();
+      }
+    });
+  }
+}
+
+/**
+ * Settings Page Form Initializer
+ */
+function initSettingsPage(user) {
+  if (!user) return;
+  const fn = document.getElementById("settings-firstname");
+  const ln = document.getElementById("settings-lastname");
+  const em = document.getElementById("settings-email");
+  const ph = document.getElementById("settings-phone");
+  if (fn && !fn.value) fn.value = user.firstName || "";
+  if (ln && !ln.value) ln.value = user.lastName || "";
+  if (em && !em.value) em.value = user.email || "";
+  if (ph && !ph.value) ph.value = user.phone || "9876543210";
 }
